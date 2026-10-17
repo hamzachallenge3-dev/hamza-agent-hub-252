@@ -1,0 +1,8 @@
+{
+  "name": "hamza-agent-hub-mcp",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true
+  // Optional custom domain (zone must be in the same Cloudflare account):
+  // "routes": [{ "pattern": "agents.example.com", "custom_domain": true }]
+}

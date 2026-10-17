@@ -26,6 +26,11 @@ every day and wants better, more focused answers without writing prompts from sc
 
 That's it: no install, no account, no setup.
 
+## 🔌 Use all 252 agents inside ChatGPT (one app)
+
+Add this MCP server in ChatGPT (Plugins → + → Add custom MCP server, no authentication):
+`https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/mcp`. Details: [`chatgpt-app/`](chatgpt-app/).
+
 ## Agent categories
 
 Counts come from the recorded roster in [`docs/bench/agent-tasks.json`](docs/bench/agent-tasks.json)

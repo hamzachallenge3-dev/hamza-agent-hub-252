@@ -1,0 +1,4 @@
+{ "name": "hamza-agent-hub-chatgpt-app", "version": "1.0.0", "private": true, "type": "module",
+  "description": "ChatGPT app (MCP server) exposing 252 expert agent roles. Read-only, no auth, no external calls.",
+  "scripts": { "build": "python3 scripts/build_catalog.py", "start": "node src/server.js", "test": "node scripts/smoke.mjs", "deploy": "wrangler deploy" },
+  "license": "MIT" }
