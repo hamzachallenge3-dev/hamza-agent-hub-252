@@ -1,0 +1,18 @@
+{
+  "task": "Design an architecture plan for feature X as ecc-network-architect.",
+  "seed_files": {
+    "REQUIREMENTS.md": "Feature X needs scalable design for ecc-network-architect\n"
+  },
+  "expect_keywords": [
+    "ecc-network-architect"
+  ],
+  "expect_artifact_substr": "ecc-network-architect-report.json",
+  "id": "ecc-network-architect",
+  "category": "architect",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

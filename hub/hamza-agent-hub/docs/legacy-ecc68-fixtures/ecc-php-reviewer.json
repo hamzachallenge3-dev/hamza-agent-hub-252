@@ -1,0 +1,18 @@
+{
+  "task": "Review target.txt using the ecc-php-reviewer specialized approach and produce findings.",
+  "seed_files": {
+    "target.txt": "sample content for ecc-php-reviewer\nTODO: fix me\n"
+  },
+  "expect_keywords": [
+    "ecc-php-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-php-reviewer-report.json",
+  "id": "ecc-php-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

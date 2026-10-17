@@ -1,0 +1,20 @@
+{
+  "task": "Produce a test-first validation checklist as ecc-gan-evaluator.",
+  "seed_files": {
+    "FEATURE.md": "Feature under test for ecc-gan-evaluator\n"
+  },
+  "expect_keywords": [
+    "ecc-gan-evaluator"
+  ],
+  "expect_artifact_substr": "ecc-gan-evaluator-report.json",
+  "id": "ecc-gan-evaluator",
+  "category": "tester",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

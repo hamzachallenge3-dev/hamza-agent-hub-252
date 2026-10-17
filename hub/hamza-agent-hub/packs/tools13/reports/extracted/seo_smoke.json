@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "url": "https://example.com/",
+  "checks": {
+    "title": true,
+    "meta_description": true,
+    "canonical": true,
+    "h1_exactly_one": true,
+    "image_alts": true,
+    "html_language": true,
+    "open_graph_title": true,
+    "json_ld": true
+  },
+  "basic_technical_score": 100,
+  "title": "Example Audit",
+  "meta_description": "An example audit site",
+  "h1": [
+    "Example"
+  ],
+  "image_count": 1,
+  "image_alt_missing": 0,
+  "schema_blocks": 1,
+  "outbound_links_count": 0,
+  "recommended_fixes": [],
+  "geo_note": "Technical signals only. Visibility in ChatGPT/Perplexity/Gemini and rankings are NOT tested; no automated Reddit marketing or posting."
+}

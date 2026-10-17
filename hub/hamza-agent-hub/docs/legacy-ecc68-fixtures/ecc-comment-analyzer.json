@@ -1,0 +1,18 @@
+{
+  "task": "Review target.txt using the ecc-comment-analyzer specialized approach and produce findings.",
+  "seed_files": {
+    "target.txt": "sample content for ecc-comment-analyzer\nTODO: fix me\n"
+  },
+  "expect_keywords": [
+    "ecc-comment-analyzer"
+  ],
+  "expect_artifact_substr": "ecc-comment-analyzer-report.json",
+  "id": "ecc-comment-analyzer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

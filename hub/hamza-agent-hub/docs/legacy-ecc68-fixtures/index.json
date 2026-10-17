@@ -1,0 +1,1302 @@
+{
+  "ecc-a11y-architect": {
+    "task": "Design an architecture plan for feature X as ecc-a11y-architect.",
+    "seed_files": {
+      "REQUIREMENTS.md": "Feature X needs scalable design for ecc-a11y-architect\n"
+    },
+    "expect_keywords": [
+      "ecc-a11y-architect"
+    ],
+    "expect_artifact_substr": "ecc-a11y-architect-report.json",
+    "id": "ecc-a11y-architect",
+    "category": "architect",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-agent-evaluator": {
+    "task": "Coordinate prioritization for shipping feature Y as ecc-agent-evaluator.",
+    "seed_files": {
+      "STATUS.md": "Feature Y blocked on review\n"
+    },
+    "expect_keywords": [
+      "ecc-agent-evaluator"
+    ],
+    "expect_artifact_substr": "artifacts/",
+    "id": "ecc-agent-evaluator",
+    "category": "orchestrator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ]
+  },
+  "ecc-architect": {
+    "task": "Design an architecture plan for feature X as ecc-architect.",
+    "seed_files": {
+      "REQUIREMENTS.md": "Feature X needs scalable design for ecc-architect\n"
+    },
+    "expect_keywords": [
+      "ecc-architect"
+    ],
+    "expect_artifact_substr": "ecc-architect-report.json",
+    "id": "ecc-architect",
+    "category": "architect",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-build-error-resolver": {
+    "task": "Diagnose the reproduced build error in build.log and propose a minimal fix.",
+    "seed_files": {
+      "build.log": "ERROR: Cannot find module 'react'\n"
+    },
+    "expect_keywords": [
+      "ecc-build-error-resolver"
+    ],
+    "expect_artifact_substr": "ecc-build-error-resolver-report.json",
+    "id": "ecc-build-error-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-chief-of-staff": {
+    "task": "Coordinate a security review of login.py and a Python code review of the same file. Differentiate and assign specialists.",
+    "seed_files": {
+      "login.py": "def login(u,p):\n  query = f\"SELECT * FROM users WHERE name='{u}'\"\n  return query\n"
+    },
+    "expect_keywords": [
+      "primary",
+      "ecc-security-reviewer",
+      "routing"
+    ],
+    "expect_artifact_substr": "chief-routing-plan.json",
+    "id": "ecc-chief-of-staff",
+    "category": "orchestrator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ]
+  },
+  "ecc-code-architect": {
+    "task": "Design an architecture plan for feature X as ecc-code-architect.",
+    "seed_files": {
+      "REQUIREMENTS.md": "Feature X needs scalable design for ecc-code-architect\n"
+    },
+    "expect_keywords": [
+      "ecc-code-architect"
+    ],
+    "expect_artifact_substr": "ecc-code-architect-report.json",
+    "id": "ecc-code-architect",
+    "category": "architect",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-code-explorer": {
+    "task": "Generate a concrete deliverable for the brief as ecc-code-explorer.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-code-explorer\n"
+    },
+    "expect_keywords": [
+      "ecc-code-explorer"
+    ],
+    "expect_artifact_substr": "ecc-code-explorer-report.json",
+    "id": "ecc-code-explorer",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-code-reviewer": {
+    "task": "Code review utils.js for bugs.",
+    "seed_files": {
+      "utils.js": "function add(a,b){return a-b}\n"
+    },
+    "expect_keywords": [
+      "ecc-code-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-code-reviewer-report.json",
+    "id": "ecc-code-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-code-simplifier": {
+    "task": "Generate a concrete deliverable for the brief as ecc-code-simplifier.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-code-simplifier\n"
+    },
+    "expect_keywords": [
+      "ecc-code-simplifier"
+    ],
+    "expect_artifact_substr": "ecc-code-simplifier-report.json",
+    "id": "ecc-code-simplifier",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-comment-analyzer": {
+    "task": "Review target.txt using the ecc-comment-analyzer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-comment-analyzer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-comment-analyzer"
+    ],
+    "expect_artifact_substr": "ecc-comment-analyzer-report.json",
+    "id": "ecc-comment-analyzer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-conversation-analyzer": {
+    "task": "Coordinate prioritization for shipping feature Y as ecc-conversation-analyzer.",
+    "seed_files": {
+      "STATUS.md": "Feature Y blocked on review\n"
+    },
+    "expect_keywords": [
+      "ecc-conversation-analyzer"
+    ],
+    "expect_artifact_substr": "artifacts/",
+    "id": "ecc-conversation-analyzer",
+    "category": "orchestrator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ]
+  },
+  "ecc-cpp-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-cpp-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-cpp-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-cpp-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-cpp-build-resolver-report.json",
+    "id": "ecc-cpp-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-cpp-reviewer": {
+    "task": "Review target.txt using the ecc-cpp-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-cpp-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-cpp-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-cpp-reviewer-report.json",
+    "id": "ecc-cpp-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-csharp-reviewer": {
+    "task": "Review target.txt using the ecc-csharp-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-csharp-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-csharp-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-csharp-reviewer-report.json",
+    "id": "ecc-csharp-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-dart-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-dart-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-dart-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-dart-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-dart-build-resolver-report.json",
+    "id": "ecc-dart-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-database-reviewer": {
+    "task": "Review target.txt using the ecc-database-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-database-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-database-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-database-reviewer-report.json",
+    "id": "ecc-database-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-django-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-django-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-django-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-django-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-django-build-resolver-report.json",
+    "id": "ecc-django-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-django-reviewer": {
+    "task": "Review target.txt using the ecc-django-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-django-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-django-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-django-reviewer-report.json",
+    "id": "ecc-django-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-doc-updater": {
+    "task": "Update documentation outline for the greeting module.",
+    "seed_files": {
+      "src/greet.ts": "export const greet = (n: string) => `hi ${n}`\n"
+    },
+    "expect_keywords": [
+      "ecc-doc-updater"
+    ],
+    "expect_artifact_substr": "ecc-doc-updater-report.json",
+    "id": "ecc-doc-updater",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-docs-lookup": {
+    "task": "Generate a concrete deliverable for the brief as ecc-docs-lookup.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-docs-lookup\n"
+    },
+    "expect_keywords": [
+      "ecc-docs-lookup"
+    ],
+    "expect_artifact_substr": "ecc-docs-lookup-report.json",
+    "id": "ecc-docs-lookup",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-e2e-runner": {
+    "task": "Produce a test-first validation checklist as ecc-e2e-runner.",
+    "seed_files": {
+      "FEATURE.md": "Feature under test for ecc-e2e-runner\n"
+    },
+    "expect_keywords": [
+      "ecc-e2e-runner"
+    ],
+    "expect_artifact_substr": "ecc-e2e-runner-report.json",
+    "id": "ecc-e2e-runner",
+    "category": "tester",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-fastapi-reviewer": {
+    "task": "Review target.txt using the ecc-fastapi-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-fastapi-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-fastapi-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-fastapi-reviewer-report.json",
+    "id": "ecc-fastapi-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-flutter-reviewer": {
+    "task": "Review target.txt using the ecc-flutter-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-flutter-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-flutter-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-flutter-reviewer-report.json",
+    "id": "ecc-flutter-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-fsharp-reviewer": {
+    "task": "Review target.txt using the ecc-fsharp-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-fsharp-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-fsharp-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-fsharp-reviewer-report.json",
+    "id": "ecc-fsharp-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-gan-evaluator": {
+    "task": "Produce a test-first validation checklist as ecc-gan-evaluator.",
+    "seed_files": {
+      "FEATURE.md": "Feature under test for ecc-gan-evaluator\n"
+    },
+    "expect_keywords": [
+      "ecc-gan-evaluator"
+    ],
+    "expect_artifact_substr": "ecc-gan-evaluator-report.json",
+    "id": "ecc-gan-evaluator",
+    "category": "tester",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-gan-generator": {
+    "task": "Generate a concrete deliverable for the brief as ecc-gan-generator.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-gan-generator\n"
+    },
+    "expect_keywords": [
+      "ecc-gan-generator"
+    ],
+    "expect_artifact_substr": "ecc-gan-generator-report.json",
+    "id": "ecc-gan-generator",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-gan-planner": {
+    "task": "Design an architecture plan for feature X as ecc-gan-planner.",
+    "seed_files": {
+      "REQUIREMENTS.md": "Feature X needs scalable design for ecc-gan-planner\n"
+    },
+    "expect_keywords": [
+      "ecc-gan-planner"
+    ],
+    "expect_artifact_substr": "ecc-gan-planner-report.json",
+    "id": "ecc-gan-planner",
+    "category": "architect",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-go-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-go-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-go-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-go-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-go-build-resolver-report.json",
+    "id": "ecc-go-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-go-reviewer": {
+    "task": "Review target.txt using the ecc-go-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-go-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-go-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-go-reviewer-report.json",
+    "id": "ecc-go-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-harmonyos-app-resolver": {
+    "task": "Diagnose the error in error.log as ecc-harmonyos-app-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-harmonyos-app-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-harmonyos-app-resolver"
+    ],
+    "expect_artifact_substr": "ecc-harmonyos-app-resolver-report.json",
+    "id": "ecc-harmonyos-app-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-harness-optimizer": {
+    "task": "Coordinate prioritization for shipping feature Y as ecc-harness-optimizer.",
+    "seed_files": {
+      "STATUS.md": "Feature Y blocked on review\n"
+    },
+    "expect_keywords": [
+      "ecc-harness-optimizer"
+    ],
+    "expect_artifact_substr": "artifacts/",
+    "id": "ecc-harness-optimizer",
+    "category": "orchestrator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ]
+  },
+  "ecc-healthcare-reviewer": {
+    "task": "Review target.txt using the ecc-healthcare-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-healthcare-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-healthcare-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-healthcare-reviewer-report.json",
+    "id": "ecc-healthcare-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-homelab-architect": {
+    "task": "Design an architecture plan for feature X as ecc-homelab-architect.",
+    "seed_files": {
+      "REQUIREMENTS.md": "Feature X needs scalable design for ecc-homelab-architect\n"
+    },
+    "expect_keywords": [
+      "ecc-homelab-architect"
+    ],
+    "expect_artifact_substr": "ecc-homelab-architect-report.json",
+    "id": "ecc-homelab-architect",
+    "category": "architect",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-java-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-java-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-java-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-java-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-java-build-resolver-report.json",
+    "id": "ecc-java-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-java-reviewer": {
+    "task": "Review target.txt using the ecc-java-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-java-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-java-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-java-reviewer-report.json",
+    "id": "ecc-java-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-kotlin-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-kotlin-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-kotlin-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-kotlin-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-kotlin-build-resolver-report.json",
+    "id": "ecc-kotlin-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-kotlin-reviewer": {
+    "task": "Review target.txt using the ecc-kotlin-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-kotlin-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-kotlin-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-kotlin-reviewer-report.json",
+    "id": "ecc-kotlin-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-loop-operator": {
+    "task": "Coordinate prioritization for shipping feature Y as ecc-loop-operator.",
+    "seed_files": {
+      "STATUS.md": "Feature Y blocked on review\n"
+    },
+    "expect_keywords": [
+      "ecc-loop-operator"
+    ],
+    "expect_artifact_substr": "artifacts/",
+    "id": "ecc-loop-operator",
+    "category": "orchestrator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ]
+  },
+  "ecc-marketing-agent": {
+    "task": "Generate a concrete deliverable for the brief as ecc-marketing-agent.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-marketing-agent\n"
+    },
+    "expect_keywords": [
+      "ecc-marketing-agent"
+    ],
+    "expect_artifact_substr": "ecc-marketing-agent-report.json",
+    "id": "ecc-marketing-agent",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-mle-reviewer": {
+    "task": "Review target.txt using the ecc-mle-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-mle-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-mle-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-mle-reviewer-report.json",
+    "id": "ecc-mle-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-network-architect": {
+    "task": "Design an architecture plan for feature X as ecc-network-architect.",
+    "seed_files": {
+      "REQUIREMENTS.md": "Feature X needs scalable design for ecc-network-architect\n"
+    },
+    "expect_keywords": [
+      "ecc-network-architect"
+    ],
+    "expect_artifact_substr": "ecc-network-architect-report.json",
+    "id": "ecc-network-architect",
+    "category": "architect",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-network-config-reviewer": {
+    "task": "Review target.txt using the ecc-network-config-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-network-config-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-network-config-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-network-config-reviewer-report.json",
+    "id": "ecc-network-config-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-network-troubleshooter": {
+    "task": "Perform the specialized task for ecc-network-troubleshooter with verifiable output.",
+    "seed_files": {
+      "INPUT.md": "input for ecc-network-troubleshooter\n"
+    },
+    "expect_keywords": [
+      "ecc-network-troubleshooter"
+    ],
+    "expect_artifact_substr": "ecc-network-troubleshooter-report.json",
+    "id": "ecc-network-troubleshooter",
+    "category": "specialist",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-opensource-forker": {
+    "task": "Generate a concrete deliverable for the brief as ecc-opensource-forker.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-opensource-forker\n"
+    },
+    "expect_keywords": [
+      "ecc-opensource-forker"
+    ],
+    "expect_artifact_substr": "ecc-opensource-forker-report.json",
+    "id": "ecc-opensource-forker",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-opensource-packager": {
+    "task": "Generate a concrete deliverable for the brief as ecc-opensource-packager.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-opensource-packager\n"
+    },
+    "expect_keywords": [
+      "ecc-opensource-packager"
+    ],
+    "expect_artifact_substr": "ecc-opensource-packager-report.json",
+    "id": "ecc-opensource-packager",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-opensource-sanitizer": {
+    "task": "Generate a concrete deliverable for the brief as ecc-opensource-sanitizer.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-opensource-sanitizer\n"
+    },
+    "expect_keywords": [
+      "ecc-opensource-sanitizer"
+    ],
+    "expect_artifact_substr": "ecc-opensource-sanitizer-report.json",
+    "id": "ecc-opensource-sanitizer",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-performance-optimizer": {
+    "task": "Generate a concrete deliverable for the brief as ecc-performance-optimizer.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-performance-optimizer\n"
+    },
+    "expect_keywords": [
+      "ecc-performance-optimizer"
+    ],
+    "expect_artifact_substr": "ecc-performance-optimizer-report.json",
+    "id": "ecc-performance-optimizer",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-php-reviewer": {
+    "task": "Review target.txt using the ecc-php-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-php-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-php-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-php-reviewer-report.json",
+    "id": "ecc-php-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-planner": {
+    "task": "Create an implementation plan for adding rate limiting to an API.",
+    "seed_files": {
+      "NOTES.md": "API has no rate limit\n"
+    },
+    "expect_keywords": [
+      "ecc-planner"
+    ],
+    "expect_artifact_substr": "ecc-planner-report.json",
+    "id": "ecc-planner",
+    "category": "architect",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-pr-test-analyzer": {
+    "task": "Review target.txt using the ecc-pr-test-analyzer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-pr-test-analyzer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-pr-test-analyzer"
+    ],
+    "expect_artifact_substr": "ecc-pr-test-analyzer-report.json",
+    "id": "ecc-pr-test-analyzer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-python-reviewer": {
+    "task": "Review sample.py for Python style and correctness issues.",
+    "seed_files": {
+      "sample.py": "def f(x):\n  return x+1\n"
+    },
+    "expect_keywords": [
+      "ecc-python-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-python-reviewer-report.json",
+    "id": "ecc-python-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-pytorch-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-pytorch-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-pytorch-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-pytorch-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-pytorch-build-resolver-report.json",
+    "id": "ecc-pytorch-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-rag-pipeline-reviewer": {
+    "task": "Review target.txt using the ecc-rag-pipeline-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-rag-pipeline-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-rag-pipeline-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-rag-pipeline-reviewer-report.json",
+    "id": "ecc-rag-pipeline-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-react-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-react-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-react-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-react-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-react-build-resolver-report.json",
+    "id": "ecc-react-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-react-reviewer": {
+    "task": "Review target.txt using the ecc-react-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-react-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-react-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-react-reviewer-report.json",
+    "id": "ecc-react-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-refactor-cleaner": {
+    "task": "Diagnose the error in error.log as ecc-refactor-cleaner and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-refactor-cleaner: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-refactor-cleaner"
+    ],
+    "expect_artifact_substr": "ecc-refactor-cleaner-report.json",
+    "id": "ecc-refactor-cleaner",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-rust-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-rust-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-rust-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-rust-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-rust-build-resolver-report.json",
+    "id": "ecc-rust-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-rust-reviewer": {
+    "task": "Review target.txt using the ecc-rust-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-rust-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-rust-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-rust-reviewer-report.json",
+    "id": "ecc-rust-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-security-reviewer": {
+    "task": "Review login.py for SQL injection and report exact risks.",
+    "seed_files": {
+      "login.py": "def login(u,p):\n  return f\"SELECT * FROM users WHERE name='{u}'\"\n"
+    },
+    "expect_keywords": [
+      "ecc-security-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-security-reviewer-report.json",
+    "id": "ecc-security-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-seo-specialist": {
+    "task": "Generate a concrete deliverable for the brief as ecc-seo-specialist.",
+    "seed_files": {
+      "BRIEF.md": "Create deliverable for ecc-seo-specialist\n"
+    },
+    "expect_keywords": [
+      "ecc-seo-specialist"
+    ],
+    "expect_artifact_substr": "ecc-seo-specialist-report.json",
+    "id": "ecc-seo-specialist",
+    "category": "generator",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-silent-failure-hunter": {
+    "task": "Review target.txt using the ecc-silent-failure-hunter specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-silent-failure-hunter\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-silent-failure-hunter"
+    ],
+    "expect_artifact_substr": "ecc-silent-failure-hunter-report.json",
+    "id": "ecc-silent-failure-hunter",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-spec-miner": {
+    "task": "Design an architecture plan for feature X as ecc-spec-miner.",
+    "seed_files": {
+      "REQUIREMENTS.md": "Feature X needs scalable design for ecc-spec-miner\n"
+    },
+    "expect_keywords": [
+      "ecc-spec-miner"
+    ],
+    "expect_artifact_substr": "ecc-spec-miner-report.json",
+    "id": "ecc-spec-miner",
+    "category": "architect",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-swift-build-resolver": {
+    "task": "Diagnose the error in error.log as ecc-swift-build-resolver and propose a minimal fix plan.",
+    "seed_files": {
+      "error.log": "ecc-swift-build-resolver: ModuleNotFoundError: missing_dep\n"
+    },
+    "expect_keywords": [
+      "ecc-swift-build-resolver"
+    ],
+    "expect_artifact_substr": "ecc-swift-build-resolver-report.json",
+    "id": "ecc-swift-build-resolver",
+    "category": "build_resolver",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-swift-reviewer": {
+    "task": "Review target.txt using the ecc-swift-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-swift-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-swift-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-swift-reviewer-report.json",
+    "id": "ecc-swift-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-tdd-guide": {
+    "task": "Write a TDD plan for a sum(a,b) function and produce a test checklist artifact.",
+    "seed_files": {
+      "REQUIREMENTS.md": "sum(a,b) returns a+b\n"
+    },
+    "expect_keywords": [
+      "ecc-tdd-guide"
+    ],
+    "expect_artifact_substr": "ecc-tdd-guide-report.json",
+    "id": "ecc-tdd-guide",
+    "category": "tester",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ]
+  },
+  "ecc-type-design-analyzer": {
+    "task": "Review target.txt using the ecc-type-design-analyzer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-type-design-analyzer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-type-design-analyzer"
+    ],
+    "expect_artifact_substr": "ecc-type-design-analyzer-report.json",
+    "id": "ecc-type-design-analyzer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-typescript-reviewer": {
+    "task": "Review target.txt using the ecc-typescript-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-typescript-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-typescript-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-typescript-reviewer-report.json",
+    "id": "ecc-typescript-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  },
+  "ecc-vue-reviewer": {
+    "task": "Review target.txt using the ecc-vue-reviewer specialized approach and produce findings.",
+    "seed_files": {
+      "target.txt": "sample content for ecc-vue-reviewer\nTODO: fix me\n"
+    },
+    "expect_keywords": [
+      "ecc-vue-reviewer"
+    ],
+    "expect_artifact_substr": "ecc-vue-reviewer-report.json",
+    "id": "ecc-vue-reviewer",
+    "category": "reviewer",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ]
+  }
+}

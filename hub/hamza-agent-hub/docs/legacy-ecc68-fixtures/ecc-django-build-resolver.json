@@ -1,0 +1,20 @@
+{
+  "task": "Diagnose the error in error.log as ecc-django-build-resolver and propose a minimal fix plan.",
+  "seed_files": {
+    "error.log": "ecc-django-build-resolver: ModuleNotFoundError: missing_dep\n"
+  },
+  "expect_keywords": [
+    "ecc-django-build-resolver"
+  ],
+  "expect_artifact_substr": "ecc-django-build-resolver-report.json",
+  "id": "ecc-django-build-resolver",
+  "category": "build_resolver",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

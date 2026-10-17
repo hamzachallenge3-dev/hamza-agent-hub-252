@@ -1,0 +1,20 @@
+{
+  "task": "Write a TDD plan for a sum(a,b) function and produce a test checklist artifact.",
+  "seed_files": {
+    "REQUIREMENTS.md": "sum(a,b) returns a+b\n"
+  },
+  "expect_keywords": [
+    "ecc-tdd-guide"
+  ],
+  "expect_artifact_substr": "ecc-tdd-guide-report.json",
+  "id": "ecc-tdd-guide",
+  "category": "tester",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

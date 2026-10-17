@@ -1,0 +1,1589 @@
+[
+  {
+    "id": "hub-boss",
+    "pack": "hub",
+    "category": "orchestrator",
+    "description": "Hamza Agent Hub boss with FULL roster awareness: differentiates work across Desk, ECC68, Forge, and Tools13 and assigns the right specialists.",
+    "tools": [
+      "hub_list_packs",
+      "hub_list_agents",
+      "hub_full_roster",
+      "hub_agent_browse",
+      "hub_freellmapi_status",
+      "hub_tools13_lookup",
+      "hub_integrations",
+      "run_command",
+      "dispatch_agent",
+      "workspace_write",
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep"
+    ],
+    "model_ready": false,
+    "tested": false,
+    "profile": "packs/hub/agents/hub-boss.md"
+  },
+  {
+    "id": "hub-freellmapi",
+    "pack": "hub",
+    "category": "model_gateway",
+    "description": "Connects Hamza Agent Hub to FreeLLMAPI \u2014 open-source free OpenAI-compatible LLM gateway (auto-routing across free tiers).",
+    "tools": [
+      "hub_freellmapi_status",
+      "hub_freellmapi_chat",
+      "hub_agent_browse",
+      "workspace_write",
+      "workspace_list",
+      "workspace_read"
+    ],
+    "model_ready": false,
+    "tested": true,
+    "profile": "packs/hub/agents/hub-freellmapi.md"
+  },
+  {
+    "id": "hub-agent-browse",
+    "pack": "hub",
+    "category": "catalog_browser",
+    "description": "Browse everything in the one plugin: all packs, 90+ agents, tools13, and MCP surface tools. Search by query or open a specific agent_id.",
+    "tools": [
+      "hub_agent_browse",
+      "hub_full_roster",
+      "hub_list_packs",
+      "hub_list_agents",
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list",
+      "workspace_read"
+    ],
+    "model_ready": false,
+    "tested": true,
+    "profile": "packs/hub/agents/hub-agent-browse.md"
+  },
+  {
+    "id": "hub-web-browser",
+    "pack": "hub",
+    "category": "web_automation",
+    "description": "Real web browser automation and web research on CPU-only headless Chromium (Playwright): navigate, snapshot, click, type, extract structured data, screenshot, plus cited web search. Distinct from hub-agent-browse, which browses the Hub catalog.",
+    "tools": [
+      "browser_session",
+      "browser_navigate",
+      "browser_snapshot",
+      "browser_act",
+      "browser_extract",
+      "browser_screenshot",
+      "web_search",
+      "workspace_write",
+      "workspace_list",
+      "workspace_read"
+    ],
+    "model_ready": false,
+    "tested": true,
+    "profile": "packs/hub/agents/hub-web-browser.md"
+  },
+  {
+    "id": "desk-inbox-to-lead",
+    "pack": "desk",
+    "category": "desk_workflow",
+    "description": "Triage inbound mail text, score the lead, and draft a reply a human reviews before send.",
+    "tools": [
+      "clean_leads",
+      "extract_contacts",
+      "workspace_list",
+      "workspace_read",
+      "workspace_write",
+      "workspace_grep"
+    ],
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "desk-weekly-report",
+    "pack": "desk",
+    "category": "desk_workflow",
+    "description": "Take weekly numbers (CSV/text), compare with prior week, and draft a short report.",
+    "tools": [
+      "sheets_to_json",
+      "workspace_list",
+      "workspace_read",
+      "workspace_write"
+    ],
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "desk-meeting-to-action",
+    "pack": "desk",
+    "category": "desk_workflow",
+    "description": "Normalize meeting notes, extract next actions, and draft the follow-up.",
+    "tools": [
+      "extract_contacts",
+      "workspace_list",
+      "workspace_read",
+      "workspace_write",
+      "workspace_grep"
+    ],
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "desk-lead-cleaner",
+    "pack": "desk",
+    "category": "desk_tool",
+    "description": "Clean and dedupe lead emails from messy text or CSV using Automation Desk logic.",
+    "tools": [
+      "clean_leads",
+      "workspace_write",
+      "workspace_read",
+      "workspace_list"
+    ],
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "forge-detect",
+    "pack": "forge",
+    "category": "forge_intelligence",
+    "description": "Detect which code-hosting forge a URL belongs to among 20 supported platforms.",
+    "tools": [
+      "forge_detect",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "forge-github-intelligence",
+    "pack": "forge",
+    "category": "forge_intelligence",
+    "description": "Apply GitHub URL tricks, search operators, and repo intelligence workflows.",
+    "tools": [
+      "forge_detect",
+      "github_url_tricks",
+      "workspace_write",
+      "workspace_read",
+      "workspace_list"
+    ],
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "forge-agent-miner",
+    "pack": "forge",
+    "category": "forge_intelligence",
+    "description": "Mine public repos for agents, skills, MCP servers and tools using curated queries.",
+    "tools": [
+      "forge_detect",
+      "github_url_tricks",
+      "agent_mining_queries",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "forge-skill-pack-builder",
+    "pack": "forge",
+    "category": "forge_intelligence",
+    "description": "Turn discovered capabilities into a curated skill-pack outline with provenance.",
+    "tools": [
+      "workspace_read",
+      "workspace_write",
+      "workspace_list",
+      "workspace_grep"
+    ],
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "tool13-lapian-notes",
+    "pack": "tools13",
+    "category": "Video / AI analysis helper",
+    "description": "Lapian Notes Companion \u2014 Included full original ChatGPT plugin archive; samples film frames, not full film AI analysis. Source: https://github.com/bkingfilm/lapian-notes. Tested: PASS_LOCAL_CODE.",
+    "tools": [
+      "film_pack_prepare",
+      "run_command",
+      "workspace_list",
+      "workspace_read",
+      "workspace_write"
+    ],
+    "tool13_id": "lapian-notes",
+    "source": "https://github.com/bkingfilm/lapian-notes",
+    "tested": false,
+    "offline_file": "original_plugins/lapian-notes-companion-v1.zip",
+    "profile": "packs/tools13/agents/tool13-lapian-notes.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-seo-audit",
+    "pack": "tools13",
+    "category": "SEO / research",
+    "description": "Free Marketing SEO Audit \u2014 Included full user-owned original plugin archive; NOT an Okara client. Works on HTML. Source: https://okara.ai/agent. Tested: PASS_LOCAL_CODE.",
+    "tools": [
+      "seo_audit_html",
+      "run_command",
+      "workspace_list",
+      "workspace_read",
+      "workspace_write"
+    ],
+    "tool13_id": "seo-audit",
+    "source": "https://okara.ai/agent",
+    "tested": false,
+    "offline_file": "original_plugins/free-marketing-seo-audit-v1.zip",
+    "profile": "packs/tools13/agents/tool13-seo-audit.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-nanomuse",
+    "pack": "tools13",
+    "category": "AI Agent",
+    "description": "nanoMuse Bridge \u2014 Private ChatGPT plugin available by plugin ID, not archived in this ZIP; official upstream source retrievable. Not Boss-connected. Source: https://github.com/nano-muse/nanoMuse. Tested: PASS_CLI_UNIT_20_AND_MOCK_BRIDGE.",
+    "tools": [
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "tool13_id": "nanomuse",
+    "source": "https://github.com/nano-muse/nanoMuse",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-nanomuse.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-n8n-library",
+    "pack": "tools13",
+    "category": "Automation",
+    "description": "n8n Workflow Library \u2014 Private ChatGPT skill not archived; official workflows available by separate source fetch. No flow activated. Source: https://github.com/Zie619/n8n-workflows. Tested: PASS_PUBLIC_WORKFLOW_JSON_VALIDATION.",
+    "tools": [
+      "n8n_workflow_validate",
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "tool13_id": "n8n-library",
+    "source": "https://github.com/Zie619/n8n-workflows",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-n8n-library.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-ecc-68",
+    "pack": "tools13",
+    "category": "AI coding / Agents",
+    "description": "ECC 68 Skills \u2014 68 actual skill files confirmed in private plugin, but original private release archive not bundled; upstream sources available. Source: https://github.com/affaan-m/ECC. Tested: PASS_68_FILES_AND_REFERENCES.",
+    "tools": [
+      "hub_list_agents",
+      "workspace_list",
+      "workspace_write"
+    ],
+    "tool13_id": "ecc-68",
+    "source": "https://github.com/affaan-m/ECC",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-ecc-68.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-munder-difflin",
+    "pack": "tools13",
+    "category": "Multi Agent Orchestrator",
+    "description": "Munder Difflin \u2014 Electron app tests; desktop UI was not run; no Boss connection. Source: https://github.com/HarnessMD/munder-difflin. Tested: PASS_18_OF_18_UNIT_TESTS.",
+    "tools": [
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "tool13_id": "munder-difflin",
+    "source": "https://github.com/HarnessMD/munder-difflin",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-munder-difflin.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-scrapling",
+    "pack": "tools13",
+    "category": "Web / Scraping",
+    "description": "Scrapling \u2014 Requires additional packages; sample public fetch was verified. Source: https://github.com/D4Vinci/Scrapling. Tested: PASS_HTML_PARSER_AND_LIVE_HTTP_200.",
+    "tools": [
+      "html_extract_links",
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "tool13_id": "scrapling",
+    "source": "https://github.com/D4Vinci/Scrapling",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-scrapling.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-goose",
+    "pack": "tools13",
+    "category": "AI coding / Agents",
+    "description": "Goose CLI \u2014 goose --version 1.54.0 passed. Doctor requires provider configuration. User must authorize any paid provider. Source: https://github.com/aaif-goose/goose. Tested: PASS_GOOSEx64_CLI_VERSION_ONLY.",
+    "tools": [
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "tool13_id": "goose",
+    "source": "https://github.com/aaif-goose/goose",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-goose.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-headroom",
+    "pack": "tools13",
+    "category": "AI / Context compression",
+    "description": "Headroom \u2014 Local compression example retained FATAL in logs. Source: https://github.com/headroomlabs-ai/headroom. Tested: PASS_LOCAL_COMPRESSION.",
+    "tools": [
+      "context_compact",
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "tool13_id": "headroom",
+    "source": "https://github.com/headroomlabs-ai/headroom",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-headroom.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-glm-5.3-flash",
+    "pack": "tools13",
+    "category": "Model / AI",
+    "description": "GLM-5.3-Flash \u2014 Large model weights intentionally excluded; needs appropriate GPU provider. Source: https://huggingface.co/zai-org/GLM-5.3-Flash. Tested: MODEL_METADATA_VERIFIED_NOT_INFERENCED.",
+    "tools": [
+      "hub_tools13_lookup",
+      "workspace_list",
+      "workspace_write"
+    ],
+    "tool13_id": "glm-5.3-flash",
+    "source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-glm-5.3-flash.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-kimi-k3",
+    "pack": "tools13",
+    "category": "Model / AI",
+    "description": "Kimi K3 \u2014 Large model weights intentionally excluded; needs appropriate GPU provider. Source: https://huggingface.co/moonshotai/Kimi-K3. Tested: MODEL_METADATA_VERIFIED_NOT_INFERENCED.",
+    "tools": [
+      "hub_tools13_lookup",
+      "workspace_list",
+      "workspace_write"
+    ],
+    "tool13_id": "kimi-k3",
+    "source": "https://huggingface.co/moonshotai/Kimi-K3",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-kimi-k3.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-open-generative-ai",
+    "pack": "tools13",
+    "category": "AI video / image",
+    "description": "Open Generative AI \u2014 Full AI video generation not run; may require external model/API resources. Source: https://github.com/Anil-matcha/Open-Generative-AI. Tested: PASS_50_OF_50_UNIT_TESTS.",
+    "tools": [
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "tool13_id": "open-generative-ai",
+    "source": "https://github.com/Anil-matcha/Open-Generative-AI",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-open-generative-ai.md",
+    "model_ready": false
+  },
+  {
+    "id": "tool13-agent-reach",
+    "pack": "tools13",
+    "category": "Research / web",
+    "description": "Agent Reach \u2014 Selected public and security unit tests; some channels require credentials. Source: https://github.com/Panniantong/Agent-Reach. Tested: PASS_81_OF_81_UNIT_TESTS.",
+    "tools": [
+      "hub_tools13_lookup",
+      "workspace_write",
+      "workspace_list"
+    ],
+    "tool13_id": "agent-reach",
+    "source": "https://github.com/Panniantong/Agent-Reach",
+    "tested": false,
+    "offline_file": null,
+    "profile": "packs/tools13/agents/tool13-agent-reach.md",
+    "model_ready": false
+  },
+  {
+    "id": "ecc-a11y-architect",
+    "pack": "ecc68",
+    "category": "architect",
+    "description": "Use ECC a11y-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-a11y-architect/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-a11y-architect/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-agent-evaluator",
+    "pack": "ecc68",
+    "category": "orchestrator",
+    "description": "Use ECC agent-evaluator for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-agent-evaluator/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-agent-evaluator/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-architect",
+    "pack": "ecc68",
+    "category": "architect",
+    "description": "Use ECC architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-architect/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-architect/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-build-error-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC build-error-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-build-error-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-build-error-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-chief-of-staff",
+    "pack": "ecc68",
+    "category": "orchestrator",
+    "description": "Use ECC chief-of-staff for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-chief-of-staff/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-chief-of-staff/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-code-architect",
+    "pack": "ecc68",
+    "category": "architect",
+    "description": "Use ECC code-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-code-architect/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-code-architect/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-code-explorer",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC code-explorer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-code-explorer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-code-explorer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-code-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC code-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-code-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-code-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-code-simplifier",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC code-simplifier for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-code-simplifier/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-code-simplifier/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-comment-analyzer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC comment-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-comment-analyzer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-comment-analyzer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-conversation-analyzer",
+    "pack": "ecc68",
+    "category": "orchestrator",
+    "description": "Use ECC conversation-analyzer for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-conversation-analyzer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-conversation-analyzer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-cpp-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC cpp-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-cpp-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-cpp-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-cpp-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC cpp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-cpp-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-cpp-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-csharp-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC csharp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-csharp-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-csharp-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-dart-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC dart-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-dart-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-dart-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-database-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC database-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-database-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-database-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-django-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC django-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-django-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-django-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-django-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC django-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-django-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-django-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-doc-updater",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC doc-updater for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-doc-updater/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-doc-updater/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-docs-lookup",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC docs-lookup for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-docs-lookup/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-docs-lookup/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-e2e-runner",
+    "pack": "ecc68",
+    "category": "tester",
+    "description": "Use ECC e2e-runner for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-e2e-runner/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-e2e-runner/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-fastapi-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC fastapi-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-fastapi-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-fastapi-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-flutter-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC flutter-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-flutter-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-flutter-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-fsharp-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC fsharp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-fsharp-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-fsharp-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-gan-evaluator",
+    "pack": "ecc68",
+    "category": "tester",
+    "description": "Use ECC gan-evaluator for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-gan-evaluator/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-gan-evaluator/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-gan-generator",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC gan-generator for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-gan-generator/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-gan-generator/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-gan-planner",
+    "pack": "ecc68",
+    "category": "architect",
+    "description": "Use ECC gan-planner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-gan-planner/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-gan-planner/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-go-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC go-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-go-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-go-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-go-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC go-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-go-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-go-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-harmonyos-app-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC harmonyos-app-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-harmonyos-app-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-harmonyos-app-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-harness-optimizer",
+    "pack": "ecc68",
+    "category": "orchestrator",
+    "description": "Use ECC harness-optimizer for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-harness-optimizer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-harness-optimizer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-healthcare-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC healthcare-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-healthcare-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-healthcare-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-homelab-architect",
+    "pack": "ecc68",
+    "category": "architect",
+    "description": "Use ECC homelab-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-homelab-architect/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-homelab-architect/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-java-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC java-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-java-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-java-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-java-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC java-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-java-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-java-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-kotlin-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC kotlin-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-kotlin-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-kotlin-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-kotlin-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC kotlin-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-kotlin-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-kotlin-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-loop-operator",
+    "pack": "ecc68",
+    "category": "orchestrator",
+    "description": "Use ECC loop-operator for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir",
+      "dispatch_agent",
+      "list_specialists"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-loop-operator/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-loop-operator/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-marketing-agent",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC marketing-agent for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-marketing-agent/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-marketing-agent/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-mle-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC mle-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-mle-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-mle-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-network-architect",
+    "pack": "ecc68",
+    "category": "architect",
+    "description": "Use ECC network-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-network-architect/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-network-architect/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-network-config-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC network-config-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-network-config-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-network-config-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-network-troubleshooter",
+    "pack": "ecc68",
+    "category": "specialist",
+    "description": "Use ECC network-troubleshooter for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-network-troubleshooter/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-network-troubleshooter/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-opensource-forker",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC opensource-forker for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-opensource-forker/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-opensource-forker/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-opensource-packager",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC opensource-packager for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-opensource-packager/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-opensource-packager/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-opensource-sanitizer",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC opensource-sanitizer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-opensource-sanitizer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-opensource-sanitizer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-performance-optimizer",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC performance-optimizer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-performance-optimizer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-performance-optimizer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-php-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC php-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-php-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-php-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-planner",
+    "pack": "ecc68",
+    "category": "architect",
+    "description": "Use ECC planner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-planner/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-planner/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-pr-test-analyzer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC pr-test-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-pr-test-analyzer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-pr-test-analyzer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-python-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC python-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-python-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-python-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-pytorch-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC pytorch-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-pytorch-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-pytorch-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-rag-pipeline-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC rag-pipeline-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-rag-pipeline-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-rag-pipeline-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-react-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC react-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-react-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-react-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-react-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC react-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-react-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-react-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-refactor-cleaner",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC refactor-cleaner for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-refactor-cleaner/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-refactor-cleaner/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-rust-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC rust-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-rust-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-rust-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-rust-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC rust-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-rust-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-rust-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-security-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC security-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-security-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-security-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-seo-specialist",
+    "pack": "ecc68",
+    "category": "generator",
+    "description": "Use ECC seo-specialist for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-seo-specialist/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-seo-specialist/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-silent-failure-hunter",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC silent-failure-hunter for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-silent-failure-hunter/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-silent-failure-hunter/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-spec-miner",
+    "pack": "ecc68",
+    "category": "architect",
+    "description": "Use ECC spec-miner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-spec-miner/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-spec-miner/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-swift-build-resolver",
+    "pack": "ecc68",
+    "category": "build_resolver",
+    "description": "Use ECC swift-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-swift-build-resolver/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-swift-build-resolver/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-swift-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC swift-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-swift-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-swift-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-tdd-guide",
+    "pack": "ecc68",
+    "category": "tester",
+    "description": "Use ECC tdd-guide for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat",
+      "workspace_write",
+      "workspace_mkdir"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-tdd-guide/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-tdd-guide/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-type-design-analyzer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC type-design-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-type-design-analyzer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-type-design-analyzer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-typescript-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC typescript-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-typescript-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-typescript-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  },
+  {
+    "id": "ecc-vue-reviewer",
+    "pack": "ecc68",
+    "category": "reviewer",
+    "description": "Use ECC vue-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "tools": [
+      "workspace_list",
+      "workspace_read",
+      "workspace_grep",
+      "workspace_stat"
+    ],
+    "profile": "packs/ecc68/profiles/ecc-vue-reviewer/SKILL.md",
+    "upstream": "packs/ecc68/profiles/ecc-vue-reviewer/UPSTREAM.md",
+    "model_ready": false,
+    "tested": false
+  }
+]

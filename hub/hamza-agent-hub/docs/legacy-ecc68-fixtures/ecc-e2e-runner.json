@@ -1,0 +1,20 @@
+{
+  "task": "Produce a test-first validation checklist as ecc-e2e-runner.",
+  "seed_files": {
+    "FEATURE.md": "Feature under test for ecc-e2e-runner\n"
+  },
+  "expect_keywords": [
+    "ecc-e2e-runner"
+  ],
+  "expect_artifact_substr": "ecc-e2e-runner-report.json",
+  "id": "ecc-e2e-runner",
+  "category": "tester",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "task": "Generate a concrete deliverable for the brief as ecc-performance-optimizer.",
+  "seed_files": {
+    "BRIEF.md": "Create deliverable for ecc-performance-optimizer\n"
+  },
+  "expect_keywords": [
+    "ecc-performance-optimizer"
+  ],
+  "expect_artifact_substr": "ecc-performance-optimizer-report.json",
+  "id": "ecc-performance-optimizer",
+  "category": "generator",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

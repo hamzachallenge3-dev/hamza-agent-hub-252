@@ -1,0 +1,18 @@
+{
+  "task": "Review target.txt using the ecc-go-reviewer specialized approach and produce findings.",
+  "seed_files": {
+    "target.txt": "sample content for ecc-go-reviewer\nTODO: fix me\n"
+  },
+  "expect_keywords": [
+    "ecc-go-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-go-reviewer-report.json",
+  "id": "ecc-go-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

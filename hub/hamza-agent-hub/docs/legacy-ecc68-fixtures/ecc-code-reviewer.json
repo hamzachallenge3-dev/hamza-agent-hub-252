@@ -1,0 +1,18 @@
+{
+  "task": "Code review utils.js for bugs.",
+  "seed_files": {
+    "utils.js": "function add(a,b){return a-b}\n"
+  },
+  "expect_keywords": [
+    "ecc-code-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-code-reviewer-report.json",
+  "id": "ecc-code-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

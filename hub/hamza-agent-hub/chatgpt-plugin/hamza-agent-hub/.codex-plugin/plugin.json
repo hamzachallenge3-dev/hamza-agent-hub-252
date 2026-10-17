@@ -1,0 +1,45 @@
+{
+  "name": "hamza-agent-hub",
+  "version": "1.2.0",
+  "description": "One plugin: hub-boss routes Desk + ECC68 + Forge + Tools13. Browse agents, FreeLLMAPI free models, SEO audit, lead cleaning \u2014 lab-safe, no paid spend.",
+  "author": {
+    "name": "Hamza Loukili",
+    "url": "https://github.com/imdifferent01"
+  },
+  "homepage": "https://github.com/imdifferent01/hamza-agent-hub/tree/main/hub/hamza-agent-hub",
+  "repository": "https://github.com/imdifferent01/hamza-agent-hub",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "mcp",
+    "hub-boss",
+    "ecc68",
+    "freellmapi",
+    "automation-desk",
+    "seo",
+    "chatgpt-plugin"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Hamza Agent Hub",
+    "shortDescription": "Route, audit and automate",
+    "longDescription": "Unified Hamza Agent Hub for ChatGPT and Codex. hub-boss differentiates work across Automation Desk, 68 ECC coding agents, Cross-Forge intelligence, and 13 Hub Boss recovery tools. Includes full agent browse, FreeLLMAPI (open-source free LLM gateway) connection, SEO HTML audit, and lead cleaning \u2014 without mutating production systems or spending money.",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "developerName": "Hamza Loukili",
+    "defaultPrompt": [
+      "Browse all agents in Hamza Agent Hub and recommend who should handle SEO + security review.",
+      "Use hub-boss to route: clean leads, SEO audit this HTML, then security review login.py.",
+      "Probe FreeLLMAPI status and tell me if the free model gateway is ready."
+    ],
+    "brandColor": "#0B3D2E",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg",
+    "websiteURL": "https://github.com/imdifferent01/hamza-agent-hub/tree/main/hub/hamza-agent-hub",
+    "privacyPolicyURL": "https://github.com/imdifferent01/hamza-agent-hub/blob/main/hub/hamza-agent-hub/chatgpt-plugin/hamza-agent-hub/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/imdifferent01/hamza-agent-hub/blob/main/hub/hamza-agent-hub/chatgpt-plugin/hamza-agent-hub/TERMS.md"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "task": "Diagnose the error in error.log as ecc-dart-build-resolver and propose a minimal fix plan.",
+  "seed_files": {
+    "error.log": "ecc-dart-build-resolver: ModuleNotFoundError: missing_dep\n"
+  },
+  "expect_keywords": [
+    "ecc-dart-build-resolver"
+  ],
+  "expect_artifact_substr": "ecc-dart-build-resolver-report.json",
+  "id": "ecc-dart-build-resolver",
+  "category": "build_resolver",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

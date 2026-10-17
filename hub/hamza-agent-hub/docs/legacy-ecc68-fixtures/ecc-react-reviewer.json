@@ -1,0 +1,18 @@
+{
+  "task": "Review target.txt using the ecc-react-reviewer specialized approach and produce findings.",
+  "seed_files": {
+    "target.txt": "sample content for ecc-react-reviewer\nTODO: fix me\n"
+  },
+  "expect_keywords": [
+    "ecc-react-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-react-reviewer-report.json",
+  "id": "ecc-react-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

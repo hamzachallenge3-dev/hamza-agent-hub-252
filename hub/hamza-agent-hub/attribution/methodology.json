@@ -1,0 +1,12 @@
+{
+  "generated_at_utc": "2026-10-04T14:39:10.338091+00:00",
+  "candidate_count": 1069,
+  "selected_count": 1000,
+  "scope": "Public, open-source projects relevant to building, operating, evaluating, or deploying AI agents.",
+  "ranking": "Balanced score: 55% normalized popularity (stars/forks/watchers), 25% recency, 10% maintenance, 10% relevance. Scores are comparative within this dataset, not a universal quality judgment.",
+  "license_rule": "Included only projects with license metadata returned by the forge API. License values are reported as provided; verify before commercial use.",
+  "discovery": "GitHub public repository search, category/topic and capability queries; previous GitLab/Codeberg queries were retained in the source trace but did not yield license-qualified rows.",
+  "platform_counts": {
+    "GitHub": 1000
+  }
+}

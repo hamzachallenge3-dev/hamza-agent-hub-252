@@ -1,0 +1,757 @@
+{"name":"code-analyzer","id":"code-analyzer#1","pass":true,"detail":"exact"}
+{"name":"code-analyzer","id":"code-analyzer#2","pass":true,"detail":"3/3 cases"}
+{"name":"analyst","id":"analyst#1","pass":true,"detail":"exact"}
+{"name":"analyst","id":"analyst#2","pass":true,"detail":"3/3 cases"}
+{"name":"system-architect","id":"system-architect#1","pass":true,"detail":"exact"}
+{"name":"system-architect","id":"system-architect#2","pass":true,"detail":"1/1 cases"}
+{"name":"base-template-generator","id":"base-template-generator#1","pass":true,"detail":"exact"}
+{"name":"base-template-generator","id":"base-template-generator#2","pass":true,"detail":"1/1 cases"}
+{"name":"byzantine-coordinator","id":"byzantine-coordinator#1","pass":true,"detail":"exact"}
+{"name":"byzantine-coordinator","id":"byzantine-coordinator#2","pass":true,"detail":"1/1 cases"}
+{"name":"crdt-synchronizer","id":"crdt-synchronizer#1","pass":true,"detail":"exact"}
+{"name":"crdt-synchronizer","id":"crdt-synchronizer#2","pass":true,"detail":"7/7 cases"}
+{"name":"gossip-coordinator","id":"gossip-coordinator#1","pass":true,"detail":"exact"}
+{"name":"code-analyzer","id":"code-analyzer#3","pass":true,"detail":"json match"}
+{"name":"analyst","id":"analyst#3","pass":true,"detail":"json match"}
+{"name":"system-architect","id":"system-architect#3","pass":true,"detail":"json match"}
+{"name":"base-template-generator","id":"base-template-generator#3","pass":true,"detail":"json match"}
+{"name":"byzantine-coordinator","id":"byzantine-coordinator#3","pass":true,"detail":"json match"}
+{"name":"crdt-synchronizer","id":"crdt-synchronizer#3","pass":true,"detail":"json match"}
+{"name":"gossip-coordinator","id":"gossip-coordinator#2","pass":true,"detail":"1/1 cases"}
+{"name":"gossip-coordinator","id":"gossip-coordinator#3","pass":true,"detail":"json match"}
+{"name":"performance-benchmarker","id":"performance-benchmarker#1","pass":true,"detail":"exact"}
+{"name":"performance-benchmarker","id":"performance-benchmarker#2","pass":true,"detail":"7/7 cases"}
+{"name":"performance-benchmarker","id":"performance-benchmarker#3","pass":true,"detail":"json match"}
+{"name":"quorum-manager","id":"quorum-manager#1","pass":true,"detail":"exact"}
+{"name":"quorum-manager","id":"quorum-manager#2","pass":true,"detail":"7/7 cases"}
+{"name":"quorum-manager","id":"quorum-manager#3","pass":true,"detail":"json match"}
+{"name":"raft-manager","id":"raft-manager#1","pass":true,"detail":"exact"}
+{"name":"raft-manager","id":"raft-manager#2","pass":true,"detail":"2/2 cases"}
+{"name":"raft-manager","id":"raft-manager#3","pass":true,"detail":"json match"}
+{"name":"security-manager","id":"security-manager#1","pass":false,"detail":"got \"SQL injection is the vulnerability because the attacker controls the concatenated input.\\nUse a parameterized placeholder query: db.query(\\\"SELECT * FROM users WHERE name = ?\\"}
+{"name":"security-manager","id":"security-manager#2","pass":false,"detail":"file:///tmp/bench-case-XcRann/mod.mjs?t=1792036424903:1\nSQL injection is the vulnerability because the attacker controls the concatenated input.\n    ^^^^^^^^^\n\nSyntaxError: Unexpec"}
+{"name":"security-manager","id":"security-manager#3","pass":true,"detail":"json match"}
+{"name":"coder","id":"coder#1","pass":true,"detail":"exact"}
+{"name":"coder","id":"coder#2","pass":true,"detail":"7/7 cases"}
+{"name":"coder","id":"coder#3","pass":true,"detail":"json match"}
+{"name":"planner","id":"planner#1","pass":true,"detail":"exact"}
+{"name":"planner","id":"planner#2","pass":true,"detail":"1/1 cases"}
+{"name":"planner","id":"planner#3","pass":true,"detail":"json match"}
+{"name":"researcher","id":"researcher#1","pass":true,"detail":"exact"}
+{"name":"researcher","id":"researcher#2","pass":false,"detail":"Coder response has no exported function"}
+{"name":"researcher","id":"researcher#3","pass":true,"detail":"json match"}
+{"name":"reviewer","id":"reviewer#1","pass":true,"detail":"exact"}
+{"name":"reviewer","id":"reviewer#2","pass":true,"detail":"3/3 cases"}
+{"name":"reviewer","id":"reviewer#3","pass":true,"detail":"json match"}
+{"name":"tester","id":"tester#1","pass":true,"detail":"exact"}
+{"name":"tester","id":"tester#2","pass":true,"detail":"4/4 cases"}
+{"name":"tester","id":"tester#3","pass":true,"detail":"json match"}
+{"name":"test-long-runner","id":"test-long-runner#1","pass":true,"detail":"exact"}
+{"name":"test-long-runner","id":"test-long-runner#2","pass":true,"detail":"4/4 cases"}
+{"name":"test-long-runner","id":"test-long-runner#3","pass":true,"detail":"json match"}
+{"name":"ml-developer","id":"ml-developer#1","pass":true,"detail":"exact"}
+{"name":"ml-developer","id":"ml-developer#2","pass":true,"detail":"7/7 cases"}
+{"name":"ml-developer","id":"ml-developer#3","pass":true,"detail":"json match"}
+{"name":"database-specialist","id":"database-specialist#1","pass":true,"detail":"exact"}
+{"name":"database-specialist","id":"database-specialist#2","pass":true,"detail":"1/1 cases"}
+{"name":"database-specialist","id":"database-specialist#3","pass":true,"detail":"json match"}
+{"name":"backend-dev","id":"backend-dev#1","pass":true,"detail":"exact"}
+{"name":"backend-dev","id":"backend-dev#2","pass":true,"detail":"7/7 cases"}
+{"name":"backend-dev","id":"backend-dev#3","pass":true,"detail":"json match"}
+{"name":"cicd-engineer","id":"cicd-engineer#1","pass":true,"detail":"exact"}
+{"name":"cicd-engineer","id":"cicd-engineer#2","pass":true,"detail":"1/1 cases"}
+{"name":"cicd-engineer","id":"cicd-engineer#3","pass":true,"detail":"json match"}
+{"name":"api-docs","id":"api-docs#1","pass":true,"detail":"exact"}
+{"name":"api-docs","id":"api-docs#2","pass":true,"detail":"1/1 cases"}
+{"name":"api-docs","id":"api-docs#3","pass":true,"detail":"json match"}
+{"name":"codex-coordinator","id":"codex-coordinator#1","pass":true,"detail":"exact"}
+{"name":"codex-coordinator","id":"codex-coordinator#2","pass":true,"detail":"1/1 cases"}
+{"name":"codex-coordinator","id":"codex-coordinator#3","pass":true,"detail":"json match"}
+{"name":"codex-worker","id":"codex-worker#1","pass":true,"detail":"exact"}
+{"name":"codex-worker","id":"codex-worker#2","pass":true,"detail":"2/2 cases"}
+{"name":"codex-worker","id":"codex-worker#3","pass":true,"detail":"json match"}
+{"name":"dual-orchestrator","id":"dual-orchestrator#1","pass":true,"detail":"exact"}
+{"name":"dual-orchestrator","id":"dual-orchestrator#2","pass":true,"detail":"1/1 cases"}
+{"name":"dual-orchestrator","id":"dual-orchestrator#3","pass":true,"detail":"json match"}
+{"name":"flow-nexus-app-store","id":"flow-nexus-app-store#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-app-store","id":"flow-nexus-app-store#2","pass":true,"detail":"2/2 cases"}
+{"name":"flow-nexus-app-store","id":"flow-nexus-app-store#3","pass":false,"detail":"json differs"}
+{"name":"flow-nexus-auth","id":"flow-nexus-auth#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-auth","id":"flow-nexus-auth#2","pass":true,"detail":"2/2 cases"}
+{"name":"flow-nexus-auth","id":"flow-nexus-auth#3","pass":false,"detail":"json differs"}
+{"name":"flow-nexus-challenges","id":"flow-nexus-challenges#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-challenges","id":"flow-nexus-challenges#2","pass":true,"detail":"2/2 cases"}
+{"name":"flow-nexus-challenges","id":"flow-nexus-challenges#3","pass":true,"detail":"json match"}
+{"name":"flow-nexus-neural","id":"flow-nexus-neural#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-neural","id":"flow-nexus-neural#2","pass":true,"detail":"2/2 cases"}
+{"name":"flow-nexus-neural","id":"flow-nexus-neural#3","pass":true,"detail":"json match"}
+{"name":"flow-nexus-payments","id":"flow-nexus-payments#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-payments","id":"flow-nexus-payments#2","pass":true,"detail":"2/2 cases"}
+{"name":"flow-nexus-payments","id":"flow-nexus-payments#3","pass":true,"detail":"json match"}
+{"name":"flow-nexus-sandbox","id":"flow-nexus-sandbox#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-sandbox","id":"flow-nexus-sandbox#2","pass":true,"detail":"2/2 cases"}
+{"name":"flow-nexus-sandbox","id":"flow-nexus-sandbox#3","pass":true,"detail":"json match"}
+{"name":"flow-nexus-swarm","id":"flow-nexus-swarm#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-swarm","id":"flow-nexus-swarm#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"1. coder: implement the route or endpoint named in the request.\",\"2. coder: implement that handler.\",\"3. tester: write the test named in the re"}
+{"name":"flow-nexus-swarm","id":"flow-nexus-swarm#3","pass":true,"detail":"json match"}
+{"name":"flow-nexus-user-tools","id":"flow-nexus-user-tools#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-user-tools","id":"flow-nexus-user-tools#2","pass":true,"detail":"2/2 cases"}
+{"name":"flow-nexus-user-tools","id":"flow-nexus-user-tools#3","pass":true,"detail":"json match"}
+{"name":"flow-nexus-workflow","id":"flow-nexus-workflow#1","pass":true,"detail":"exact"}
+{"name":"flow-nexus-workflow","id":"flow-nexus-workflow#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\""}
+{"name":"flow-nexus-workflow","id":"flow-nexus-workflow#3","pass":true,"detail":"json match"}
+{"name":"code-review-swarm","id":"code-review-swarm#1","pass":true,"detail":"exact"}
+{"name":"code-review-swarm","id":"code-review-swarm#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"1. coder: implement the route or endpoint named in the request.\",\"2. coder: implement that handler.\",\"3. tester: write the test named in the re"}
+{"name":"code-review-swarm","id":"code-review-swarm#3","pass":true,"detail":"json match"}
+{"name":"github-modes","id":"github-modes#1","pass":true,"detail":"exact"}
+{"name":"github-modes","id":"github-modes#2","pass":true,"detail":"1/1 cases"}
+{"name":"github-modes","id":"github-modes#3","pass":true,"detail":"json match"}
+{"name":"issue-tracker","id":"issue-tracker#1","pass":true,"detail":"exact"}
+{"name":"issue-tracker","id":"issue-tracker#2","pass":false,"detail":"Coder response has no exported function"}
+{"name":"issue-tracker","id":"issue-tracker#3","pass":true,"detail":"json match"}
+{"name":"multi-repo-swarm","id":"multi-repo-swarm#1","pass":false,"detail":"got \"1. coder: implement the route or endpoint named in the request.\\n2. coder: implement that handler.\\n3. tester: write the test named in the request.\\n4. tester: run that test.\""}
+{"name":"multi-repo-swarm","id":"multi-repo-swarm#2","pass":true,"detail":"1/1 cases"}
+{"name":"multi-repo-swarm","id":"multi-repo-swarm#3","pass":true,"detail":"json match"}
+{"name":"pr-manager","id":"pr-manager#1","pass":true,"detail":"exact"}
+{"name":"pr-manager","id":"pr-manager#2","pass":true,"detail":"1/1 cases"}
+{"name":"pr-manager","id":"pr-manager#3","pass":true,"detail":"json match"}
+{"name":"project-board-sync","id":"project-board-sync#1","pass":true,"detail":"exact"}
+{"name":"project-board-sync","id":"project-board-sync#2","pass":true,"detail":"2/2 cases"}
+{"name":"project-board-sync","id":"project-board-sync#3","pass":true,"detail":"json match"}
+{"name":"release-manager","id":"release-manager#1","pass":true,"detail":"exact"}
+{"name":"release-manager","id":"release-manager#2","pass":true,"detail":"1/1 cases"}
+{"name":"release-manager","id":"release-manager#3","pass":true,"detail":"json match"}
+{"name":"release-swarm","id":"release-swarm#1","pass":true,"detail":"exact"}
+{"name":"release-swarm","id":"release-swarm#2","pass":true,"detail":"1/1 cases"}
+{"name":"release-swarm","id":"release-swarm#3","pass":true,"detail":"json match"}
+{"name":"repo-architect","id":"repo-architect#1","pass":true,"detail":"exact"}
+{"name":"repo-architect","id":"repo-architect#2","pass":true,"detail":"1/1 cases"}
+{"name":"repo-architect","id":"repo-architect#3","pass":true,"detail":"json match"}
+{"name":"swarm-issue","id":"swarm-issue#1","pass":true,"detail":"exact"}
+{"name":"swarm-issue","id":"swarm-issue#2","pass":true,"detail":"1/1 cases"}
+{"name":"swarm-issue","id":"swarm-issue#3","pass":true,"detail":"json match"}
+{"name":"swarm-pr","id":"swarm-pr#1","pass":true,"detail":"exact"}
+{"name":"swarm-pr","id":"swarm-pr#2","pass":true,"detail":"1/1 cases"}
+{"name":"swarm-pr","id":"swarm-pr#3","pass":true,"detail":"json match"}
+{"name":"sync-coordinator","id":"sync-coordinator#1","pass":true,"detail":"exact"}
+{"name":"sync-coordinator","id":"sync-coordinator#2","pass":true,"detail":"1/1 cases"}
+{"name":"sync-coordinator","id":"sync-coordinator#3","pass":true,"detail":"json match"}
+{"name":"workflow-automation","id":"workflow-automation#1","pass":true,"detail":"exact"}
+{"name":"workflow-automation","id":"workflow-automation#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\""}
+{"name":"workflow-automation","id":"workflow-automation#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sublinear-goal-planner","id":"sublinear-goal-planner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sublinear-goal-planner","id":"sublinear-goal-planner#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sublinear-goal-planner","id":"sublinear-goal-planner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"code-goal-planner","id":"code-goal-planner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"code-goal-planner","id":"code-goal-planner#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"code-goal-planner","id":"code-goal-planner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"goal-planner","id":"goal-planner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"goal-planner","id":"goal-planner#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"Increase /health\",\"Run test suite\",\"Code new feature\",\"Review code as tester\"],\"expected\":null,\"error\":\"\"}","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"goal-planner","id":"goal-planner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"collective-intelligence-coordinator","id":"collective-intelligence-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"collective-intelligence-coordinator","id":"collective-intelligence-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"1. coder: implement the route or endpoint named in the request.\",\"2. coder: implement that handler.\",\"3. tester: write the test named in the re","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"collective-intelligence-coordinator","id":"collective-intelligence-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"queen-coordinator","id":"queen-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"queen-coordinator","id":"queen-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"Developer: Add the GET /health endpoint to the route definitions.\",\"Developer: Implement the handler so GET /health returns a status.\",\"Tester:","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"queen-coordinator","id":"queen-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"scout-explorer","id":"scout-explorer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"scout-explorer","id":"scout-explorer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"scout-explorer","id":"scout-explorer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"swarm-memory-manager","id":"swarm-memory-manager#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"swarm-memory-manager","id":"swarm-memory-manager#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"swarm-memory-manager","id":"swarm-memory-manager#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"worker-specialist","id":"worker-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"worker-specialist","id":"worker-specialist#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"worker-specialist","id":"worker-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"safla-neural","id":"safla-neural#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"safla-neural","id":"safla-neural#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"safla-neural","id":"safla-neural#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Benchmark Suite","id":"Benchmark Suite#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Benchmark Suite","id":"Benchmark Suite#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Benchmark Suite","id":"Benchmark Suite#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Load Balancing Coordinator","id":"Load Balancing Coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Load Balancing Coordinator","id":"Load Balancing Coordinator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Load Balancing Coordinator","id":"Load Balancing Coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Performance Monitor","id":"Performance Monitor#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Performance Monitor","id":"Performance Monitor#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Performance Monitor","id":"Performance Monitor#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Resource Allocator","id":"Resource Allocator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Resource Allocator","id":"Resource Allocator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Resource Allocator","id":"Resource Allocator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Topology Optimizer","id":"Topology Optimizer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Topology Optimizer","id":"Topology Optimizer#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"Step 1: /health check\",\"Step 2: Run tests\",\"Step 3: Code review\",\"Step 4: Test deployment\"],\"expected\":null,\"error\":\"\"}","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"Topology Optimizer","id":"Topology Optimizer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"agentic-payments","id":"agentic-payments#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"agentic-payments","id":"agentic-payments#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"agentic-payments","id":"agentic-payments#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"project-coordinator","id":"project-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"project-coordinator","id":"project-coordinator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"project-coordinator","id":"project-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"python-specialist","id":"python-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"python-specialist","id":"python-specialist#2","pass":true,"detail":"7/7 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"python-specialist","id":"python-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-auditor","id":"security-auditor#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-auditor","id":"security-auditor#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-auditor","id":"security-auditor#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sona-learning-optimizer","id":"sona-learning-optimizer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sona-learning-optimizer","id":"sona-learning-optimizer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sona-learning-optimizer","id":"sona-learning-optimizer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"architecture","id":"architecture#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"architecture","id":"architecture#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"architecture","id":"architecture#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pseudocode","id":"pseudocode#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pseudocode","id":"pseudocode#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pseudocode","id":"pseudocode#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"refinement","id":"refinement#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"refinement","id":"refinement#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"refinement","id":"refinement#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"specification","id":"specification#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"specification","id":"specification#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"specification","id":"specification#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"mobile-dev","id":"mobile-dev#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"mobile-dev","id":"mobile-dev#2","pass":true,"detail":"7/7 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"mobile-dev","id":"mobile-dev#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"consensus-coordinator","id":"consensus-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"consensus-coordinator","id":"consensus-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"consensus-coordinator","id":"consensus-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"matrix-optimizer","id":"matrix-optimizer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"matrix-optimizer","id":"matrix-optimizer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"matrix-optimizer","id":"matrix-optimizer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pagerank-analyzer","id":"pagerank-analyzer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pagerank-analyzer","id":"pagerank-analyzer#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pagerank-analyzer","id":"pagerank-analyzer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"performance-optimizer","id":"performance-optimizer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"performance-optimizer","id":"performance-optimizer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"performance-optimizer","id":"performance-optimizer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"trading-predictor","id":"trading-predictor#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"trading-predictor","id":"trading-predictor#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"trading-predictor","id":"trading-predictor#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"adaptive-coordinator","id":"adaptive-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"adaptive-coordinator","id":"adaptive-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"adaptive-coordinator","id":"adaptive-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hierarchical-coordinator","id":"hierarchical-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hierarchical-coordinator","id":"hierarchical-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hierarchical-coordinator","id":"hierarchical-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"mesh-coordinator","id":"mesh-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"mesh-coordinator","id":"mesh-coordinator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"mesh-coordinator","id":"mesh-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"smart-agent","id":"smart-agent#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"smart-agent","id":"smart-agent#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"smart-agent","id":"smart-agent#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"swarm-init","id":"swarm-init#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"swarm-init","id":"swarm-init#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"swarm-init","id":"swarm-init#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-coder","id":"sparc-coder#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-coder","id":"sparc-coder#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-coder","id":"sparc-coder#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"memory-coordinator","id":"memory-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"memory-coordinator","id":"memory-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"memory-coordinator","id":"memory-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"migration-planner","id":"migration-planner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"migration-planner","id":"migration-planner#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"migration-planner","id":"migration-planner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"task-orchestrator","id":"task-orchestrator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"task-orchestrator","id":"task-orchestrator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"task-orchestrator","id":"task-orchestrator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"perf-analyzer","id":"perf-analyzer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"perf-analyzer","id":"perf-analyzer#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"perf-analyzer","id":"perf-analyzer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-coord","id":"sparc-coord#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-coord","id":"sparc-coord#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-coord","id":"sparc-coord#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"production-validator","id":"production-validator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"production-validator","id":"production-validator#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"production-validator","id":"production-validator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tdd-london-swarm","id":"tdd-london-swarm#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tdd-london-swarm","id":"tdd-london-swarm#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tdd-london-swarm","id":"tdd-london-swarm#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"typescript-specialist","id":"typescript-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"typescript-specialist","id":"typescript-specialist#2","pass":false,"detail":"file:///tmp/bench-case-CPTOMS/mod.mjs?t=1792049771178:2\nexport function isEven(n: number): boolean {\n                        ^\n\nSyntaxError: Unexpected token ':'\n    at compileSour","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"typescript-specialist","id":"typescript-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"test-architect","id":"test-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"test-architect","id":"test-architect#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"test-architect","id":"test-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-integration-architect","id":"v3-integration-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-integration-architect","id":"v3-integration-architect#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-integration-architect","id":"v3-integration-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-memory-specialist","id":"v3-memory-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-memory-specialist","id":"v3-memory-specialist#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-memory-specialist","id":"v3-memory-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-performance-engineer","id":"v3-performance-engineer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-performance-engineer","id":"v3-performance-engineer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-performance-engineer","id":"v3-performance-engineer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-queen-coordinator","id":"v3-queen-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-queen-coordinator","id":"v3-queen-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-queen-coordinator","id":"v3-queen-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-security-architect","id":"v3-security-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-security-architect","id":"v3-security-architect#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":{\"text\":\"SELECT * FROM users WHERE name = $1\",\"values\":[\"ada\"]},\"expected\":{\"text\":\"SELECT * FROM users WHERE name = ?\",\"values\":[\"ada\"]},\"error\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"v3-security-architect","id":"v3-security-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"adr-architect","id":"adr-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"adr-architect","id":"adr-architect#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"adr-architect","id":"adr-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-coordinator","id":"nested-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-coordinator","id":"nested-coordinator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-coordinator","id":"nested-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-leaf","id":"nested-leaf#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-leaf","id":"nested-leaf#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-leaf","id":"nested-leaf#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-leaf","id":"nested-queen-leaf#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-leaf","id":"nested-queen-leaf#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-leaf","id":"nested-queen-leaf#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-researcher","id":"nested-queen-researcher#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-researcher","id":"nested-queen-researcher#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"healthCheck\",\"runTests\",\"codeReview\",\"testingPhase\"],\"expected\":null,\"error\":\"\"}","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-researcher","id":"nested-queen-researcher#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-reviewer","id":"nested-queen-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-reviewer","id":"nested-queen-reviewer#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"healthCheck\",\"runTests\",\"codeReview\",\"testingPhase\"],\"expected\":null,\"error\":\"\"}","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen-reviewer","id":"nested-queen-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen","id":"nested-queen#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen","id":"nested-queen#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-queen","id":"nested-queen#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-researcher","id":"nested-researcher#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-researcher","id":"nested-researcher#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"1. coder: implement the route or endpoint named in the request.\",\"2. coder: implement that handler.\",\"3. tester: write the test named in the re","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-researcher","id":"nested-researcher#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-reviewer","id":"nested-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-reviewer","id":"nested-reviewer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"nested-reviewer","id":"nested-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"wasm-specialist","id":"wasm-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"wasm-specialist","id":"wasm-specialist#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"wasm-specialist","id":"wasm-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"agentdb-specialist","id":"agentdb-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"agentdb-specialist","id":"agentdb-specialist#2","pass":false,"detail":"CUDA out of memory. Tried to allocate 1.45 GiB. GPU 0 has a total capacity of 14.56 GiB of which 224.81 MiB is free. Including non-PyTorch memory, this process has 14.34 GiB memory","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"agentdb-specialist","id":"agentdb-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"builder","id":"builder#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"builder","id":"builder#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"builder","id":"builder#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"team-coordinator","id":"team-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"team-coordinator","id":"team-coordinator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"team-coordinator","id":"team-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"verifier","id":"verifier#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"verifier","id":"verifier#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"verifier","id":"verifier#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"safety-specialist","id":"safety-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"safety-specialist","id":"safety-specialist#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"safety-specialist","id":"safety-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"autopilot-coordinator","id":"autopilot-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"autopilot-coordinator","id":"autopilot-coordinator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"autopilot-coordinator","id":"autopilot-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"browser-agent","id":"browser-agent#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"browser-agent","id":"browser-agent#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"browser-agent","id":"browser-agent#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"witness-curator","id":"witness-curator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"witness-curator","id":"witness-curator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"witness-curator","id":"witness-curator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"cost-analyst","id":"cost-analyst#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"cost-analyst","id":"cost-analyst#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"cost-analyst","id":"cost-analyst#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"daa-specialist","id":"daa-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"daa-specialist","id":"daa-specialist#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"daa-specialist","id":"daa-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"domain-modeler","id":"domain-modeler#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"domain-modeler","id":"domain-modeler#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"domain-modeler","id":"domain-modeler#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"deepseek-architect","id":"deepseek-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"deepseek-architect","id":"deepseek-architect#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"deepseek-architect","id":"deepseek-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"docs-writer","id":"docs-writer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"docs-writer","id":"docs-writer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"docs-writer","id":"docs-writer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"federation-coordinator","id":"federation-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"federation-coordinator","id":"federation-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":{\"text\":\"SELECT * FROM users WHERE name = $1\",\"values\":[\"ada\"]},\"expected\":{\"text\":\"SELECT * FROM users WHERE name = ?\",\"values\":[\"ada\"]},\"error\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"federation-coordinator","id":"federation-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"deep-researcher","id":"deep-researcher#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"deep-researcher","id":"deep-researcher#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"deep-researcher","id":"deep-researcher#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"dossier-investigator","id":"dossier-investigator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"dossier-investigator","id":"dossier-investigator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"dossier-investigator","id":"dossier-investigator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"horizon-tracker","id":"horizon-tracker#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"horizon-tracker","id":"horizon-tracker#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"horizon-tracker","id":"horizon-tracker#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"intelligence-specialist","id":"intelligence-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"intelligence-specialist","id":"intelligence-specialist#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"intelligence-specialist","id":"intelligence-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"device-coordinator","id":"device-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"device-coordinator","id":"device-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"device-coordinator","id":"device-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"fleet-manager","id":"fleet-manager#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"fleet-manager","id":"fleet-manager#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"fleet-manager","id":"fleet-manager#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"telemetry-analyzer","id":"telemetry-analyzer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"telemetry-analyzer","id":"telemetry-analyzer#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"telemetry-analyzer","id":"telemetry-analyzer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"witness-auditor","id":"witness-auditor#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"witness-auditor","id":"witness-auditor#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"witness-auditor","id":"witness-auditor#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"git-specialist","id":"git-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"git-specialist","id":"git-specialist#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"git-specialist","id":"git-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"graph-navigator","id":"graph-navigator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"graph-navigator","id":"graph-navigator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"graph-navigator","id":"graph-navigator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"loop-worker-coordinator","id":"loop-worker-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"loop-worker-coordinator","id":"loop-worker-coordinator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"loop-worker-coordinator","id":"loop-worker-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"data-engineer","id":"data-engineer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"data-engineer","id":"data-engineer#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"data-engineer","id":"data-engineer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"metaharness-architect","id":"metaharness-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"metaharness-architect","id":"metaharness-architect#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"metaharness-architect","id":"metaharness-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"migration-engineer","id":"migration-engineer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"migration-engineer","id":"migration-engineer#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"migration-engineer","id":"migration-engineer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"music-composer","id":"music-composer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"music-composer","id":"music-composer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"music-composer","id":"music-composer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"music-producer","id":"music-producer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"music-producer","id":"music-producer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"music-producer","id":"music-producer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"backtest-engineer","id":"backtest-engineer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"backtest-engineer","id":"backtest-engineer#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"backtest-engineer","id":"backtest-engineer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"market-analyst","id":"market-analyst#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"market-analyst","id":"market-analyst#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"market-analyst","id":"market-analyst#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"risk-analyst","id":"risk-analyst#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"risk-analyst","id":"risk-analyst#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"risk-analyst","id":"risk-analyst#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"trading-strategist","id":"trading-strategist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"trading-strategist","id":"trading-strategist#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"trading-strategist","id":"trading-strategist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"observability-engineer","id":"observability-engineer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"observability-engineer","id":"observability-engineer#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"observability-engineer","id":"observability-engineer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"plugin-developer","id":"plugin-developer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"plugin-developer","id":"plugin-developer#2","pass":true,"detail":"7/7 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"plugin-developer","id":"plugin-developer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"memory-specialist","id":"memory-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"memory-specialist","id":"memory-specialist#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"memory-specialist","id":"memory-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ruos-host-operator","id":"ruos-host-operator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ruos-host-operator","id":"ruos-host-operator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ruos-host-operator","id":"ruos-host-operator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"vector-engineer","id":"vector-engineer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"vector-engineer","id":"vector-engineer#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"vector-engineer","id":"vector-engineer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"llm-specialist","id":"llm-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"llm-specialist","id":"llm-specialist#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"llm-specialist","id":"llm-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"session-specialist","id":"session-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"session-specialist","id":"session-specialist#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"session-specialist","id":"session-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-orchestrator","id":"sparc-orchestrator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-orchestrator","id":"sparc-orchestrator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"sparc-orchestrator","id":"sparc-orchestrator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"architect","id":"architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"architect","id":"architect#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"architect","id":"architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"coordinator","id":"coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"coordinator","id":"coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"coder: implement that handler.\",\"tester: write the test named in the request.\",\"","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"coordinator","id":"coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"gaia-benchmark-runner","id":"gaia-benchmark-runner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"gaia-benchmark-runner","id":"gaia-benchmark-runner#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"gaia-benchmark-runner","id":"gaia-benchmark-runner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"gaia-submission-coordinator","id":"gaia-submission-coordinator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"gaia-submission-coordinator","id":"gaia-submission-coordinator#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":[\"coder: implement the route or endpoint named in the request.\",\"tester: write the test named in the request.\",\"tester: run that test.\",\"coder: i","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"gaia-submission-coordinator","id":"gaia-submission-coordinator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"workflow-specialist","id":"workflow-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"workflow-specialist","id":"workflow-specialist#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"workflow-specialist","id":"workflow-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"aidefence-guardian","id":"aidefence-guardian#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"aidefence-guardian","id":"aidefence-guardian#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"aidefence-guardian","id":"aidefence-guardian#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"claims-authorizer","id":"claims-authorizer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"claims-authorizer","id":"claims-authorizer#2","pass":false,"detail":"case failed {\"pass\":false,\"expected\":{\"moduleA\":\"payments\",\"moduleB\":\"mail\",\"event\":\"payment-charged\"},\"error\":\"Cannot read properties of undefined (reading 'split')\"}","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"claims-authorizer","id":"claims-authorizer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ddd-domain-expert","id":"ddd-domain-expert#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ddd-domain-expert","id":"ddd-domain-expert#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ddd-domain-expert","id":"ddd-domain-expert#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"injection-analyst","id":"injection-analyst#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"injection-analyst","id":"injection-analyst#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"injection-analyst","id":"injection-analyst#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"performance-engineer","id":"performance-engineer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"performance-engineer","id":"performance-engineer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"performance-engineer","id":"performance-engineer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pii-detector","id":"pii-detector#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pii-detector","id":"pii-detector#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"pii-detector","id":"pii-detector#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"reasoningbank-learner","id":"reasoningbank-learner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"reasoningbank-learner","id":"reasoningbank-learner#2","pass":false,"detail":"case failed {\"pass\":false,\"actual\":{},\"expected\":{\"key\":\"prefers-dark-mode\",\"text\":\"users prefer dark mode\",\"query\":\"dark mode\"},\"error\":\"\"}","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"reasoningbank-learner","id":"reasoningbank-learner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-architect-aidefence","id":"security-architect-aidefence#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-architect-aidefence","id":"security-architect-aidefence#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-architect-aidefence","id":"security-architect-aidefence#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-architect","id":"security-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-architect","id":"security-architect#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-architect","id":"security-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-boss","id":"hub-boss#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-boss","id":"hub-boss#2","pass":false,"detail":"CUDA out of memory. Tried to allocate 1.45 GiB. GPU 0 has a total capacity of 14.56 GiB of which 224.81 MiB is free. Including non-PyTorch memory, this process has 14.34 GiB memory","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-boss","id":"hub-boss#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-freellmapi","id":"hub-freellmapi#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-freellmapi","id":"hub-freellmapi#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-freellmapi","id":"hub-freellmapi#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-agent-browse","id":"hub-agent-browse#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-agent-browse","id":"hub-agent-browse#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-agent-browse","id":"hub-agent-browse#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-web-browser","id":"hub-web-browser#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-web-browser","id":"hub-web-browser#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"hub-web-browser","id":"hub-web-browser#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-inbox-to-lead","id":"desk-inbox-to-lead#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-inbox-to-lead","id":"desk-inbox-to-lead#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-inbox-to-lead","id":"desk-inbox-to-lead#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-weekly-report","id":"desk-weekly-report#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-weekly-report","id":"desk-weekly-report#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-weekly-report","id":"desk-weekly-report#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-meeting-to-action","id":"desk-meeting-to-action#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-meeting-to-action","id":"desk-meeting-to-action#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-meeting-to-action","id":"desk-meeting-to-action#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-lead-cleaner","id":"desk-lead-cleaner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-lead-cleaner","id":"desk-lead-cleaner#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"desk-lead-cleaner","id":"desk-lead-cleaner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-detect","id":"forge-detect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-detect","id":"forge-detect#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-detect","id":"forge-detect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-github-intelligence","id":"forge-github-intelligence#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-github-intelligence","id":"forge-github-intelligence#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-github-intelligence","id":"forge-github-intelligence#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-agent-miner","id":"forge-agent-miner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-agent-miner","id":"forge-agent-miner#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-agent-miner","id":"forge-agent-miner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-skill-pack-builder","id":"forge-skill-pack-builder#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-skill-pack-builder","id":"forge-skill-pack-builder#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"forge-skill-pack-builder","id":"forge-skill-pack-builder#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-lapian-notes","id":"tool13-lapian-notes#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-lapian-notes","id":"tool13-lapian-notes#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-lapian-notes","id":"tool13-lapian-notes#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-seo-audit","id":"tool13-seo-audit#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-seo-audit","id":"tool13-seo-audit#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-seo-audit","id":"tool13-seo-audit#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-nanomuse","id":"tool13-nanomuse#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-nanomuse","id":"tool13-nanomuse#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-nanomuse","id":"tool13-nanomuse#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-n8n-library","id":"tool13-n8n-library#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-n8n-library","id":"tool13-n8n-library#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-n8n-library","id":"tool13-n8n-library#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-ecc-68","id":"tool13-ecc-68#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-ecc-68","id":"tool13-ecc-68#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-ecc-68","id":"tool13-ecc-68#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-munder-difflin","id":"tool13-munder-difflin#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-munder-difflin","id":"tool13-munder-difflin#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-munder-difflin","id":"tool13-munder-difflin#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-scrapling","id":"tool13-scrapling#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-scrapling","id":"tool13-scrapling#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-scrapling","id":"tool13-scrapling#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-goose","id":"tool13-goose#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-goose","id":"tool13-goose#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-goose","id":"tool13-goose#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-headroom","id":"tool13-headroom#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-headroom","id":"tool13-headroom#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-headroom","id":"tool13-headroom#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-glm-5.3-flash","id":"tool13-glm-5.3-flash#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-glm-5.3-flash","id":"tool13-glm-5.3-flash#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-glm-5.3-flash","id":"tool13-glm-5.3-flash#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-kimi-k3","id":"tool13-kimi-k3#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-kimi-k3","id":"tool13-kimi-k3#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-kimi-k3","id":"tool13-kimi-k3#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-open-generative-ai","id":"tool13-open-generative-ai#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-open-generative-ai","id":"tool13-open-generative-ai#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-open-generative-ai","id":"tool13-open-generative-ai#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-agent-reach","id":"tool13-agent-reach#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-agent-reach","id":"tool13-agent-reach#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"tool13-agent-reach","id":"tool13-agent-reach#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-a11y-architect","id":"ecc-a11y-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-a11y-architect","id":"ecc-a11y-architect#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-a11y-architect","id":"ecc-a11y-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-agent-evaluator","id":"ecc-agent-evaluator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-agent-evaluator","id":"ecc-agent-evaluator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-agent-evaluator","id":"ecc-agent-evaluator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-build-error-resolver","id":"ecc-build-error-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-build-error-resolver","id":"ecc-build-error-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-build-error-resolver","id":"ecc-build-error-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-chief-of-staff","id":"ecc-chief-of-staff#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-chief-of-staff","id":"ecc-chief-of-staff#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-chief-of-staff","id":"ecc-chief-of-staff#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-architect","id":"ecc-code-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-architect","id":"ecc-code-architect#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-architect","id":"ecc-code-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-explorer","id":"ecc-code-explorer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-explorer","id":"ecc-code-explorer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-explorer","id":"ecc-code-explorer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-reviewer","id":"ecc-code-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-reviewer","id":"ecc-code-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-reviewer","id":"ecc-code-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-simplifier","id":"ecc-code-simplifier#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-simplifier","id":"ecc-code-simplifier#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-code-simplifier","id":"ecc-code-simplifier#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-comment-analyzer","id":"ecc-comment-analyzer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-comment-analyzer","id":"ecc-comment-analyzer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-comment-analyzer","id":"ecc-comment-analyzer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-conversation-analyzer","id":"ecc-conversation-analyzer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-conversation-analyzer","id":"ecc-conversation-analyzer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-conversation-analyzer","id":"ecc-conversation-analyzer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-cpp-build-resolver","id":"ecc-cpp-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-cpp-build-resolver","id":"ecc-cpp-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-cpp-build-resolver","id":"ecc-cpp-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-cpp-reviewer","id":"ecc-cpp-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-cpp-reviewer","id":"ecc-cpp-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-cpp-reviewer","id":"ecc-cpp-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-csharp-reviewer","id":"ecc-csharp-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-csharp-reviewer","id":"ecc-csharp-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-csharp-reviewer","id":"ecc-csharp-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-dart-build-resolver","id":"ecc-dart-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-dart-build-resolver","id":"ecc-dart-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-dart-build-resolver","id":"ecc-dart-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-database-reviewer","id":"ecc-database-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-database-reviewer","id":"ecc-database-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-database-reviewer","id":"ecc-database-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-django-build-resolver","id":"ecc-django-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-django-build-resolver","id":"ecc-django-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-django-build-resolver","id":"ecc-django-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-django-reviewer","id":"ecc-django-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-django-reviewer","id":"ecc-django-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-django-reviewer","id":"ecc-django-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-doc-updater","id":"ecc-doc-updater#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-doc-updater","id":"ecc-doc-updater#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-doc-updater","id":"ecc-doc-updater#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-docs-lookup","id":"ecc-docs-lookup#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-docs-lookup","id":"ecc-docs-lookup#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-docs-lookup","id":"ecc-docs-lookup#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-e2e-runner","id":"ecc-e2e-runner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-e2e-runner","id":"ecc-e2e-runner#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-e2e-runner","id":"ecc-e2e-runner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-fastapi-reviewer","id":"ecc-fastapi-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-fastapi-reviewer","id":"ecc-fastapi-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-fastapi-reviewer","id":"ecc-fastapi-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-flutter-reviewer","id":"ecc-flutter-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-flutter-reviewer","id":"ecc-flutter-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-flutter-reviewer","id":"ecc-flutter-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-fsharp-reviewer","id":"ecc-fsharp-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-fsharp-reviewer","id":"ecc-fsharp-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-fsharp-reviewer","id":"ecc-fsharp-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-evaluator","id":"ecc-gan-evaluator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-evaluator","id":"ecc-gan-evaluator#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-evaluator","id":"ecc-gan-evaluator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-generator","id":"ecc-gan-generator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-generator","id":"ecc-gan-generator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-generator","id":"ecc-gan-generator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-planner","id":"ecc-gan-planner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-planner","id":"ecc-gan-planner#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-gan-planner","id":"ecc-gan-planner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-go-build-resolver","id":"ecc-go-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-go-build-resolver","id":"ecc-go-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-go-build-resolver","id":"ecc-go-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-go-reviewer","id":"ecc-go-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-go-reviewer","id":"ecc-go-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-go-reviewer","id":"ecc-go-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-harmonyos-app-resolver","id":"ecc-harmonyos-app-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-harmonyos-app-resolver","id":"ecc-harmonyos-app-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-harmonyos-app-resolver","id":"ecc-harmonyos-app-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-harness-optimizer","id":"ecc-harness-optimizer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-harness-optimizer","id":"ecc-harness-optimizer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-harness-optimizer","id":"ecc-harness-optimizer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-healthcare-reviewer","id":"ecc-healthcare-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-healthcare-reviewer","id":"ecc-healthcare-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-healthcare-reviewer","id":"ecc-healthcare-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-homelab-architect","id":"ecc-homelab-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-homelab-architect","id":"ecc-homelab-architect#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-homelab-architect","id":"ecc-homelab-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-java-build-resolver","id":"ecc-java-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-java-build-resolver","id":"ecc-java-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-java-build-resolver","id":"ecc-java-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-java-reviewer","id":"ecc-java-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-java-reviewer","id":"ecc-java-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-java-reviewer","id":"ecc-java-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-kotlin-build-resolver","id":"ecc-kotlin-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-kotlin-build-resolver","id":"ecc-kotlin-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-kotlin-build-resolver","id":"ecc-kotlin-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-kotlin-reviewer","id":"ecc-kotlin-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-kotlin-reviewer","id":"ecc-kotlin-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-kotlin-reviewer","id":"ecc-kotlin-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-loop-operator","id":"ecc-loop-operator#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-loop-operator","id":"ecc-loop-operator#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-loop-operator","id":"ecc-loop-operator#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-marketing-agent","id":"ecc-marketing-agent#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-marketing-agent","id":"ecc-marketing-agent#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-marketing-agent","id":"ecc-marketing-agent#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-mle-reviewer","id":"ecc-mle-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-mle-reviewer","id":"ecc-mle-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-mle-reviewer","id":"ecc-mle-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-architect","id":"ecc-network-architect#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-architect","id":"ecc-network-architect#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-architect","id":"ecc-network-architect#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-config-reviewer","id":"ecc-network-config-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-config-reviewer","id":"ecc-network-config-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-config-reviewer","id":"ecc-network-config-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-troubleshooter","id":"ecc-network-troubleshooter#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-troubleshooter","id":"ecc-network-troubleshooter#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-network-troubleshooter","id":"ecc-network-troubleshooter#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-forker","id":"ecc-opensource-forker#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-forker","id":"ecc-opensource-forker#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-forker","id":"ecc-opensource-forker#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-packager","id":"ecc-opensource-packager#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-packager","id":"ecc-opensource-packager#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-packager","id":"ecc-opensource-packager#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-sanitizer","id":"ecc-opensource-sanitizer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-sanitizer","id":"ecc-opensource-sanitizer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-opensource-sanitizer","id":"ecc-opensource-sanitizer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-php-reviewer","id":"ecc-php-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-php-reviewer","id":"ecc-php-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-php-reviewer","id":"ecc-php-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-pr-test-analyzer","id":"ecc-pr-test-analyzer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-pr-test-analyzer","id":"ecc-pr-test-analyzer#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-pr-test-analyzer","id":"ecc-pr-test-analyzer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-python-reviewer","id":"ecc-python-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-python-reviewer","id":"ecc-python-reviewer#2","pass":true,"detail":"7/7 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-python-reviewer","id":"ecc-python-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-pytorch-build-resolver","id":"ecc-pytorch-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-pytorch-build-resolver","id":"ecc-pytorch-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-pytorch-build-resolver","id":"ecc-pytorch-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rag-pipeline-reviewer","id":"ecc-rag-pipeline-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rag-pipeline-reviewer","id":"ecc-rag-pipeline-reviewer#2","pass":false,"detail":"Coder response has no exported function","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rag-pipeline-reviewer","id":"ecc-rag-pipeline-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-react-build-resolver","id":"ecc-react-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-react-build-resolver","id":"ecc-react-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-react-build-resolver","id":"ecc-react-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-react-reviewer","id":"ecc-react-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-react-reviewer","id":"ecc-react-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-react-reviewer","id":"ecc-react-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-refactor-cleaner","id":"ecc-refactor-cleaner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-refactor-cleaner","id":"ecc-refactor-cleaner#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-refactor-cleaner","id":"ecc-refactor-cleaner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rust-build-resolver","id":"ecc-rust-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rust-build-resolver","id":"ecc-rust-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rust-build-resolver","id":"ecc-rust-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rust-reviewer","id":"ecc-rust-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rust-reviewer","id":"ecc-rust-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-rust-reviewer","id":"ecc-rust-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-security-reviewer","id":"ecc-security-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-security-reviewer","id":"ecc-security-reviewer#2","pass":true,"detail":"2/2 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-security-reviewer","id":"ecc-security-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-seo-specialist","id":"ecc-seo-specialist#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-seo-specialist","id":"ecc-seo-specialist#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-seo-specialist","id":"ecc-seo-specialist#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-silent-failure-hunter","id":"ecc-silent-failure-hunter#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-silent-failure-hunter","id":"ecc-silent-failure-hunter#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-silent-failure-hunter","id":"ecc-silent-failure-hunter#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-spec-miner","id":"ecc-spec-miner#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-spec-miner","id":"ecc-spec-miner#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-spec-miner","id":"ecc-spec-miner#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-swift-build-resolver","id":"ecc-swift-build-resolver#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-swift-build-resolver","id":"ecc-swift-build-resolver#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-swift-build-resolver","id":"ecc-swift-build-resolver#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-swift-reviewer","id":"ecc-swift-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-swift-reviewer","id":"ecc-swift-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-swift-reviewer","id":"ecc-swift-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-tdd-guide","id":"ecc-tdd-guide#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-tdd-guide","id":"ecc-tdd-guide#2","pass":true,"detail":"4/4 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-tdd-guide","id":"ecc-tdd-guide#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-type-design-analyzer","id":"ecc-type-design-analyzer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-type-design-analyzer","id":"ecc-type-design-analyzer#2","pass":true,"detail":"1/1 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-type-design-analyzer","id":"ecc-type-design-analyzer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-typescript-reviewer","id":"ecc-typescript-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-typescript-reviewer","id":"ecc-typescript-reviewer#2","pass":false,"detail":"file:///tmp/bench-case-wjeAfp/mod.mjs?t=1792049774201:2\nexport function isEven(n: number): boolean {\n                        ^\n\nSyntaxError: Unexpected token ':'\n    at compileSour","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-typescript-reviewer","id":"ecc-typescript-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-vue-reviewer","id":"ecc-vue-reviewer#1","pass":true,"detail":"exact","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-vue-reviewer","id":"ecc-vue-reviewer#2","pass":true,"detail":"3/3 cases","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"ecc-vue-reviewer","id":"ecc-vue-reviewer#3","pass":true,"detail":"json match","model":"Qwen/Qwen2.5-Coder-14B-Instruct"}
+{"name":"security-manager","id":"security-manager#1","pass":true,"detail":"exact"}

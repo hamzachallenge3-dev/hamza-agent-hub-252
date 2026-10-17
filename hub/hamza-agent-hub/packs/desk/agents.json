@@ -1,0 +1,53 @@
+[
+  {
+    "id": "desk-inbox-to-lead",
+    "pack": "desk",
+    "category": "desk_workflow",
+    "description": "Triage inbound mail text, score the lead, and draft a reply a human reviews before send.",
+    "tools": [
+      "clean_leads",
+      "extract_contacts",
+      "workspace_list",
+      "workspace_read",
+      "workspace_write",
+      "workspace_grep"
+    ]
+  },
+  {
+    "id": "desk-weekly-report",
+    "pack": "desk",
+    "category": "desk_workflow",
+    "description": "Take weekly numbers (CSV/text), compare with prior week, and draft a short report.",
+    "tools": [
+      "sheets_to_json",
+      "workspace_list",
+      "workspace_read",
+      "workspace_write"
+    ]
+  },
+  {
+    "id": "desk-meeting-to-action",
+    "pack": "desk",
+    "category": "desk_workflow",
+    "description": "Normalize meeting notes, extract next actions, and draft the follow-up.",
+    "tools": [
+      "extract_contacts",
+      "workspace_list",
+      "workspace_read",
+      "workspace_write",
+      "workspace_grep"
+    ]
+  },
+  {
+    "id": "desk-lead-cleaner",
+    "pack": "desk",
+    "category": "desk_tool",
+    "description": "Clean and dedupe lead emails from messy text or CSV using Automation Desk logic.",
+    "tools": [
+      "clean_leads",
+      "workspace_write",
+      "workspace_read",
+      "workspace_list"
+    ]
+  }
+]

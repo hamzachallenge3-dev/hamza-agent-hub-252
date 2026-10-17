@@ -1,0 +1,342 @@
+[
+  {
+    "id": "ecc-a11y-architect",
+    "description": "Use ECC a11y-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-a11y-architect/SKILL.md"
+  },
+  {
+    "id": "ecc-agent-evaluator",
+    "description": "Use ECC agent-evaluator for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-agent-evaluator/SKILL.md"
+  },
+  {
+    "id": "ecc-architect",
+    "description": "Use ECC architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-architect/SKILL.md"
+  },
+  {
+    "id": "ecc-build-error-resolver",
+    "description": "Use ECC build-error-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-build-error-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-chief-of-staff",
+    "description": "Use ECC chief-of-staff for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-chief-of-staff/SKILL.md"
+  },
+  {
+    "id": "ecc-code-architect",
+    "description": "Use ECC code-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-code-architect/SKILL.md"
+  },
+  {
+    "id": "ecc-code-explorer",
+    "description": "Use ECC code-explorer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-code-explorer/SKILL.md"
+  },
+  {
+    "id": "ecc-code-reviewer",
+    "description": "Use ECC code-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-code-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-code-simplifier",
+    "description": "Use ECC code-simplifier for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-code-simplifier/SKILL.md"
+  },
+  {
+    "id": "ecc-comment-analyzer",
+    "description": "Use ECC comment-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-comment-analyzer/SKILL.md"
+  },
+  {
+    "id": "ecc-conversation-analyzer",
+    "description": "Use ECC conversation-analyzer for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-conversation-analyzer/SKILL.md"
+  },
+  {
+    "id": "ecc-cpp-build-resolver",
+    "description": "Use ECC cpp-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-cpp-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-cpp-reviewer",
+    "description": "Use ECC cpp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-cpp-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-csharp-reviewer",
+    "description": "Use ECC csharp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-csharp-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-dart-build-resolver",
+    "description": "Use ECC dart-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-dart-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-database-reviewer",
+    "description": "Use ECC database-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-database-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-django-build-resolver",
+    "description": "Use ECC django-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-django-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-django-reviewer",
+    "description": "Use ECC django-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-django-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-doc-updater",
+    "description": "Use ECC doc-updater for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-doc-updater/SKILL.md"
+  },
+  {
+    "id": "ecc-docs-lookup",
+    "description": "Use ECC docs-lookup for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-docs-lookup/SKILL.md"
+  },
+  {
+    "id": "ecc-e2e-runner",
+    "description": "Use ECC e2e-runner for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-e2e-runner/SKILL.md"
+  },
+  {
+    "id": "ecc-fastapi-reviewer",
+    "description": "Use ECC fastapi-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-fastapi-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-flutter-reviewer",
+    "description": "Use ECC flutter-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-flutter-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-fsharp-reviewer",
+    "description": "Use ECC fsharp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-fsharp-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-gan-evaluator",
+    "description": "Use ECC gan-evaluator for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-gan-evaluator/SKILL.md"
+  },
+  {
+    "id": "ecc-gan-generator",
+    "description": "Use ECC gan-generator for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-gan-generator/SKILL.md"
+  },
+  {
+    "id": "ecc-gan-planner",
+    "description": "Use ECC gan-planner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-gan-planner/SKILL.md"
+  },
+  {
+    "id": "ecc-go-build-resolver",
+    "description": "Use ECC go-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-go-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-go-reviewer",
+    "description": "Use ECC go-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-go-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-harmonyos-app-resolver",
+    "description": "Use ECC harmonyos-app-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-harmonyos-app-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-harness-optimizer",
+    "description": "Use ECC harness-optimizer for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-harness-optimizer/SKILL.md"
+  },
+  {
+    "id": "ecc-healthcare-reviewer",
+    "description": "Use ECC healthcare-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-healthcare-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-homelab-architect",
+    "description": "Use ECC homelab-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-homelab-architect/SKILL.md"
+  },
+  {
+    "id": "ecc-java-build-resolver",
+    "description": "Use ECC java-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-java-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-java-reviewer",
+    "description": "Use ECC java-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-java-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-kotlin-build-resolver",
+    "description": "Use ECC kotlin-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-kotlin-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-kotlin-reviewer",
+    "description": "Use ECC kotlin-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-kotlin-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-loop-operator",
+    "description": "Use ECC loop-operator for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-loop-operator/SKILL.md"
+  },
+  {
+    "id": "ecc-marketing-agent",
+    "description": "Use ECC marketing-agent for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-marketing-agent/SKILL.md"
+  },
+  {
+    "id": "ecc-mle-reviewer",
+    "description": "Use ECC mle-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-mle-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-network-architect",
+    "description": "Use ECC network-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-network-architect/SKILL.md"
+  },
+  {
+    "id": "ecc-network-config-reviewer",
+    "description": "Use ECC network-config-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-network-config-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-network-troubleshooter",
+    "description": "Use ECC network-troubleshooter for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-network-troubleshooter/SKILL.md"
+  },
+  {
+    "id": "ecc-opensource-forker",
+    "description": "Use ECC opensource-forker for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-opensource-forker/SKILL.md"
+  },
+  {
+    "id": "ecc-opensource-packager",
+    "description": "Use ECC opensource-packager for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-opensource-packager/SKILL.md"
+  },
+  {
+    "id": "ecc-opensource-sanitizer",
+    "description": "Use ECC opensource-sanitizer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-opensource-sanitizer/SKILL.md"
+  },
+  {
+    "id": "ecc-performance-optimizer",
+    "description": "Use ECC performance-optimizer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-performance-optimizer/SKILL.md"
+  },
+  {
+    "id": "ecc-php-reviewer",
+    "description": "Use ECC php-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-php-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-planner",
+    "description": "Use ECC planner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-planner/SKILL.md"
+  },
+  {
+    "id": "ecc-pr-test-analyzer",
+    "description": "Use ECC pr-test-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-pr-test-analyzer/SKILL.md"
+  },
+  {
+    "id": "ecc-python-reviewer",
+    "description": "Use ECC python-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-python-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-pytorch-build-resolver",
+    "description": "Use ECC pytorch-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-pytorch-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-rag-pipeline-reviewer",
+    "description": "Use ECC rag-pipeline-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-rag-pipeline-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-react-build-resolver",
+    "description": "Use ECC react-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-react-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-react-reviewer",
+    "description": "Use ECC react-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-react-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-refactor-cleaner",
+    "description": "Use ECC refactor-cleaner for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-refactor-cleaner/SKILL.md"
+  },
+  {
+    "id": "ecc-rust-build-resolver",
+    "description": "Use ECC rust-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-rust-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-rust-reviewer",
+    "description": "Use ECC rust-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-rust-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-security-reviewer",
+    "description": "Use ECC security-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-security-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-seo-specialist",
+    "description": "Use ECC seo-specialist for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-seo-specialist/SKILL.md"
+  },
+  {
+    "id": "ecc-silent-failure-hunter",
+    "description": "Use ECC silent-failure-hunter for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-silent-failure-hunter/SKILL.md"
+  },
+  {
+    "id": "ecc-spec-miner",
+    "description": "Use ECC spec-miner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-spec-miner/SKILL.md"
+  },
+  {
+    "id": "ecc-swift-build-resolver",
+    "description": "Use ECC swift-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-swift-build-resolver/SKILL.md"
+  },
+  {
+    "id": "ecc-swift-reviewer",
+    "description": "Use ECC swift-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-swift-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-tdd-guide",
+    "description": "Use ECC tdd-guide for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-tdd-guide/SKILL.md"
+  },
+  {
+    "id": "ecc-type-design-analyzer",
+    "description": "Use ECC type-design-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-type-design-analyzer/SKILL.md"
+  },
+  {
+    "id": "ecc-typescript-reviewer",
+    "description": "Use ECC typescript-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-typescript-reviewer/SKILL.md"
+  },
+  {
+    "id": "ecc-vue-reviewer",
+    "description": "Use ECC vue-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+    "profile": "profiles/ecc-vue-reviewer/SKILL.md"
+  }
+]

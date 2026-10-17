@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "hamza-agent-hub": {
+      "command": "node",
+      "args": ["--experimental-sqlite", "/ABSOLUTE/PATH/TO/hamza-agent-hub/dist/index.js"],
+      "env": {
+        "HAH_TRANSPORT": "stdio",
+        "HAH_CONCURRENCY": "2",
+        "HAH_MODEL_PROVIDER": "freellmapi",
+        "HAH_FREELLMAPI_URL": "http://127.0.0.1:3001/v1",
+        "HAH_FREELLMAPI_MODEL": "auto",
+        "HAH_FREELLMAPI_KEY": "freellmapi-PASTE_FROM_DASHBOARD"
+      }
+    }
+  }
+}

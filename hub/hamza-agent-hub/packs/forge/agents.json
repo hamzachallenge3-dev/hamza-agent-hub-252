@@ -1,0 +1,51 @@
+[
+  {
+    "id": "forge-detect",
+    "pack": "forge",
+    "category": "forge_intelligence",
+    "description": "Detect which code-hosting forge a URL belongs to among 20 supported platforms.",
+    "tools": [
+      "forge_detect",
+      "workspace_write",
+      "workspace_list"
+    ]
+  },
+  {
+    "id": "forge-github-intelligence",
+    "pack": "forge",
+    "category": "forge_intelligence",
+    "description": "Apply GitHub URL tricks, search operators, and repo intelligence workflows.",
+    "tools": [
+      "forge_detect",
+      "github_url_tricks",
+      "workspace_write",
+      "workspace_read",
+      "workspace_list"
+    ]
+  },
+  {
+    "id": "forge-agent-miner",
+    "pack": "forge",
+    "category": "forge_intelligence",
+    "description": "Mine public repos for agents, skills, MCP servers and tools using curated queries.",
+    "tools": [
+      "forge_detect",
+      "github_url_tricks",
+      "agent_mining_queries",
+      "workspace_write",
+      "workspace_list"
+    ]
+  },
+  {
+    "id": "forge-skill-pack-builder",
+    "pack": "forge",
+    "category": "forge_intelligence",
+    "description": "Turn discovered capabilities into a curated skill-pack outline with provenance.",
+    "tools": [
+      "workspace_read",
+      "workspace_write",
+      "workspace_list",
+      "workspace_grep"
+    ]
+  }
+]

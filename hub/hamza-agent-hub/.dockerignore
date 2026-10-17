@@ -1,0 +1,9 @@
+node_modules
+dist
+data
+workspaces
+.env*
+.git
+chatgpt-plugin
+**/.env*
+**/__pycache__

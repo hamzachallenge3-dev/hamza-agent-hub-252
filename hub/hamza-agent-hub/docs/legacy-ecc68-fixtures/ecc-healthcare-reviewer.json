@@ -1,0 +1,18 @@
+{
+  "task": "Review target.txt using the ecc-healthcare-reviewer specialized approach and produce findings.",
+  "seed_files": {
+    "target.txt": "sample content for ecc-healthcare-reviewer\nTODO: fix me\n"
+  },
+  "expect_keywords": [
+    "ecc-healthcare-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-healthcare-reviewer-report.json",
+  "id": "ecc-healthcare-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

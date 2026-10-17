@@ -1,0 +1,345 @@
+# Hamza Agent Hub — complete Codex handoff (ChatGPT)
+
+**Audience:** Codex inside ChatGPT (Work / Codex mode).  
+**Goal:** Take Hamza’s full plugin work, make it stronger, and finish ChatGPT Plugin Directory readiness.  
+**Never print or commit secret values** (`HUB_SECRET`, API keys, tokens, `.env` contents). Use placeholders only.
+
+**Repo:** https://github.com/hamzachallenge3-dev/hamza-agent-hub-252  
+**PR branch:** `cursor/hamza-agent-hub-plugin-838a`  
+**PR:** (private PR, not published)  
+**Plugin root in repo:** `hamza-agent-hub/`
+
+Raw handoff (this file):  
+https://raw.githubusercontent.com/hamzachallenge3-dev/hamza-agent-hub-252/main/hub/hamza-agent-hub/CODEX-HANDOFF.md
+
+Raw ChatGPT plugin ZIP:  
+https://raw.githubusercontent.com/hamzachallenge3-dev/hamza-agent-hub-252/main/hub/hamza-agent-hub/chatgpt-plugin/release/hamza-agent-hub-chatgpt-plugin.zip
+
+---
+
+## 1. Every requirement Hamza gave (session contract)
+
+Treat these as **acceptance criteria**, not suggestions.
+
+| # | Requirement | Status in this repo |
+|---|---|---|
+| R1 | Build a **real MCP plugin** from ECC68 Build Kit (not skill files only), with a **distributor agent** that assigns work | **Partial → Done in lab Node plugin** (`hub-boss` + ECC68 pack). Original `ecc68-lab` retired to redirect stub. |
+| R2 | Prove agents work with a real mission (routing + completion evidence) | **Done (lab)** — `npm test` e2e hub-boss writes roster + routing artifacts |
+| R3 | Remember **Hamza Agent Hub**; build a **new unified plugin** = Hub + ECC68 | **Done (lab)** — `hamza-agent-hub/` |
+| R4 | Add **Hub Boss Tools Recovery 13**; boss must know **all** agents | **Done (lab)** — `packs/tools13/`, full-roster scoring, 13 agents |
+| R5 | Put **all work into ONE plugin** (no second installable plugin) | **Done (lab packaging)** — only `hamza-agent-hub/` is installable; `ecc68-lab/` is redirect |
+| R6 | **Agent browse with everything** (packs/agents/tools13/MCP surface) | **Done (lab)** — `hub-agent-browse` + `hub_agent_browse` |
+| R7 | Connect **open-source free LLM API** (FreeLLMAPI; alias `lotf`) | **Done (lab wiring)** — `hub-freellmapi`, env + connect script; live gateway must be running separately |
+| R8 | Package for **ChatGPT + Codex Plugin Directory / store** and hand to Codex to strengthen | **Scaffold done** — ZIP + skills + annotations; public HTTPS + portal submission **not finished** |
+| R9 | Production path Hamza described: **ChatGPT connector → `https://hub.imdifferent01.com/<HUB_SECRET>/mcp` → Cloudflare Worker → `hub.py`**, currently hosted on a **Kaggle CPU kernel via cloudflared tunnel** | **MISSING from this repo** — see §3–§5. Lab Node MCP is a parallel twin, not that Worker/`hub.py` stack |
+
+Lab / safety constraints (always keep):
+
+- Do **not** mutate production Hamza Agent Hub, production GLM, or production Headroom.
+- No paid spend; FreeLLMAPI / free tiers only.
+- No Okara/Reddit auto-posting claims.
+- Secrets only via env / host secrets — never in ZIP or chat.
+
+---
+
+## 2. Target production architecture (Hamza’s live Hub)
+
+This is the architecture Codex must align with / strengthen toward:
+
+```text
+ChatGPT (Plugins / connector)
+    │  Streamable HTTP MCP
+    ▼
+https://hub.imdifferent01.com/<HUB_SECRET>/mcp
+    │  Cloudflare edge (Worker reverse-proxy / auth path)
+    ▼
+Cloudflare Worker
+    │  tunnel / origin fetch
+    ▼
+cloudflared tunnel  ──►  Kaggle CPU kernel
+                              │
+                              ▼
+                           hub.py   (Python MCP / hub runtime)
+```
+
+### Path & auth rules (no secret values)
+
+- Public host: `hub.imdifferent01.com` (Cloudflare).
+- MCP URL shape: `https://hub.imdifferent01.com/<HUB_SECRET>/mcp`
+- `<HUB_SECRET>` is a **path secret** (treat like a bearer capability). Never log it, never commit it, never put it in the ChatGPT ZIP. In docs use the literal placeholder `<HUB_SECRET>`.
+- Worker should validate path/auth, forward Streamable HTTP MCP to the origin served by `hub.py`.
+- Origin today: **ephemeral Kaggle CPU** + **cloudflared** (tunnels die when kernel sleeps → Hub URL flaky).
+- Related live twin (Desk tools, not the Hub MCP): `https://desk.imdifferent01.com` (Automation Desk).
+
+### Observed from this environment (2026-10-13)
+
+- `https://desk.imdifferent01.com/` → HTTP 200 (Cloudflare).
+- `https://hub.imdifferent01.com/` → HTTP 404 at `/` (host exists on CF; root not an app page). Full MCP path with secret was **not** probed (would require a secret).
+
+---
+
+## 3. What this GitHub repo actually contains (lab twin)
+
+`hamza-agent-hub/` is a **Node 22 + TypeScript MCP plugin** (stdio + optional local HTTP). It consolidates Hamza’s kits into one lab package. It is **not** yet the Cloudflare Worker + `hub.py` + Kaggle stack.
+
+### Runtime shape (lab)
+
+```text
+Cursor / local MCP client
+    │ stdio  or  http://127.0.0.1:8790/mcp + Bearer HAH_AUTH_TOKEN
+    ▼
+hamza-agent-hub (Node)
+    ├── hub-boss / hub-agent-browse / hub-freellmapi
+    ├── packs: desk, ecc68, forge, tools13
+    ├── SQLite task queue
+    └── FreeLLMAPI (optional) → http://127.0.0.1:3001/v1  model=auto
+```
+
+### Agent roster (92)
+
+| Pack | Count | Notes |
+|---|---:|---|
+| hub | 3 | `hub-boss`, `hub-agent-browse`, `hub-freellmapi` |
+| desk | 4 | Automation Desk workflows |
+| ecc68 | 68 | ECC specialists (+ chief in pack) |
+| forge | 4 | Cross-forge / GitHub intelligence |
+| tools13 | 13 | Hub Boss Tools Recovery |
+| **Total** | **92** | |
+
+### MCP tools (20) — all annotated for ChatGPT directory
+
+`hub_health`, `hub_list_packs`, `hub_list_agents`, `hub_full_roster`, `hub_agent_browse`, `hub_boss_route`, `hub_tools13_lookup`, `hub_freellmapi_status`, `hub_freellmapi_chat`, `run_agent`, `task_status`, `task_result`, `cancel_task`, `clean_leads`, `sheets_to_json`, `extract_contacts`, `seo_audit_html`, `forge_detect`, `github_url_tricks`, `agent_mining_queries`
+
+Annotations: `readOnlyHint`, `openWorldHint`, `destructiveHint` on every tool (`src/mcp/annotations.ts`).
+
+### ChatGPT package
+
+- Source: `chatgpt-plugin/hamza-agent-hub/` (`.codex-plugin/plugin.json`, skills×5, mcp.json, assets)
+- Pack: `npm run pack:chatgpt` → tracked release ZIP under `chatgpt-plugin/release/`
+- Store notes: `docs/CHATGPT-STORE.md`
+
+---
+
+## 4. Full file map (important paths)
+
+```text
+hamza-agent-hub/
+├── CODEX-HANDOFF.md          ← THIS file (canonical handoff)
+├── GIVE-TO-CODEX.txt         ← same handoff, paste-oriented wrapper
+├── README.md
+├── package.json              # name hamza-agent-hub @1.1.0
+├── cursor-mcp.example.json
+├── .env.example              # HAH_* placeholders only
+├── scripts/
+│   ├── start.sh
+│   ├── connect-freellmapi.sh
+│   └── pack-chatgpt-plugin.sh
+├── src/
+│   ├── index.ts              # stdio + HTTP /mcp, /healthz, openai-apps-challenge
+│   ├── config.ts
+│   ├── mcp/tools.ts          # MCP surface
+│   ├── mcp/annotations.ts
+│   ├── model/client.ts       # live + heuristic
+│   ├── model/freellmapi.ts   # FreeLLMAPI adapter
+│   ├── runtime/{boss,browse,catalog,executor,queue,registry}.*
+│   ├── packs/{desk,forge,tools13}/*
+│   ├── security/{redact,workspace}.ts
+│   ├── storage/db.ts
+│   └── tools/runner.ts
+├── packs/
+│   ├── hub/agents/*.md
+│   ├── desk/
+│   ├── ecc68/                # agents.json, profiles, kit-original, upstream-ecc
+│   ├── forge/
+│   └── tools13/              # TOOLS_MANIFEST, runtime seo/lapian, original_plugins zips
+├── chatgpt-plugin/
+│   ├── hamza-agent-hub/      # store package root (zipped)
+│   ├── release/*.zip         # committed release artifact
+│   ├── PRIVACY.md / TERMS.md
+│   └── README.md
+├── docs/
+│   ├── CHATGPT-STORE.md
+│   ├── FREELLMAPI.md
+│   └── MISSION-LOG.md
+├── tests/hub.test.ts         # 9 tests currently
+└── attribution/
+
+repo root (docs site):
+├── ecc68-lab/README.md       # REDIRECT stub only — do not install
+├── cursor-mcp.hamza-agent-hub.example.json
+├── AGENTS.md / README.md
+└── (Mintlify docs files)
+```
+
+**Not in this repo (production gap):**
+
+- `hub.py` (Kaggle runtime)
+- Cloudflare Worker source (`wrangler` project)
+- `cloudflared` config / Kaggle notebook that starts the tunnel
+- Deployment scripts that bind `hub.imdifferent01.com/<HUB_SECRET>/mcp`
+
+---
+
+## 5. Done vs broken / missing
+
+### Done (lab)
+
+- One installable plugin consolidating ECC68 + Desk + Forge + Tools13
+- Full-roster `hub-boss` scoring (not a tiny keyword list)
+- Agent browse across packs / tools13 / MCP tools
+- FreeLLMAPI client + connect script + agent
+- SQLite durable queue, workspace isolation, secret redaction helpers
+- ChatGPT ZIP scaffold + 5 skills + tool annotations + domain-challenge endpoint hook
+- Tests: **9/9 passing** (`npm test`) as of handoff refresh
+- `ecc68-lab` retired to redirect
+
+### Broken / missing / weak (Codex must attack these)
+
+| Gap | Why it matters | Suggested direction |
+|---|---|---|
+| **No Worker + `hub.py` in repo** | Hamza’s real ChatGPT connector path is CF → Kaggle | Add `deploy/cloudflare-worker/` + `runtime/hub.py` (or document exact external repo) and wire Streamable HTTP MCP |
+| **Kaggle/cloudflared ephemerality** | Kernel sleep kills tunnel → ChatGPT connector dies | Persist origin (always-on VM/container) or Worker-held queue + wake; health check tool |
+| **ChatGPT portal auth** | Portal prefers OAuth/none; lab uses Bearer `HAH_AUTH_TOKEN` | Path-secret on `hub.imdifferent01.com/<HUB_SECRET>/mcp` may be enough if Worker enforces it; document portal “none” + secret path; avoid putting Bearer in ZIP headers |
+| **`.app.json` placeholder** | Needs real `plugin_asdk_app…` after ChatGPT custom MCP connect | Fill after connect; re-pack ZIP |
+| **`YOUR-PUBLIC-HOST` in mcp.json** | Store package not pointed at production | Set to `https://hub.imdifferent01.com/<HUB_SECRET>/mcp` only in **private** deployer docs — **never** bake the real secret into the public ZIP; use env substitution at publish time |
+| **Heuristic model path** | Without FreeLLMAPI up, agents use canned heuristics | Auto-probe FreeLLMAPI; clearer `hub_health`; optional keyless free fallback only if Hamza approves |
+| **Tools13 mostly reference/offline** | Only SEO + Lapian have local runtimes | Implement more offline runners or honest BLOCKED statuses |
+| **Thin test suite** | 9 tests for 92 agents | Add per-pack smoke, MCP annotation audit, HTTP auth tests, Worker contract tests |
+| **Store submission unfinished** | No verified domain challenge, demo video, portal upload | Follow `docs/CHATGPT-STORE.md` checklist end-to-end |
+| **Arabic + English UX** | Hamza chats in AR/EN | Skills + errors bilingual; keep sentence-case EN for store listing fields |
+
+---
+
+## 6. How to test (lab, this repo)
+
+```bash
+git clone https://github.com/hamzachallenge3-dev/hamza-agent-hub-252.git
+cd docs
+git checkout cursor/hamza-agent-hub-plugin-838a
+cd hamza-agent-hub
+npm install
+npm run build
+npm test
+python3 packs/tools13/scripts/verify_bundle.py
+npm run pack:chatgpt
+# ZIP → chatgpt-plugin/release/hamza-agent-hub-chatgpt-plugin.zip
+```
+
+Optional live FreeLLMAPI (separate process):
+
+```bash
+# start FreeLLMAPI per its docs, then:
+export HAH_FREELLMAPI_KEY='freellmapi-…'   # do not commit
+./scripts/connect-freellmapi.sh
+./scripts/start.sh
+```
+
+Optional local HTTP MCP:
+
+```bash
+export HAH_TRANSPORT=http
+export HAH_AUTH_TOKEN='strong-lab-token'   # do not commit
+export HAH_OPENAI_APPS_CHALLENGE='portal-token'  # for /.well-known/openai-apps-challenge
+./scripts/start.sh
+# GET /healthz  and  POST /mcp
+```
+
+Smoke missions (lab stdio/heuristic OK):
+
+```text
+run_agent(agent_id="hub-boss", task="SEO audit + security review login.py", workspace_id="codex", idempotency_key="codex-1")
+hub_agent_browse(query="SEO security")
+hub_freellmapi_status()
+```
+
+Production smoke (Codex / Hamza only — needs secret in env, never in git):
+
+```bash
+# Example shape only — substitute from private secret store:
+# curl -sS "https://hub.imdifferent01.com/${HUB_SECRET}/mcp" ...
+```
+
+---
+
+## 7. Codex mission — make it stronger (ordered)
+
+### P0 — Align with Hamza’s production Hub path
+
+1. Locate or recreate `hub.py` MCP server compatible with Streamable HTTP.
+2. Add Cloudflare Worker that proxies `https://hub.imdifferent01.com/<HUB_SECRET>/mcp` → origin (tunnel URL from env binding / Worker secret).
+3. Document Kaggle + cloudflared runbook (start order, health, restart). Prefer moving off ephemeral Kaggle for store reliability.
+4. Add a **read-only** `hub_edge_health` tool that checks public host `/healthz` (or Worker health) **without** echoing secrets.
+
+### P1 — Robustness & tools
+
+1. Harden queue: retries, dead-letter, cancel correctness under concurrency.
+2. Expand Tools13 local runners where safe; otherwise explicit BLOCKED + install hints.
+3. Improve `hub-boss` routing with bilingual cues and pack-aware decomposition.
+4. Make FreeLLMAPI the default live brain when probe OK; degrade gracefully.
+5. Add MCP resources/prompts if ChatGPT store scan expects them.
+
+### P2 — Tests & security
+
+1. Annotation audit test (every tool has the three hints).
+2. HTTP 401 without auth; challenge endpoint serves `HAH_OPENAI_APPS_CHALLENGE`.
+3. Path traversal / redact regression tests.
+4. Red-team: ensure ZIP contains **no** `.env`, keys, or real `<HUB_SECRET>`.
+5. Rate-limit / timeout behavior documented for ChatGPT clients.
+
+### P3 — ChatGPT Store readiness
+
+1. Follow https://developers.openai.com/plugins/build/plugins and submission guide.
+2. Connect custom MCP in ChatGPT → fill `.app.json` `plugin_asdk_app…`.
+3. Domain verification via `/.well-known/openai-apps-challenge` on the **public** host.
+4. 5 positive + 3 negative test cases (already drafted in `docs/CHATGPT-STORE.md`) — execute and attach evidence.
+5. Listing polish: displayName, short/long description, logo, privacy/terms URLs, demo recording script.
+6. Re-run `npm run pack:chatgpt`, upload ZIP at https://platform.openai.com/plugins
+
+### Deliverables Codex must return to Hamza
+
+1. Diff summary (what strengthened).
+2. Updated release ZIP path + raw GitHub URL.
+3. Exact ChatGPT connect URL shape using `<HUB_SECRET>` placeholder.
+4. Store portal checklist status (done / blocked + why).
+5. Remaining risks (Kaggle ephemerality, auth, missing runners).
+
+---
+
+## 8. Constraints & non-goals
+
+- **One plugin** in the directory: `hamza-agent-hub` only.
+- Do **not** revive `ecc68-lab` as a second MCP server.
+- Do **not** embed secrets in manifests, skills, ZIP, or README examples.
+- Do **not** claim production GLM/Headroom mutation or paid APIs.
+- Prefer MIT / free tiers; keep attribution for ECC + Tools13 upstreams.
+
+---
+
+## 9. First commands for Codex
+
+```bash
+cd hamza-agent-hub
+npm install && npm run build && npm test
+npm run pack:chatgpt
+ls -la chatgpt-plugin/release/
+```
+
+Then implement **P0** (Worker + `hub.py` path) or, if those sources live outside this repo, create `deploy/` stubs + a precise fetch plan and strengthen the lab Node twin for store scan pass in parallel.
+
+---
+
+## 10. Quick links
+
+| Resource | URL |
+|---|---|
+| PR | (private PR, not published) |
+| This handoff (raw) | https://raw.githubusercontent.com/hamzachallenge3-dev/hamza-agent-hub-252/main/hub/hamza-agent-hub/CODEX-HANDOFF.md |
+| Plugin ZIP (raw) | https://raw.githubusercontent.com/hamzachallenge3-dev/hamza-agent-hub-252/main/hub/hamza-agent-hub/chatgpt-plugin/release/hamza-agent-hub-chatgpt-plugin.zip |
+| Store notes | `hamza-agent-hub/docs/CHATGPT-STORE.md` |
+| FreeLLMAPI notes | `hamza-agent-hub/docs/FREELLMAPI.md` |
+| OpenAI plugin packaging | https://developers.openai.com/plugins/build/plugins |
+| OpenAI plugin submission | https://developers.openai.com/plugins/deploy/submission |
+
+## 11. Codex implementation update — 1.2.0
+
+The original contract above remains the acceptance record. Implementation and test evidence now live in `docs/VALIDATION.md`; the current done/blocked matrix is `docs/CHATGPT-STORE.md`. The Worker/Python production-path gap is implemented as source with local integration tests. Public deployment, live domain verification, app binding, demo capture and portal submission remain blocked on private infrastructure/account inputs. No production mutations or paid calls occurred.

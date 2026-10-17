@@ -1,0 +1,22 @@
+{
+  "task": "Coordinate prioritization for shipping feature Y as ecc-conversation-analyzer.",
+  "seed_files": {
+    "STATUS.md": "Feature Y blocked on review\n"
+  },
+  "expect_keywords": [
+    "ecc-conversation-analyzer"
+  ],
+  "expect_artifact_substr": "artifacts/",
+  "id": "ecc-conversation-analyzer",
+  "category": "orchestrator",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir",
+    "dispatch_agent",
+    "list_specialists"
+  ]
+}

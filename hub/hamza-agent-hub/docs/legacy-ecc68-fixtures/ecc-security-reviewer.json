@@ -1,0 +1,18 @@
+{
+  "task": "Review login.py for SQL injection and report exact risks.",
+  "seed_files": {
+    "login.py": "def login(u,p):\n  return f\"SELECT * FROM users WHERE name='{u}'\"\n"
+  },
+  "expect_keywords": [
+    "ecc-security-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-security-reviewer-report.json",
+  "id": "ecc-security-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

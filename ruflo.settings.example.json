@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "fallbacks": true,
+  "providers": [
+    {
+      "id": "ollama",
+      "preset": "ollama",
+      "model": "llama3.2"
+    },
+    {
+      "id": "groq",
+      "preset": "groq",
+      "apiKey": "env:GROQ_API_KEY",
+      "model": "llama-3.3-70b-versatile"
+    },
+    {
+      "id": "openrouter",
+      "preset": "openrouter",
+      "apiKey": "env:OPENROUTER_API_KEY",
+      "model": "openai/gpt-4o-mini"
+    },
+    {
+      "id": "openai",
+      "preset": "openai",
+      "apiKey": "env:OPENAI_API_KEY",
+      "model": "gpt-4o-mini"
+    },
+    {
+      "id": "gemini",
+      "preset": "gemini",
+      "apiKey": "env:GEMINI_API_KEY",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "id": "anthropic",
+      "preset": "anthropic",
+      "apiKey": "env:ANTHROPIC_API_KEY",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "id": "local-gateway",
+      "protocol": "openai",
+      "baseUrl": "http://127.0.0.1:11434/v1",
+      "model": "llama3.2",
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task": "Perform the specialized task for ecc-network-troubleshooter with verifiable output.",
+  "seed_files": {
+    "INPUT.md": "input for ecc-network-troubleshooter\n"
+  },
+  "expect_keywords": [
+    "ecc-network-troubleshooter"
+  ],
+  "expect_artifact_substr": "ecc-network-troubleshooter-report.json",
+  "id": "ecc-network-troubleshooter",
+  "category": "specialist",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

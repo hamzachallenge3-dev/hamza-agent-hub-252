@@ -1,0 +1,480 @@
+{
+  "generated_at": "2026-10-14T21:41:16.252Z",
+  "cases": [
+    {
+      "id": "B01",
+      "mission": "Review this Python module for SQL injection and other security vulnerabilities",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-python-reviewer",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "code.review",
+        "security.review"
+      ],
+      "subtasks": 2,
+      "constraints": 0,
+      "ms": 18
+    },
+    {
+      "id": "B02",
+      "mission": "Review the TypeScript API client for correctness and style problems",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-typescript-reviewer",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "code.review"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 3
+    },
+    {
+      "id": "B03",
+      "mission": "Open https://example.com, click the Download invoice link and save the file",
+      "ok": true,
+      "failures": [],
+      "primary": "hub-web-browser",
+      "primary_readiness": "READY",
+      "routed_capabilities": [
+        "browser.automate"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B04",
+      "mission": "Browse the agent catalog and list every agent in the SEO category",
+      "ok": true,
+      "failures": [],
+      "primary": "hub-agent-browse",
+      "primary_readiness": "READY",
+      "routed_capabilities": [
+        "catalog.browse",
+        "seo.audit"
+      ],
+      "subtasks": 2,
+      "constraints": 0,
+      "ms": 1
+    },
+    {
+      "id": "B05",
+      "mission": "Clean this lead list, normalise the addresses and remove duplicates",
+      "ok": true,
+      "failures": [],
+      "primary": "desk-lead-cleaner",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "data.clean"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B06",
+      "mission": "Run an SEO audit on this HTML page and report missing meta descriptions",
+      "ok": true,
+      "failures": [],
+      "primary": "tool13-seo-audit",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "seo.audit"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B07",
+      "mission": "Plan the architecture for a multi-tenant billing service, then implement it and write tests",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-architect",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "plan.architecture",
+        "code.generate",
+        "code.test"
+      ],
+      "subtasks": 3,
+      "constraints": 0,
+      "ms": 1
+    },
+    {
+      "id": "B08",
+      "mission": "Research our competitors online and produce a cited summary",
+      "ok": true,
+      "failures": [],
+      "primary": "tool13-scrapling",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "research.web"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B09",
+      "mission": "Fix the failing build in this Rust project",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-rust-build-resolver",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "code.build_fix"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B10",
+      "mission": "Write unit tests for the payment reconciliation module",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-pr-test-analyzer",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "code.test"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B11",
+      "mission": "Validate this n8n workflow before anyone activates it",
+      "ok": true,
+      "failures": [],
+      "primary": "tool13-n8n-library",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "workflow.validate"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B12",
+      "mission": "Compress this 40000 line log into the relevant context",
+      "ok": true,
+      "failures": [],
+      "primary": "tool13-headroom",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "context.compact"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B13",
+      "mission": "Detect which forge hosts https://github.com/hamzaloukili/agent-core and show the raw file URLs",
+      "ok": true,
+      "failures": [],
+      "primary": "forge-agent-miner",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "forge.inspect"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B14",
+      "mission": "Prepare the lapian film pack frames from the uploaded video",
+      "ok": true,
+      "failures": [],
+      "primary": "tool13-lapian-notes",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "media.process"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 1
+    },
+    {
+      "id": "B15",
+      "mission": "Check whether the FreeLLMAPI model gateway is reachable",
+      "ok": true,
+      "failures": [],
+      "primary": "hub-freellmapi",
+      "primary_readiness": "READY",
+      "routed_capabilities": [
+        "model.gateway"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B16",
+      "mission": "Review the checkout code for security problems. Do not execute anything or use paid services.",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-code-reviewer",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "code.review",
+        "security.review"
+      ],
+      "subtasks": 2,
+      "constraints": 2,
+      "ms": 0
+    },
+    {
+      "id": "B17",
+      "mission": "Clean the contact list, then audit the site SEO, then review the auth code for security issues",
+      "ok": true,
+      "failures": [],
+      "primary": "desk-lead-cleaner",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "data.clean",
+        "seo.audit",
+        "code.review",
+        "security.review"
+      ],
+      "subtasks": 4,
+      "constraints": 0,
+      "ms": 1
+    },
+    {
+      "id": "B18",
+      "mission": "راجع الكود بحثاً عن ثغرات أمان",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-security-reviewer",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "security.review"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 2
+    },
+    {
+      "id": "B19",
+      "mission": "نظف جهات الاتصال وأزل التكرار",
+      "ok": true,
+      "failures": [],
+      "primary": "desk-lead-cleaner",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "data.clean"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B20",
+      "mission": "تصفح الوكلاء واعرض قائمة الوكلاء المتاحة",
+      "ok": true,
+      "failures": [],
+      "primary": "hub-agent-browse",
+      "primary_readiness": "READY",
+      "routed_capabilities": [
+        "catalog.browse"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 1
+    },
+    {
+      "id": "B21",
+      "mission": "Log in to the supplier portal at https://portal.example.com and download this month invoice",
+      "ok": true,
+      "failures": [],
+      "primary": "hub-web-browser",
+      "primary_readiness": "READY",
+      "routed_capabilities": [
+        "browser.automate"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B22",
+      "mission": "Use the Goose integration to run an automation for me",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-agent-evaluator",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "orchestrate"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B23",
+      "mission": "Research competitor pricing online. Work offline with no internet access.",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-architect",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "plan.architecture"
+      ],
+      "subtasks": 1,
+      "constraints": 1,
+      "ms": 0
+    },
+    {
+      "id": "B24",
+      "mission": "Transform this spreadsheet export into JSON records",
+      "ok": true,
+      "failures": [],
+      "primary": "desk-weekly-report",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "data.transform"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 1
+    },
+    {
+      "id": "B25",
+      "mission": "Implement a REST endpoint that returns invoice totals",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-code-explorer",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "code.generate"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B26",
+      "mission": "Draft a proposal email for the client summarising our offer",
+      "ok": true,
+      "failures": [],
+      "primary": "desk-meeting-to-action",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "content.write"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B27",
+      "mission": "Run the test suite using a shell command and report the output",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-pr-test-analyzer",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "code.test",
+        "shell.execute"
+      ],
+      "subtasks": 2,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B28",
+      "mission": "Research the top three competitors in our market and write a cited report",
+      "ok": true,
+      "failures": [],
+      "primary": "tool13-scrapling",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "research.web",
+        "content.write"
+      ],
+      "subtasks": 2,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B29",
+      "mission": "Open the supplier portal, go to the billing page and download the latest invoice",
+      "ok": true,
+      "failures": [],
+      "primary": "hub-web-browser",
+      "primary_readiness": "READY",
+      "routed_capabilities": [
+        "browser.automate"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 1
+    },
+    {
+      "id": "B30",
+      "mission": "Fix the failing build and prove the tests pass",
+      "ok": true,
+      "failures": [],
+      "primary": "ecc-build-error-resolver",
+      "primary_readiness": "LIMITED",
+      "routed_capabilities": [
+        "code.build_fix",
+        "code.test"
+      ],
+      "subtasks": 2,
+      "constraints": 0,
+      "ms": 0
+    },
+    {
+      "id": "B31",
+      "mission": "Find new leads, clean up the list and draft a proposal. Do not send anything.",
+      "ok": true,
+      "failures": [],
+      "primary": "tool13-scrapling",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "research.web",
+        "data.clean",
+        "content.write"
+      ],
+      "subtasks": 3,
+      "constraints": 1,
+      "ms": 0
+    },
+    {
+      "id": "B32",
+      "mission": "List the open issues on the GitHub repository and summarise them",
+      "ok": true,
+      "failures": [],
+      "primary": "forge-github-intelligence",
+      "primary_readiness": "UNTESTED",
+      "routed_capabilities": [
+        "forge.inspect"
+      ],
+      "subtasks": 1,
+      "constraints": 0,
+      "ms": 1
+    }
+  ],
+  "passed": 32,
+  "total": 32,
+  "routing_accuracy": 1,
+  "latency_ms": {
+    "p50": 0,
+    "p95": 3,
+    "max": 18
+  },
+  "tool_success_rate": 1,
+  "tools": {
+    "passed": 26,
+    "total": 26
+  },
+  "degraded_assignments": 15
+}

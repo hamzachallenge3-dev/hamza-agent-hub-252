@@ -1,0 +1,24 @@
+{
+  "name": "free-marketing-seo-audit",
+  "version": "1.0.0",
+  "description": "Read-only local/public HTML SEO audit inspired by Okara marketing features. No Okara API connection or automatic Reddit posting.",
+  "author": {
+    "name": "Hamza Loukili"
+  },
+  "keywords": [],
+  "skills": "./skills",
+  "interface": {
+    "capabilities": [
+      "Interactive"
+    ],
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Audit the SEO metadata of my public website with no spending.",
+      "Create a factual SEO/GEO improvement checklist, no auto posts."
+    ],
+    "developerName": "Hamza Loukili",
+    "displayName": "Free Marketing SEO Audit",
+    "longDescription": "Independent free Okara-style on-page SEO scanner, checks factual HTML signals and suggests specific fixes without contacting a paid marketing service or auto-posting. No claims of achieving AI search rankings.",
+    "shortDescription": "Run SEO and GEO audits"
+  }
+}

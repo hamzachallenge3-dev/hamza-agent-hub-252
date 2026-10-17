@@ -1,0 +1,17 @@
+{
+  "name": "hamza-local",
+  "interface": {
+    "displayName": "Hamza local plugins"
+  },
+  "plugins": [
+    {
+      "name": "hamza-agent-hub",
+      "source": {
+        "path": "../../chatgpt-plugin/hamza-agent-hub"
+      },
+      "interface": {
+        "displayName": "Hamza Agent Hub"
+      }
+    }
+  ]
+}

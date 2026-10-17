@@ -1,0 +1,18 @@
+{
+  "task": "Review sample.py for Python style and correctness issues.",
+  "seed_files": {
+    "sample.py": "def f(x):\n  return x+1\n"
+  },
+  "expect_keywords": [
+    "ecc-python-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-python-reviewer-report.json",
+  "id": "ecc-python-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

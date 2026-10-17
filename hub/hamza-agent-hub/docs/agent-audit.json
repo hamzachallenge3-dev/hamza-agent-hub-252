@@ -1,0 +1,4949 @@
+{
+  "generated_at": "2026-10-14T21:41:18.184Z",
+  "summary": {
+    "total": 93,
+    "ready": 13,
+    "limited": 73,
+    "blocked": 7,
+    "untested": 0,
+    "all_tools_executed": 83,
+    "some_tools_executed": 10,
+    "declared_only": 0,
+    "declared_tested": 3,
+    "model_ready": false,
+    "tools": {
+      "verified": 26,
+      "external": 18
+    },
+    "packs": {
+      "hub": 4,
+      "desk": 4,
+      "forge": 4,
+      "tools13": 13,
+      "ecc68": 68
+    }
+  },
+  "tools13": [
+    {
+      "id": "lapian-notes",
+      "status": "BLOCKED",
+      "runner": null,
+      "hint": "film_pack_prepare is agent-only; install ffmpeg/ffprobe and provide a workspace video"
+    },
+    {
+      "id": "seo-audit",
+      "status": "LOCAL_ALTERNATIVE",
+      "runner": "seo_audit_html",
+      "hint": "No external API calls / يعمل محلياً"
+    },
+    {
+      "id": "nanomuse",
+      "status": "BLOCKED",
+      "runner": null,
+      "hint": "Install and configure upstream manually: https://github.com/nano-muse/nanoMuse. No service started / الخدمة غير مفعلة"
+    },
+    {
+      "id": "n8n-library",
+      "status": "LOCAL_ALTERNATIVE",
+      "runner": "n8n_workflow_validate (local validation only)",
+      "hint": "No external API calls / يعمل محلياً"
+    },
+    {
+      "id": "ecc-68",
+      "status": "LOCAL_ALTERNATIVE",
+      "runner": "run_agent (heuristic scaffold or configured live model)",
+      "hint": "No external API calls / يعمل محلياً"
+    },
+    {
+      "id": "munder-difflin",
+      "status": "BLOCKED",
+      "runner": null,
+      "hint": "Install and configure upstream manually: https://github.com/HarnessMD/munder-difflin. No service started / الخدمة غير مفعلة"
+    },
+    {
+      "id": "scrapling",
+      "status": "LOCAL_ALTERNATIVE",
+      "runner": "html_extract_links (local extraction only)",
+      "hint": "No external API calls / يعمل محلياً"
+    },
+    {
+      "id": "goose",
+      "status": "BLOCKED",
+      "runner": null,
+      "hint": "Install and configure upstream manually: https://github.com/aaif-goose/goose. No service started / الخدمة غير مفعلة"
+    },
+    {
+      "id": "headroom",
+      "status": "LOCAL_ALTERNATIVE",
+      "runner": "context_compact (local line dedupe only)",
+      "hint": "No external API calls / يعمل محلياً"
+    },
+    {
+      "id": "glm-5.3-flash",
+      "status": "BLOCKED",
+      "runner": null,
+      "hint": "Install and configure upstream manually: https://huggingface.co/zai-org/GLM-5.3-Flash. No service started / الخدمة غير مفعلة"
+    },
+    {
+      "id": "kimi-k3",
+      "status": "BLOCKED",
+      "runner": null,
+      "hint": "Install and configure upstream manually: https://huggingface.co/moonshotai/Kimi-K3. No service started / الخدمة غير مفعلة"
+    },
+    {
+      "id": "open-generative-ai",
+      "status": "BLOCKED",
+      "runner": null,
+      "hint": "Install and configure upstream manually: https://github.com/Anil-matcha/Open-Generative-AI. No service started / الخدمة غير مفعلة"
+    },
+    {
+      "id": "agent-reach",
+      "status": "BLOCKED",
+      "runner": null,
+      "hint": "Install and configure upstream manually: https://github.com/Panniantong/Agent-Reach. No service started / الخدمة غير مفعلة"
+    }
+  ],
+  "agents": [
+    {
+      "agent_id": "hub-boss",
+      "pack": "hub",
+      "category": "orchestrator",
+      "responsibility": "Hamza Agent Hub boss with FULL roster awareness: differentiates work across Desk, ECC68, Forge, and Tools13 and assigns the right specialists.",
+      "role_brief": "packs/hub/agents/hub-boss.md",
+      "tools": [
+        "hub_list_packs",
+        "hub_list_agents",
+        "hub_full_roster",
+        "hub_agent_browse",
+        "hub_freellmapi_status",
+        "hub_tools13_lookup",
+        "hub_integrations",
+        "run_command",
+        "dispatch_agent",
+        "workspace_write",
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep"
+      ],
+      "verified_tools": [
+        "hub_agent_browse",
+        "hub_freellmapi_status",
+        "hub_full_roster",
+        "hub_integrations",
+        "hub_list_agents",
+        "hub_list_packs",
+        "hub_tools13_lookup",
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "run_command",
+          "reason": "sandboxed shell, authenticated HTTP path only; covered by the sandbox suite"
+        },
+        {
+          "tool": "dispatch_agent",
+          "reason": "spawns a child task; covered by the orchestration suite instead"
+        }
+      ],
+      "capabilities": [
+        "catalog.browse",
+        "model.gateway",
+        "orchestrate",
+        "plan.architecture",
+        "shell.execute"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "dispatch_agent.agent_id",
+        "dispatch_agent.subtask",
+        "hub_agent_browse.agent_id",
+        "hub_agent_browse.pack",
+        "hub_agent_browse.query",
+        "hub_integrations.integration_id",
+        "hub_list_agents.pack",
+        "hub_tools13_lookup.query",
+        "run_command.command",
+        "run_command.cwd",
+        "run_command.timeout_ms",
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "mission plan with per-task assignments and constraints",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "FreeLLMAPI gateway (status probe only)",
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [
+        "sandboxed shell, authenticated HTTP path only"
+      ],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "some_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED.",
+        "run_command: sandboxed shell, authenticated HTTP path only; covered by the sandbox suite",
+        "dispatch_agent: spawns a child task; covered by the orchestration suite instead"
+      ]
+    },
+    {
+      "agent_id": "hub-freellmapi",
+      "pack": "hub",
+      "category": "model_gateway",
+      "responsibility": "Connects Hamza Agent Hub to FreeLLMAPI — open-source free OpenAI-compatible LLM gateway (auto-routing across free tiers).",
+      "role_brief": "packs/hub/agents/hub-freellmapi.md",
+      "tools": [
+        "hub_freellmapi_status",
+        "hub_freellmapi_chat",
+        "hub_agent_browse",
+        "workspace_write",
+        "workspace_list",
+        "workspace_read"
+      ],
+      "verified_tools": [
+        "hub_agent_browse",
+        "hub_freellmapi_status",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "hub_freellmapi_chat",
+          "reason": "requires a reachable FreeLLMAPI gateway; currently BLOCKED"
+        }
+      ],
+      "capabilities": [
+        "catalog.browse",
+        "model.gateway"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_agent_browse.agent_id",
+        "hub_agent_browse.pack",
+        "hub_agent_browse.query",
+        "hub_freellmapi_chat.model",
+        "hub_freellmapi_chat.prompt",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [
+        "FreeLLMAPI gateway",
+        "FreeLLMAPI gateway (status probe only)"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "tools backed and model available",
+      "declared_readiness": "READY",
+      "evidence": "some_tools_executed",
+      "declared_tested": true,
+      "limitations": [
+        "hub_freellmapi_chat: requires a reachable FreeLLMAPI gateway; currently BLOCKED"
+      ]
+    },
+    {
+      "agent_id": "hub-agent-browse",
+      "pack": "hub",
+      "category": "catalog_browser",
+      "responsibility": "Browse everything in the one plugin: all packs, 90+ agents, tools13, and MCP surface tools. Search by query or open a specific agent_id.",
+      "role_brief": "packs/hub/agents/hub-agent-browse.md",
+      "tools": [
+        "hub_agent_browse",
+        "hub_full_roster",
+        "hub_list_packs",
+        "hub_list_agents",
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list",
+        "workspace_read"
+      ],
+      "verified_tools": [
+        "hub_agent_browse",
+        "hub_full_roster",
+        "hub_list_agents",
+        "hub_list_packs",
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_agent_browse.agent_id",
+        "hub_agent_browse.pack",
+        "hub_agent_browse.query",
+        "hub_list_agents.pack",
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "tools backed and model available",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": true,
+      "limitations": []
+    },
+    {
+      "agent_id": "hub-web-browser",
+      "pack": "hub",
+      "category": "web_automation",
+      "responsibility": "Real web browser automation and web research on CPU-only headless Chromium (Playwright): navigate, snapshot, click, type, extract structured data, screenshot, plus cited web search. Distinct from hub-agent-browse, which browses the Hub catalog.",
+      "role_brief": "packs/hub/agents/hub-web-browser.md",
+      "tools": [
+        "browser_session",
+        "browser_navigate",
+        "browser_snapshot",
+        "browser_act",
+        "browser_extract",
+        "browser_screenshot",
+        "web_search",
+        "workspace_write",
+        "workspace_list",
+        "workspace_read"
+      ],
+      "verified_tools": [
+        "web_search",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "browser_session",
+          "reason": "live Chromium; covered by scripts/browser-smoke.ts"
+        },
+        {
+          "tool": "browser_navigate",
+          "reason": "live Chromium; covered by scripts/browser-smoke.ts"
+        },
+        {
+          "tool": "browser_snapshot",
+          "reason": "live Chromium; covered by scripts/browser-smoke.ts"
+        },
+        {
+          "tool": "browser_act",
+          "reason": "live Chromium; covered by scripts/browser-smoke.ts"
+        },
+        {
+          "tool": "browser_extract",
+          "reason": "live Chromium; covered by scripts/browser-smoke.ts"
+        },
+        {
+          "tool": "browser_screenshot",
+          "reason": "live Chromium; covered by scripts/browser-smoke.ts"
+        }
+      ],
+      "capabilities": [
+        "browser.automate",
+        "research.web"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "browser_act.action",
+        "browser_act.expect_selector",
+        "browser_act.expect_text",
+        "browser_act.label",
+        "browser_act.name",
+        "browser_act.placeholder",
+        "browser_act.role",
+        "browser_act.selector",
+        "browser_act.text",
+        "browser_act.value",
+        "browser_extract.attribute",
+        "browser_extract.kind",
+        "browser_extract.selector",
+        "browser_navigate.timeout_ms",
+        "browser_navigate.url",
+        "browser_navigate.wait_for",
+        "browser_screenshot.full_page",
+        "browser_session.allow_domains",
+        "browser_session.allow_downloads",
+        "browser_session.allow_uploads",
+        "browser_session.op",
+        "browser_session.profile",
+        "web_search.query",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "screenshot files as action receipts",
+        "search results with source URLs",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [
+        "a research provider credential (Tavily, Brave or Exa)",
+        "outbound HTTP to allow-listed domains"
+      ],
+      "runtime_dependencies": [
+        "Chromium via Playwright (CPU, headless)"
+      ],
+      "readiness": "READY",
+      "readiness_reason": "tools backed and model available",
+      "declared_readiness": "READY",
+      "evidence": "some_tools_executed",
+      "declared_tested": true,
+      "limitations": [
+        "browser_session: live Chromium; covered by scripts/browser-smoke.ts",
+        "browser_navigate: live Chromium; covered by scripts/browser-smoke.ts",
+        "browser_snapshot: live Chromium; covered by scripts/browser-smoke.ts",
+        "browser_act: live Chromium; covered by scripts/browser-smoke.ts",
+        "browser_extract: live Chromium; covered by scripts/browser-smoke.ts",
+        "browser_screenshot: live Chromium; covered by scripts/browser-smoke.ts"
+      ]
+    },
+    {
+      "agent_id": "desk-inbox-to-lead",
+      "pack": "desk",
+      "category": "desk_workflow",
+      "responsibility": "Triage inbound mail text, score the lead, and draft a reply a human reviews before send.",
+      "role_brief": null,
+      "tools": [
+        "clean_leads",
+        "extract_contacts",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write",
+        "workspace_grep"
+      ],
+      "verified_tools": [
+        "clean_leads",
+        "extract_contacts",
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "content.write",
+        "data.clean"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "clean_leads.csv",
+        "clean_leads.text",
+        "extract_contacts.html",
+        "extract_contacts.url",
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "normalised records (JSON)",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "desk-weekly-report",
+      "pack": "desk",
+      "category": "desk_workflow",
+      "responsibility": "Take weekly numbers (CSV/text), compare with prior week, and draft a short report.",
+      "role_brief": null,
+      "tools": [
+        "sheets_to_json",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "verified_tools": [
+        "sheets_to_json",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "content.write",
+        "data.clean",
+        "data.transform"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "sheets_to_json.csv",
+        "sheets_to_json.dialect",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "normalised records (JSON)",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "desk-meeting-to-action",
+      "pack": "desk",
+      "category": "desk_workflow",
+      "responsibility": "Normalize meeting notes, extract next actions, and draft the follow-up.",
+      "role_brief": null,
+      "tools": [
+        "extract_contacts",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write",
+        "workspace_grep"
+      ],
+      "verified_tools": [
+        "extract_contacts",
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "content.write",
+        "data.clean"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "extract_contacts.html",
+        "extract_contacts.url",
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "normalised records (JSON)",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "desk-lead-cleaner",
+      "pack": "desk",
+      "category": "desk_tool",
+      "responsibility": "Clean and dedupe lead emails from messy text or CSV using Automation Desk logic.",
+      "role_brief": null,
+      "tools": [
+        "clean_leads",
+        "workspace_write",
+        "workspace_read",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "clean_leads",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "data.clean"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "clean_leads.csv",
+        "clean_leads.text",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "normalised records (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": []
+    },
+    {
+      "agent_id": "forge-detect",
+      "pack": "forge",
+      "category": "forge_intelligence",
+      "responsibility": "Detect which code-hosting forge a URL belongs to among 20 supported platforms.",
+      "role_brief": null,
+      "tools": [
+        "forge_detect",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "forge_detect",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "forge.inspect"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "forge_detect.url",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": []
+    },
+    {
+      "agent_id": "forge-github-intelligence",
+      "pack": "forge",
+      "category": "forge_intelligence",
+      "responsibility": "Apply GitHub URL tricks, search operators, and repo intelligence workflows.",
+      "role_brief": null,
+      "tools": [
+        "forge_detect",
+        "github_url_tricks",
+        "workspace_write",
+        "workspace_read",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "forge_detect",
+        "github_url_tricks",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "forge.inspect"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "forge_detect.url",
+        "github_url_tricks.url",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": []
+    },
+    {
+      "agent_id": "forge-agent-miner",
+      "pack": "forge",
+      "category": "forge_intelligence",
+      "responsibility": "Mine public repos for agents, skills, MCP servers and tools using curated queries.",
+      "role_brief": null,
+      "tools": [
+        "forge_detect",
+        "github_url_tricks",
+        "agent_mining_queries",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "agent_mining_queries",
+        "forge_detect",
+        "github_url_tricks",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "forge.inspect"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "forge_detect.url",
+        "github_url_tricks.url",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": []
+    },
+    {
+      "agent_id": "forge-skill-pack-builder",
+      "pack": "forge",
+      "category": "forge_intelligence",
+      "responsibility": "Turn discovered capabilities into a curated skill-pack outline with provenance.",
+      "role_brief": null,
+      "tools": [
+        "workspace_read",
+        "workspace_write",
+        "workspace_list",
+        "workspace_grep"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "forge.inspect"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": []
+    },
+    {
+      "agent_id": "tool13-lapian-notes",
+      "pack": "tools13",
+      "category": "Video / AI analysis helper",
+      "responsibility": "Lapian Notes Companion — Included full original ChatGPT plugin archive; samples film frames, not full film AI analysis. Source: https://github.com/bkingfilm/lapian-notes. Tested: PASS_LOCAL_CODE.",
+      "role_brief": "packs/tools13/agents/tool13-lapian-notes.md",
+      "tools": [
+        "film_pack_prepare",
+        "run_command",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "verified_tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "film_pack_prepare",
+          "reason": "requires ffmpeg/ffprobe and a workspace video file"
+        },
+        {
+          "tool": "run_command",
+          "reason": "sandboxed shell, authenticated HTTP path only; covered by the sandbox suite"
+        }
+      ],
+      "capabilities": [
+        "media.process",
+        "shell.execute"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "film_pack_prepare.interval",
+        "film_pack_prepare.max_frames",
+        "film_pack_prepare.out_path",
+        "film_pack_prepare.video_path",
+        "run_command.command",
+        "run_command.cwd",
+        "run_command.timeout_ms",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [
+        "ffmpeg and ffprobe on PATH",
+        "sandboxed shell, authenticated HTTP path only"
+      ],
+      "readiness": "LIMITED",
+      "readiness_reason": "upstream service unavailable; local runner only — film_pack_prepare is agent-only; install ffmpeg/ffprobe and provide a workspace video",
+      "declared_readiness": "LIMITED",
+      "evidence": "some_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Upstream service unavailable: film_pack_prepare is agent-only; install ffmpeg/ffprobe and provide a workspace video",
+        "film_pack_prepare: requires ffmpeg/ffprobe and a workspace video file",
+        "run_command: sandboxed shell, authenticated HTTP path only; covered by the sandbox suite"
+      ]
+    },
+    {
+      "agent_id": "tool13-seo-audit",
+      "pack": "tools13",
+      "category": "SEO / research",
+      "responsibility": "Free Marketing SEO Audit — Included full user-owned original plugin archive; NOT an Okara client. Works on HTML. Source: https://okara.ai/agent. Tested: PASS_LOCAL_CODE.",
+      "role_brief": "packs/tools13/agents/tool13-seo-audit.md",
+      "tools": [
+        "seo_audit_html",
+        "run_command",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "verified_tools": [
+        "seo_audit_html",
+        "workspace_list",
+        "workspace_read",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "run_command",
+          "reason": "sandboxed shell, authenticated HTTP path only; covered by the sandbox suite"
+        }
+      ],
+      "capabilities": [
+        "seo.audit",
+        "shell.execute"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "run_command.command",
+        "run_command.cwd",
+        "run_command.timeout_ms",
+        "seo_audit_html.html",
+        "seo_audit_html.url",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "audit findings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [
+        "sandboxed shell, authenticated HTTP path only"
+      ],
+      "readiness": "LIMITED",
+      "readiness_reason": "some tools passed an executed check; the rest name an unmet dependency",
+      "declared_readiness": "LIMITED",
+      "evidence": "some_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Local alternative only (seo_audit_html); the upstream service is not running.",
+        "run_command: sandboxed shell, authenticated HTTP path only; covered by the sandbox suite"
+      ]
+    },
+    {
+      "agent_id": "tool13-nanomuse",
+      "pack": "tools13",
+      "category": "AI Agent",
+      "responsibility": "nanoMuse Bridge — Private ChatGPT plugin available by plugin ID, not archived in this ZIP; official upstream source retrievable. Not Boss-connected. Source: https://github.com/nano-muse/nanoMuse. Tested: PASS_CLI_UNIT_20_AND_MOCK_BRIDGE.",
+      "role_brief": "packs/tools13/agents/tool13-nanomuse.md",
+      "tools": [
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse",
+        "media.process"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "BLOCKED",
+      "readiness_reason": "Install and configure upstream manually: https://github.com/nano-muse/nanoMuse. No service started / الخدمة غير مفعلة",
+      "declared_readiness": "BLOCKED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Upstream service unavailable: Install and configure upstream manually: https://github.com/nano-muse/nanoMuse. No service started / الخدمة غير مفعلة"
+      ]
+    },
+    {
+      "agent_id": "tool13-n8n-library",
+      "pack": "tools13",
+      "category": "Automation",
+      "responsibility": "n8n Workflow Library — Private ChatGPT skill not archived; official workflows available by separate source fetch. No flow activated. Source: https://github.com/Zie619/n8n-workflows. Tested: PASS_PUBLIC_WORKFLOW_JSON_VALIDATION.",
+      "role_brief": "packs/tools13/agents/tool13-n8n-library.md",
+      "tools": [
+        "n8n_workflow_validate",
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "hub_tools13_lookup",
+        "n8n_workflow_validate",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse",
+        "workflow.validate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_tools13_lookup.query",
+        "n8n_workflow_validate.workflow",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Local alternative only (n8n_workflow_validate (local validation only)); the upstream service is not running."
+      ]
+    },
+    {
+      "agent_id": "tool13-ecc-68",
+      "pack": "tools13",
+      "category": "AI coding / Agents",
+      "responsibility": "ECC 68 Skills — 68 actual skill files confirmed in private plugin, but original private release archive not bundled; upstream sources available. Source: https://github.com/affaan-m/ECC. Tested: PASS_68_FILES_AND_REFERENCES.",
+      "role_brief": "packs/tools13/agents/tool13-ecc-68.md",
+      "tools": [
+        "hub_list_agents",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "verified_tools": [
+        "hub_list_agents",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_list_agents.pack",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Local alternative only (run_agent (heuristic scaffold or configured live model)); the upstream service is not running."
+      ]
+    },
+    {
+      "agent_id": "tool13-munder-difflin",
+      "pack": "tools13",
+      "category": "Multi Agent Orchestrator",
+      "responsibility": "Munder Difflin — Electron app tests; desktop UI was not run; no Boss connection. Source: https://github.com/HarnessMD/munder-difflin. Tested: PASS_18_OF_18_UNIT_TESTS.",
+      "role_brief": "packs/tools13/agents/tool13-munder-difflin.md",
+      "tools": [
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "BLOCKED",
+      "readiness_reason": "Install and configure upstream manually: https://github.com/HarnessMD/munder-difflin. No service started / الخدمة غير مفعلة",
+      "declared_readiness": "BLOCKED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Upstream service unavailable: Install and configure upstream manually: https://github.com/HarnessMD/munder-difflin. No service started / الخدمة غير مفعلة"
+      ]
+    },
+    {
+      "agent_id": "tool13-scrapling",
+      "pack": "tools13",
+      "category": "Web / Scraping",
+      "responsibility": "Scrapling — Requires additional packages; sample public fetch was verified. Source: https://github.com/D4Vinci/Scrapling. Tested: PASS_HTML_PARSER_AND_LIVE_HTTP_200.",
+      "role_brief": "packs/tools13/agents/tool13-scrapling.md",
+      "tools": [
+        "html_extract_links",
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "html_extract_links",
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse",
+        "data.transform",
+        "research.web"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "html_extract_links.html",
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "normalised records (JSON)",
+        "search results with source URLs",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Local alternative only (html_extract_links (local extraction only)); the upstream service is not running."
+      ]
+    },
+    {
+      "agent_id": "tool13-goose",
+      "pack": "tools13",
+      "category": "AI coding / Agents",
+      "responsibility": "Goose CLI — goose --version 1.54.0 passed. Doctor requires provider configuration. User must authorize any paid provider. Source: https://github.com/aaif-goose/goose. Tested: PASS_GOOSEx64_CLI_VERSION_ONLY.",
+      "role_brief": "packs/tools13/agents/tool13-goose.md",
+      "tools": [
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "BLOCKED",
+      "readiness_reason": "Install and configure upstream manually: https://github.com/aaif-goose/goose. No service started / الخدمة غير مفعلة",
+      "declared_readiness": "BLOCKED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Upstream service unavailable: Install and configure upstream manually: https://github.com/aaif-goose/goose. No service started / الخدمة غير مفعلة"
+      ]
+    },
+    {
+      "agent_id": "tool13-headroom",
+      "pack": "tools13",
+      "category": "AI / Context compression",
+      "responsibility": "Headroom — Local compression example retained FATAL in logs. Source: https://github.com/headroomlabs-ai/headroom. Tested: PASS_LOCAL_COMPRESSION.",
+      "role_brief": "packs/tools13/agents/tool13-headroom.md",
+      "tools": [
+        "context_compact",
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "context_compact",
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse",
+        "context.compact"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "context_compact.max_lines",
+        "context_compact.text",
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Local alternative only (context_compact (local line dedupe only)); the upstream service is not running."
+      ]
+    },
+    {
+      "agent_id": "tool13-glm-5.3-flash",
+      "pack": "tools13",
+      "category": "Model / AI",
+      "responsibility": "GLM-5.3-Flash — Large model weights intentionally excluded; needs appropriate GPU provider. Source: https://huggingface.co/zai-org/GLM-5.3-Flash. Tested: MODEL_METADATA_VERIFIED_NOT_INFERENCED.",
+      "role_brief": "packs/tools13/agents/tool13-glm-5.3-flash.md",
+      "tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "verified_tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse",
+        "model.gateway"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "BLOCKED",
+      "readiness_reason": "Install and configure upstream manually: https://huggingface.co/zai-org/GLM-5.3-Flash. No service started / الخدمة غير مفعلة",
+      "declared_readiness": "BLOCKED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Upstream service unavailable: Install and configure upstream manually: https://huggingface.co/zai-org/GLM-5.3-Flash. No service started / الخدمة غير مفعلة"
+      ]
+    },
+    {
+      "agent_id": "tool13-kimi-k3",
+      "pack": "tools13",
+      "category": "Model / AI",
+      "responsibility": "Kimi K3 — Large model weights intentionally excluded; needs appropriate GPU provider. Source: https://huggingface.co/moonshotai/Kimi-K3. Tested: MODEL_METADATA_VERIFIED_NOT_INFERENCED.",
+      "role_brief": "packs/tools13/agents/tool13-kimi-k3.md",
+      "tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "verified_tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse",
+        "model.gateway"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "BLOCKED",
+      "readiness_reason": "Install and configure upstream manually: https://huggingface.co/moonshotai/Kimi-K3. No service started / الخدمة غير مفعلة",
+      "declared_readiness": "BLOCKED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Upstream service unavailable: Install and configure upstream manually: https://huggingface.co/moonshotai/Kimi-K3. No service started / الخدمة غير مفعلة"
+      ]
+    },
+    {
+      "agent_id": "tool13-open-generative-ai",
+      "pack": "tools13",
+      "category": "AI video / image",
+      "responsibility": "Open Generative AI — Full AI video generation not run; may require external model/API resources. Source: https://github.com/Anil-matcha/Open-Generative-AI. Tested: PASS_50_OF_50_UNIT_TESTS.",
+      "role_brief": "packs/tools13/agents/tool13-open-generative-ai.md",
+      "tools": [
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse",
+        "media.process"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "BLOCKED",
+      "readiness_reason": "Install and configure upstream manually: https://github.com/Anil-matcha/Open-Generative-AI. No service started / الخدمة غير مفعلة",
+      "declared_readiness": "BLOCKED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Upstream service unavailable: Install and configure upstream manually: https://github.com/Anil-matcha/Open-Generative-AI. No service started / الخدمة غير مفعلة"
+      ]
+    },
+    {
+      "agent_id": "tool13-agent-reach",
+      "pack": "tools13",
+      "category": "Research / web",
+      "responsibility": "Agent Reach — Selected public and security unit tests; some channels require credentials. Source: https://github.com/Panniantong/Agent-Reach. Tested: PASS_81_OF_81_UNIT_TESTS.",
+      "role_brief": "packs/tools13/agents/tool13-agent-reach.md",
+      "tools": [
+        "hub_tools13_lookup",
+        "workspace_write",
+        "workspace_list"
+      ],
+      "verified_tools": [
+        "hub_tools13_lookup",
+        "workspace_list",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "catalog.browse",
+        "research.web"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "hub_tools13_lookup.query",
+        "workspace_list.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "catalog listings (JSON)",
+        "search results with source URLs",
+        "workspace artifacts (files under the task workspace)"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "BLOCKED",
+      "readiness_reason": "Install and configure upstream manually: https://github.com/Panniantong/Agent-Reach. No service started / الخدمة غير مفعلة",
+      "declared_readiness": "BLOCKED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "Upstream service unavailable: Install and configure upstream manually: https://github.com/Panniantong/Agent-Reach. No service started / الخدمة غير مفعلة"
+      ]
+    },
+    {
+      "agent_id": "ecc-a11y-architect",
+      "pack": "ecc68",
+      "category": "architect",
+      "responsibility": "Use ECC a11y-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-a11y-architect/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-agent-evaluator",
+      "pack": "ecc68",
+      "category": "orchestrator",
+      "responsibility": "Use ECC agent-evaluator for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-agent-evaluator/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir",
+        "dispatch_agent",
+        "list_specialists"
+      ],
+      "verified_tools": [
+        "list_specialists",
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "dispatch_agent",
+          "reason": "spawns a child task; covered by the orchestration suite instead"
+        }
+      ],
+      "capabilities": [
+        "orchestrate",
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "dispatch_agent.agent_id",
+        "dispatch_agent.subtask",
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "mission plan with per-task assignments and constraints",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "some_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED.",
+        "dispatch_agent: spawns a child task; covered by the orchestration suite instead"
+      ]
+    },
+    {
+      "agent_id": "ecc-architect",
+      "pack": "ecc68",
+      "category": "architect",
+      "responsibility": "Use ECC architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-architect/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-build-error-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC build-error-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-build-error-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-chief-of-staff",
+      "pack": "ecc68",
+      "category": "orchestrator",
+      "responsibility": "Use ECC chief-of-staff for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-chief-of-staff/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir",
+        "dispatch_agent",
+        "list_specialists"
+      ],
+      "verified_tools": [
+        "list_specialists",
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "dispatch_agent",
+          "reason": "spawns a child task; covered by the orchestration suite instead"
+        }
+      ],
+      "capabilities": [
+        "orchestrate",
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "dispatch_agent.agent_id",
+        "dispatch_agent.subtask",
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "mission plan with per-task assignments and constraints",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "some_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED.",
+        "dispatch_agent: spawns a child task; covered by the orchestration suite instead"
+      ]
+    },
+    {
+      "agent_id": "ecc-code-architect",
+      "pack": "ecc68",
+      "category": "architect",
+      "responsibility": "Use ECC code-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-code-architect/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-code-explorer",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC code-explorer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-code-explorer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-code-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC code-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-code-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-code-simplifier",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC code-simplifier for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-code-simplifier/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-comment-analyzer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC comment-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-comment-analyzer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-conversation-analyzer",
+      "pack": "ecc68",
+      "category": "orchestrator",
+      "responsibility": "Use ECC conversation-analyzer for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-conversation-analyzer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir",
+        "dispatch_agent",
+        "list_specialists"
+      ],
+      "verified_tools": [
+        "list_specialists",
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "dispatch_agent",
+          "reason": "spawns a child task; covered by the orchestration suite instead"
+        }
+      ],
+      "capabilities": [
+        "orchestrate",
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "dispatch_agent.agent_id",
+        "dispatch_agent.subtask",
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "mission plan with per-task assignments and constraints",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "some_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED.",
+        "dispatch_agent: spawns a child task; covered by the orchestration suite instead"
+      ]
+    },
+    {
+      "agent_id": "ecc-cpp-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC cpp-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-cpp-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-cpp-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC cpp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-cpp-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-csharp-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC csharp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-csharp-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-dart-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC dart-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-dart-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-database-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC database-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-database-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-django-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC django-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-django-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-django-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC django-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-django-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-doc-updater",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC doc-updater for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-doc-updater/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-docs-lookup",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC docs-lookup for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-docs-lookup/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-e2e-runner",
+      "pack": "ecc68",
+      "category": "tester",
+      "responsibility": "Use ECC e2e-runner for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-e2e-runner/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.test"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-fastapi-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC fastapi-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-fastapi-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-flutter-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC flutter-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-flutter-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-fsharp-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC fsharp-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-fsharp-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-gan-evaluator",
+      "pack": "ecc68",
+      "category": "tester",
+      "responsibility": "Use ECC gan-evaluator for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-gan-evaluator/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.test"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-gan-generator",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC gan-generator for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-gan-generator/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-gan-planner",
+      "pack": "ecc68",
+      "category": "architect",
+      "responsibility": "Use ECC gan-planner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-gan-planner/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-go-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC go-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-go-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-go-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC go-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-go-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-harmonyos-app-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC harmonyos-app-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-harmonyos-app-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-harness-optimizer",
+      "pack": "ecc68",
+      "category": "orchestrator",
+      "responsibility": "Use ECC harness-optimizer for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-harness-optimizer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir",
+        "dispatch_agent",
+        "list_specialists"
+      ],
+      "verified_tools": [
+        "list_specialists",
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "dispatch_agent",
+          "reason": "spawns a child task; covered by the orchestration suite instead"
+        }
+      ],
+      "capabilities": [
+        "orchestrate",
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "dispatch_agent.agent_id",
+        "dispatch_agent.subtask",
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "mission plan with per-task assignments and constraints",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "some_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED.",
+        "dispatch_agent: spawns a child task; covered by the orchestration suite instead"
+      ]
+    },
+    {
+      "agent_id": "ecc-healthcare-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC healthcare-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-healthcare-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-homelab-architect",
+      "pack": "ecc68",
+      "category": "architect",
+      "responsibility": "Use ECC homelab-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-homelab-architect/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-java-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC java-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-java-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-java-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC java-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-java-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-kotlin-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC kotlin-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-kotlin-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-kotlin-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC kotlin-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-kotlin-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-loop-operator",
+      "pack": "ecc68",
+      "category": "orchestrator",
+      "responsibility": "Use ECC loop-operator for coordination, status tracking, prioritization, and evaluation, without assuming access to private accounts or permission to send messages. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-loop-operator/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir",
+        "dispatch_agent",
+        "list_specialists"
+      ],
+      "verified_tools": [
+        "list_specialists",
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [
+        {
+          "tool": "dispatch_agent",
+          "reason": "spawns a child task; covered by the orchestration suite instead"
+        }
+      ],
+      "capabilities": [
+        "orchestrate",
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "dispatch_agent.agent_id",
+        "dispatch_agent.subtask",
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "mission plan with per-task assignments and constraints",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "some_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED.",
+        "dispatch_agent: spawns a child task; covered by the orchestration suite instead"
+      ]
+    },
+    {
+      "agent_id": "ecc-marketing-agent",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC marketing-agent for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-marketing-agent/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate",
+        "content.write"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-mle-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC mle-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-mle-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-network-architect",
+      "pack": "ecc68",
+      "category": "architect",
+      "responsibility": "Use ECC network-architect for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-network-architect/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-network-config-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC network-config-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-network-config-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-network-troubleshooter",
+      "pack": "ecc68",
+      "category": "specialist",
+      "responsibility": "Use ECC network-troubleshooter for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-network-troubleshooter/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "structured JSON tool output"
+      ],
+      "requires_model": false,
+      "model_ready": false,
+      "api_requirements": [],
+      "runtime_dependencies": [],
+      "readiness": "READY",
+      "readiness_reason": "every tool it holds passed an executed smoke check",
+      "declared_readiness": "READY",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": []
+    },
+    {
+      "agent_id": "ecc-opensource-forker",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC opensource-forker for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-opensource-forker/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-opensource-packager",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC opensource-packager for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-opensource-packager/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-opensource-sanitizer",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC opensource-sanitizer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-opensource-sanitizer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-performance-optimizer",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC performance-optimizer for the specialized task signaled by this role name, with verifiable practical output. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-performance-optimizer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-php-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC php-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-php-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-planner",
+      "pack": "ecc68",
+      "category": "architect",
+      "responsibility": "Use ECC planner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-planner/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-pr-test-analyzer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC pr-test-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-pr-test-analyzer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review",
+        "code.test"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-python-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC python-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-python-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-pytorch-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC pytorch-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-pytorch-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-rag-pipeline-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC rag-pipeline-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-rag-pipeline-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-react-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC react-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-react-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-react-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC react-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-react-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-refactor-cleaner",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC refactor-cleaner for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-refactor-cleaner/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-rust-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC rust-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-rust-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-rust-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC rust-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-rust-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-security-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC security-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-security-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review",
+        "security.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-seo-specialist",
+      "pack": "ecc68",
+      "category": "generator",
+      "responsibility": "Use ECC seo-specialist for generating a concrete deliverable while preserving original files and verifying produced outputs. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-seo-specialist/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.generate",
+        "seo.audit"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "audit findings (JSON)",
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-silent-failure-hunter",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC silent-failure-hunter for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-silent-failure-hunter/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-spec-miner",
+      "pack": "ecc68",
+      "category": "architect",
+      "responsibility": "Use ECC spec-miner for designing an implementation plan from current requirements and existing project architecture. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-spec-miner/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "plan.architecture"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-swift-build-resolver",
+      "pack": "ecc68",
+      "category": "build_resolver",
+      "responsibility": "Use ECC swift-build-resolver for diagnosing a reproduced error, proposing a minimal fix, then rerunning available tests. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-swift-build-resolver/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.build_fix"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-swift-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC swift-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-swift-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-tdd-guide",
+      "pack": "ecc68",
+      "category": "tester",
+      "responsibility": "Use ECC tdd-guide for test-first implementation and validation of observed behavior. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-tdd-guide/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat",
+        "workspace_write",
+        "workspace_mkdir"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_mkdir",
+        "workspace_read",
+        "workspace_stat",
+        "workspace_write"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.test"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path",
+        "workspace_write.content",
+        "workspace_write.path"
+      ],
+      "outputs": [
+        "workspace artifacts (files under the task workspace)",
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-type-design-analyzer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC type-design-analyzer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-type-design-analyzer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-typescript-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC typescript-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-typescript-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    },
+    {
+      "agent_id": "ecc-vue-reviewer",
+      "pack": "ecc68",
+      "category": "reviewer",
+      "responsibility": "Use ECC vue-reviewer for reviewing evidence and pointing to exact lines, risks, and actionable fixes. Loads the upstream profile and executes with available ChatGPT tools.",
+      "role_brief": "packs/ecc68/profiles/ecc-vue-reviewer/SKILL.md",
+      "tools": [
+        "workspace_list",
+        "workspace_read",
+        "workspace_grep",
+        "workspace_stat"
+      ],
+      "verified_tools": [
+        "workspace_grep",
+        "workspace_list",
+        "workspace_read",
+        "workspace_stat"
+      ],
+      "unverified_tools": [],
+      "capabilities": [
+        "code.review"
+      ],
+      "unbacked_capabilities": [],
+      "inputs": [
+        "workspace_grep.path",
+        "workspace_grep.pattern",
+        "workspace_list.path",
+        "workspace_read.path"
+      ],
+      "outputs": [
+        "written analysis (requires a live model; otherwise COMPLETED_LIMITED)"
+      ],
+      "requires_model": true,
+      "model_ready": false,
+      "api_requirements": [
+        "an OpenAI-compatible model provider"
+      ],
+      "runtime_dependencies": [],
+      "readiness": "LIMITED",
+      "readiness_reason": "reasoning capabilities need a live model; deterministic tools still run",
+      "declared_readiness": "LIMITED",
+      "evidence": "all_tools_executed",
+      "declared_tested": false,
+      "limitations": [
+        "No live model is configured, so reasoning output is deterministic and marked COMPLETED_LIMITED."
+      ]
+    }
+  ]
+}

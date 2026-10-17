@@ -1,0 +1,20 @@
+{
+  "task": "Generate a concrete deliverable for the brief as ecc-gan-generator.",
+  "seed_files": {
+    "BRIEF.md": "Create deliverable for ecc-gan-generator\n"
+  },
+  "expect_keywords": [
+    "ecc-gan-generator"
+  ],
+  "expect_artifact_substr": "ecc-gan-generator-report.json",
+  "id": "ecc-gan-generator",
+  "category": "generator",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

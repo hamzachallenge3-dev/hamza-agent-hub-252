@@ -1,0 +1,24 @@
+{
+  "task": "Coordinate a security review of login.py and a Python code review of the same file. Differentiate and assign specialists.",
+  "seed_files": {
+    "login.py": "def login(u,p):\n  query = f\"SELECT * FROM users WHERE name='{u}'\"\n  return query\n"
+  },
+  "expect_keywords": [
+    "primary",
+    "ecc-security-reviewer",
+    "routing"
+  ],
+  "expect_artifact_substr": "chief-routing-plan.json",
+  "id": "ecc-chief-of-staff",
+  "category": "orchestrator",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir",
+    "dispatch_agent",
+    "list_specialists"
+  ]
+}

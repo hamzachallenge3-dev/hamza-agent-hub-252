@@ -1,0 +1,18 @@
+{
+  "task": "Design an architecture plan for feature X as ecc-code-architect.",
+  "seed_files": {
+    "REQUIREMENTS.md": "Feature X needs scalable design for ecc-code-architect\n"
+  },
+  "expect_keywords": [
+    "ecc-code-architect"
+  ],
+  "expect_artifact_substr": "ecc-code-architect-report.json",
+  "id": "ecc-code-architect",
+  "category": "architect",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

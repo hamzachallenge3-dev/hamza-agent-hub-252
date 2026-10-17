@@ -1,0 +1,18 @@
+{
+  "task": "Review target.txt using the ecc-database-reviewer specialized approach and produce findings.",
+  "seed_files": {
+    "target.txt": "sample content for ecc-database-reviewer\nTODO: fix me\n"
+  },
+  "expect_keywords": [
+    "ecc-database-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-database-reviewer-report.json",
+  "id": "ecc-database-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

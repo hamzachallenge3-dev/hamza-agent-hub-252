@@ -1,0 +1,20 @@
+{
+  "task": "Diagnose the error in error.log as ecc-harmonyos-app-resolver and propose a minimal fix plan.",
+  "seed_files": {
+    "error.log": "ecc-harmonyos-app-resolver: ModuleNotFoundError: missing_dep\n"
+  },
+  "expect_keywords": [
+    "ecc-harmonyos-app-resolver"
+  ],
+  "expect_artifact_substr": "ecc-harmonyos-app-resolver-report.json",
+  "id": "ecc-harmonyos-app-resolver",
+  "category": "build_resolver",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

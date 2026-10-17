@@ -1,0 +1,18 @@
+{
+  "task": "Design an architecture plan for feature X as ecc-gan-planner.",
+  "seed_files": {
+    "REQUIREMENTS.md": "Feature X needs scalable design for ecc-gan-planner\n"
+  },
+  "expect_keywords": [
+    "ecc-gan-planner"
+  ],
+  "expect_artifact_substr": "ecc-gan-planner-report.json",
+  "id": "ecc-gan-planner",
+  "category": "architect",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

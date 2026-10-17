@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "lapian-notes-companion",
+  "version": "1.0.0",
+  "description": "CPU-only video frame/sample ZIP helper inspired by the MIT Lapian Notes workflow. Not the official application; no AI execution or Hub connection implied.",
+  "author": {
+    "name": "Hamza Loukili"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "Interactive"
+        ],
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Prepare a Lapian analysis pack for my attached video without spending money.",
+          "Find the official Lapian Notes demo and explain the safe local video workflow."
+        ],
+        "developerName": "Hamza Loukili",
+        "displayName": "Lapian Film Notes Companion",
+        "longDescription": "Unpaid, CPU-only local video sample and timestamp/AI analysis pack builder. Based on verified MIT upstream workflow (independent companion, no remote model or Hub runtime assumed).",
+        "shortDescription": "Prepare film analysis ZIPs"
+      }
+    }
+  }
+}

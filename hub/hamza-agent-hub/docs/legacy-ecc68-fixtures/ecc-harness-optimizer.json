@@ -1,0 +1,22 @@
+{
+  "task": "Coordinate prioritization for shipping feature Y as ecc-harness-optimizer.",
+  "seed_files": {
+    "STATUS.md": "Feature Y blocked on review\n"
+  },
+  "expect_keywords": [
+    "ecc-harness-optimizer"
+  ],
+  "expect_artifact_substr": "artifacts/",
+  "id": "ecc-harness-optimizer",
+  "category": "orchestrator",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir",
+    "dispatch_agent",
+    "list_specialists"
+  ]
+}

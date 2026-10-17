@@ -1,0 +1,18 @@
+{
+  "task": "Review target.txt using the ecc-vue-reviewer specialized approach and produce findings.",
+  "seed_files": {
+    "target.txt": "sample content for ecc-vue-reviewer\nTODO: fix me\n"
+  },
+  "expect_keywords": [
+    "ecc-vue-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-vue-reviewer-report.json",
+  "id": "ecc-vue-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

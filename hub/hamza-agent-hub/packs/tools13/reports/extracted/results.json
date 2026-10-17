@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-13",
+  "purpose": "Independent CPU/no-spend one-by-one validation of 13 recovered names",
+  "count": 13,
+  "original_inventory_count": "not verified (user previously reported 12; 13 distinct names reconstructed across notes)",
+  "expenditure": "0 authorized purchases; no paid API or paid GPU used",
+  "boss_runtime_running": false,
+  "boss_live_connections_verified": 0,
+  "environment": "Isolated CPU Linux workspace; original projects/accounts not changed",
+  "definition": {
+    "local_function_pass": "actual runnable code sample or CLI core function verified",
+    "upstream_unit_pass": "selected official upstream unit tests passed, not full end to end",
+    "workflow_structure_pass": "real source workflow parsed, not executed",
+    "bundle_integrity_pass": "archive structure reviewed, not task execution",
+    "binary_cli_pass": "official binary launches/doctor checked, model missing",
+    "model_metadata_only": "public metadata accessible, inference not run"
+  },
+  "items": [
+    {
+      "name": "Lapian Notes Companion",
+      "level": "local_function_pass",
+      "verification": "2 combined Python pytest cases (Lapian+SEO) passed. 4-second fixture -> 2 timestamped JPEGs inside a valid ZIP.",
+      "limitation": "No full AI film interpretation; no Boss connection"
+    },
+    {
+      "name": "Free Marketing SEO Audit",
+      "level": "local_function_pass",
+      "verification": "Local offline HTML audit returned 100/100 for synthetic complete fixture; pytest passed.",
+      "limitation": "Not a real website audit in this test; no automatic marketing/posting; no Boss connection"
+    },
+    {
+      "name": "nanoMuse Bridge & CLI",
+      "level": "upstream_unit_pass",
+      "verification": "Private Bridge allowed-actions/redaction mock passed; official nanoMuse source installed in isolated Python environment; 20 of 20 selected tests passed and CLI nanomuse --version -> 1.0.4.",
+      "limitation": "No actual model interaction or MCP connection; original Bridge mock is not full agent execution"
+    },
+    {
+      "name": "n8n Workflow Library",
+      "level": "workflow_structure_pass",
+      "verification": "Queried official Zie619 repo tree; downloaded ai-stack/workflows/comfyui-image-generation.json; validated nodes list (12) and connections map (9); examined code-risk node indicator.",
+      "limitation": "Workflow not imported or executed in an n8n server; it may need external credentials"
+    },
+    {
+      "name": "ECC 68 Agents/Skills",
+      "level": "bundle_integrity_pass",
+      "verification": "Current personal plugin archive inspected: exactly 68 role references and 68 corresponding SKILL.md files with metadata, cross-references valid.",
+      "limitation": "68 skills are not 68 running autonomous agents; no E2E task execution"
+    },
+    {
+      "name": "Munder Difflin",
+      "level": "upstream_unit_pass",
+      "verification": "Cloned official repository isolated at short commit 241d1e5; installed compatible TypeScript 5.9.3 for focused tests; node --test 18 of 18 passed (Slack timeouts, file path security, update timeouts).",
+      "limitation": "Electron GUI not booted; no live coding agent configured; no Boss connection"
+    },
+    {
+      "name": "Scrapling",
+      "level": "live_readonly_pass",
+      "verification": "Installed Scrapling 0.4.15 and required Python dependencies in isolated venv; parsed local HTML and fetched https://example.com HTTP 200; extracted title Example Domain.",
+      "limitation": "No browser anti-bot test, authentication or dynamic JS sites"
+    },
+    {
+      "name": "Goose CLI",
+      "level": "binary_cli_pass",
+      "verification": "Downloaded official aaif-goose/goose Linux x86_64 musl v1.54.0 binary (44,731,168 bytes); goose --version returned 1.54.0; goose --help ran.",
+      "limitation": "goose doctor reports No provider configured; no actual agent task was run"
+    },
+    {
+      "name": "Headroom",
+      "level": "local_function_pass",
+      "verification": "Installed headroom-ai 0.40.0 in isolated venv; compress(messages, model=gpt-4o, model_limit=4000) returned valid messages retaining FATAL configuration error; reduced sample from 16876 input chars to ~249 output chars.",
+      "limitation": "Single local synthetic log, not a measured production token-billing reduction; no proxy/MCP deployment"
+    },
+    {
+      "name": "GLM-5.3-Flash",
+      "level": "model_metadata_only",
+      "verification": "Official Hugging Face API metadata responded HTTP 200 for zai-org/GLM-5.3-Flash; non-gated public model weights listed.",
+      "limitation": "320B-scale model inference NOT tested. No cloud GPU/API call used, no Boss routing"
+    },
+    {
+      "name": "Kimi K3",
+      "level": "model_metadata_only",
+      "verification": "Official Hugging Face API metadata responded HTTP 200 for moonshotai/Kimi-K3; non-gated public model weights listed.",
+      "limitation": "2.8T-scale model inference NOT tested. No cloud GPU/API call used, no Boss routing"
+    },
+    {
+      "name": "Open Generative AI",
+      "level": "upstream_unit_pass",
+      "verification": "Cloned upstream at short commit 7cd7ade; node --test tests/*.test.js: 50/50 tests passed (catalogs, inference progress, output and path helpers).",
+      "limitation": "No actual generation, external model calls, studio GUI runtime, or Boss connection"
+    },
+    {
+      "name": "Agent Reach",
+      "level": "upstream_unit_pass",
+      "verification": "Cloned upstream at short commit 94f06c1; installed editable in isolated venv; 81 of 81 selected tests passed (URL security, public web channel and process). agent-reach doctor --json ran.",
+      "limitation": "Doctor identified missing/misconfigured optional channels. No social account access or Boss integration"
+    }
+  ],
+  "evidence_locations": {
+    "container_previous_unit_tests": "/mnt/data/hub_boss_testing_2026-10-13/unit_tests.log",
+    "server_isolated_workspace": "/home/agentbox/work/boss-test-20261013",
+    "server_current_work_is_ephemeral": true
+  },
+  "interpretation": "All 13 were assessed at the deepest feasible safe level; this is NOT proof that all 13 are fully operational or connected to Hub Boss."
+}

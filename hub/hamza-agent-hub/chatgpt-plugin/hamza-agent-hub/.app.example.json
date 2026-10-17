@@ -1,0 +1,9 @@
+{
+  "apps": {
+    "hamza-agent-hub": {
+      "name": "Hamza Agent Hub",
+      "description": "Placeholder for ChatGPT registered MCP app id (plugin_asdk_app…). After you create a custom MCP connection in ChatGPT Plugins, paste its technical ID here and re-pack.",
+      "mcp_app_id": "plugin_asdk_app_REPLACE_AFTER_CHATGPT_CONNECT"
+    }
+  }
+}

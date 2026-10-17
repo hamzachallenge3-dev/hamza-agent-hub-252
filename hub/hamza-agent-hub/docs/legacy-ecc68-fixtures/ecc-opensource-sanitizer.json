@@ -1,0 +1,20 @@
+{
+  "task": "Generate a concrete deliverable for the brief as ecc-opensource-sanitizer.",
+  "seed_files": {
+    "BRIEF.md": "Create deliverable for ecc-opensource-sanitizer\n"
+  },
+  "expect_keywords": [
+    "ecc-opensource-sanitizer"
+  ],
+  "expect_artifact_substr": "ecc-opensource-sanitizer-report.json",
+  "id": "ecc-opensource-sanitizer",
+  "category": "generator",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}

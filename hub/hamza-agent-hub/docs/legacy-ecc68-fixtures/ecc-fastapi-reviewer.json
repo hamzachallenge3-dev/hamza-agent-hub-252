@@ -1,0 +1,18 @@
+{
+  "task": "Review target.txt using the ecc-fastapi-reviewer specialized approach and produce findings.",
+  "seed_files": {
+    "target.txt": "sample content for ecc-fastapi-reviewer\nTODO: fix me\n"
+  },
+  "expect_keywords": [
+    "ecc-fastapi-reviewer"
+  ],
+  "expect_artifact_substr": "ecc-fastapi-reviewer-report.json",
+  "id": "ecc-fastapi-reviewer",
+  "category": "reviewer",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat"
+  ]
+}

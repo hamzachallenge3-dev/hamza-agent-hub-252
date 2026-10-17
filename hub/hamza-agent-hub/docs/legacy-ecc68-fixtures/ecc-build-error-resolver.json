@@ -1,0 +1,20 @@
+{
+  "task": "Diagnose the reproduced build error in build.log and propose a minimal fix.",
+  "seed_files": {
+    "build.log": "ERROR: Cannot find module 'react'\n"
+  },
+  "expect_keywords": [
+    "ecc-build-error-resolver"
+  ],
+  "expect_artifact_substr": "ecc-build-error-resolver-report.json",
+  "id": "ecc-build-error-resolver",
+  "category": "build_resolver",
+  "tools": [
+    "workspace_list",
+    "workspace_read",
+    "workspace_grep",
+    "workspace_stat",
+    "workspace_write",
+    "workspace_mkdir"
+  ]
+}
