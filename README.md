@@ -1,86 +1,112 @@
-# ⚡ Hamza Agent Hub — Super Powers for ChatGPT & Claude
+# ⚡ Hamza Agent Hub
 
-**Use your chat with super power, with full power.**
+**243 expert agents (reviewer, planner, tester, security auditor…) inside ChatGPT, Claude and Cursor with one MCP URL. No install, no API key.**
 
-Hamza Agent Hub is a free, open library of **252 ready-made expert agents** for ChatGPT,
-Claude, Gemini, or any AI chat. Each agent is a carefully written role prompt
-(planner, code reviewer, tester, security auditor, lead cleaner, docs writer, and many
-more). You plug one into your chat and it answers as that specialist.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MCP](https://img.shields.io/badge/MCP-server-blue)](https://modelcontextprotocol.io)
+![Agents](https://img.shields.io/badge/agents-243-orange)
+![Categories](https://img.shields.io/badge/categories-13-purple)
+![Tools](https://img.shields.io/badge/tools-4%20read--only-lightgrey)
+[![GitHub stars](https://img.shields.io/github/stars/hamzachallenge3-dev/hamza-agent-hub-252?style=social)](https://github.com/hamzachallenge3-dev/hamza-agent-hub-252/stargazers)
 
-**Who it's for:** freelancers, small teams, developers, and anyone who uses an AI chat
-every day and wants better, more focused answers without writing prompts from scratch.
+![Hamza Agent Hub running inside ChatGPT](docs/media/chatgpt-demo.gif)
 
-> **Honest note.** These agents are prompt / instruction files. They don't run by
-> themselves, don't act on your accounts, and don't make money on their own. They make
-> the AI chat you already use behave like a focused expert when you give it a task.
+▶️ **Demo video (3.5 min, ChatGPT):** https://drive.google.com/file/d/1Pk586kzf7EgKf_5hXbwUgdBLtm4CaN9N/view
 
 ---
 
-## Use it in 3 steps
+## 30-second quickstart
 
-1. **Pick an agent.** Browse the list in [`docs/agent-inventory.md`](docs/agent-inventory.md)
-   or the folders below (for example `.claude/agents/core/reviewer.md`).
-2. **Copy its text.** Open the `.md` file and copy everything under the front-matter.
-3. **Paste it into your chat.** Use it as a ChatGPT Custom GPT / custom instructions, a
-   Claude Project instruction, or just the first message of a new chat. Then give it your task.
+The hosted server is free and has no authentication:
 
-That's it: no install, no account, no setup.
+```
+https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/mcp
+```
 
-## 🔌 Use all 252 agents inside ChatGPT (one app)
+**ChatGPT** (developer mode / plugins): Settings → Plugins → **+ Add custom MCP server** → paste the URL → Authentication: *None*.
 
-Add this MCP server in ChatGPT (Plugins → + → Add custom MCP server, no authentication):
-`https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/mcp`. Details: [`chatgpt-app/`](chatgpt-app/).
+**Claude** (claude.ai or Desktop): Settings → Connectors → **Add custom connector** → paste the URL.
+Claude Code: `claude mcp add --transport http agent-hub https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/mcp`
 
-## Agent categories
+**Cursor**: add this to `~/.cursor/mcp.json`:
 
-Counts come from the recorded roster in [`docs/bench/agent-tasks.json`](docs/bench/agent-tasks.json)
-(252 agents, each tagged with a kind):
+```json
+{
+  "mcpServers": {
+    "hamza-agent-hub": { "url": "https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/mcp" }
+  }
+}
+```
+
+Then ask: *"Use Hamza Agent Hub to review this function as a security auditor."*
+
+## What the server exposes
+
+Four **read-only** tools. Nothing touches your accounts, files or money.
+
+| Tool | What it does |
+| --- | --- |
+| `list_categories` | The 13 categories and how many agents each has |
+| `search_agents` | Find agents by keyword or category |
+| `get_agent` | Full role prompt and details for one agent |
+| `run_agent_prompt` | Builds a ready-to-use prompt: agent role + your task |
+
+> **Honest note.** These agents are carefully written role prompts. They don't run by
+> themselves or act on your accounts. They make the AI chat you already use behave like a
+> focused specialist for the task you give it.
+
+## Categories (243 agents)
 
 | Category | Agents |
 | --- | ---: |
 | 🗺️ Planning & coordination | 51 |
 | 🧪 Testing & QA | 35 |
-| 🧰 General helpers | 34 |
+| 🧰 General helpers | 35 |
 | 🔍 Code review | 25 |
 | 🚀 Performance & optimization | 22 |
 | 🏗️ Architecture & design | 21 |
 | 🔐 Security | 14 |
 | 💻 Coding | 12 |
-| 🧠 Memory & knowledge | 10 |
 | 📝 Documentation | 9 |
-| 📈 Trading & market data (prompts only, not financial advice) | 9 |
+| 🧠 Memory & knowledge | 9 |
 | 🔎 Research | 5 |
 | 🌿 Git & GitHub | 3 |
 | 🎵 Music | 2 |
-| **Total** | **252** |
+| **Total** | **243** |
 
-Where they live:
+The served roster is [`chatgpt-app/data/agents.json`](chatgpt-app/data/agents.json).
 
-* **162** agents from the upstream open-source agent library, under `.claude/agents/`,
-  `plugins/*/agents/` and `v3/`. 362 files exist on disk because some names are defined
-  more than once; the first match is used (see `docs/agent-inventory.md`).
-* **90** Hamza Agent Hub agents under [`hub/hamza-agent-hub/`](hub/hamza-agent-hub/)
-  (packs: Desk, ECC68, Forge, Tools13, Hub). The hub has 93; 3 duplicate an upstream role
-  and are not counted twice.
+## Example prompts
 
-## Quick start (power users)
+- "What categories does Hamza Agent Hub have?"
+- "Find an agent for writing unit tests in TypeScript, then use it on this file."
+- "Act as the security auditor agent and review this Express login route."
+- "Use the planner agent to break this feature into tasks with estimates."
+- "Get the performance optimizer agent and find the slow parts of this SQL query."
+- "Use the docs writer agent to write a README for this script."
 
-Want the agents as tools inside Claude Desktop, Cursor, or another MCP client?
+## No MCP? Copy-paste works too
+
+Every agent is a Markdown file. Browse [`docs/agent-inventory.md`](docs/agent-inventory.md),
+copy the text under the front-matter, and paste it as custom instructions or the first message of a chat.
+
+## Self-host
+
+The server is a small Cloudflare Worker in [`chatgpt-app/`](chatgpt-app/):
 
 ```bash
 git clone https://github.com/hamzachallenge3-dev/hamza-agent-hub-252.git
-cd hamza-agent-hub-252/hub/hamza-agent-hub
+cd hamza-agent-hub-252/chatgpt-app
 npm install
-npm run build
+npx wrangler deploy
 ```
 
-Then add the server to your MCP client using
-[`cursor-mcp.example.json`](hub/hamza-agent-hub/cursor-mcp.example.json) as a template, and
-point it at any OpenAI-compatible model (free and local ones work). Put API keys in
-environment variables, never in a committed file. Full details (Arabic):
-[`hub/hamza-agent-hub/README.md`](hub/hamza-agent-hub/README.md).
+A local stdio MCP version for Claude Desktop/Cursor lives in [`hub/hamza-agent-hub/`](hub/hamza-agent-hub/) (Node.js 22+).
 
-Requires **Node.js 22+**.
+## ⭐ Star if useful
+
+If this saved you from writing a prompt from scratch, a star helps other people find it.
+Issues and PRs with new agents are welcome, see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Work with imdifferent01
 
@@ -96,6 +122,5 @@ this running in your business, we build:
 
 ## License
 
-Based on MIT-licensed work, see [`LICENSE`](LICENSE) (original copyright notice kept
-unchanged). The Hamza Agent Hub under `hub/hamza-agent-hub/` carries its own
-[`LICENSE`](hub/hamza-agent-hub/LICENSE). Changes © 2026 imdifferent01 (Hamza Loukili).
+MIT, see [`LICENSE`](LICENSE). Based on MIT-licensed work (original copyright notice kept).
+Changes © 2026 imdifferent01 (Hamza Loukili).

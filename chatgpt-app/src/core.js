@@ -6,7 +6,7 @@ const RO = { readOnlyHint: true, destructiveHint: false, openWorldHint: false, i
 
 const TOOLS = [
   { name: 'list_categories', title: 'List agent categories',
-    description: 'Use this to show the 14 categories of the 252 expert agents and how many agents are in each.',
+    description: 'Use this to show the 13 categories of the 243 expert agents and how many agents are in each.',
     inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: RO },
   { name: 'search_agents', title: 'Search agents',
     description: 'Use this to find the best expert agent for a task. Searches agent ids, descriptions and instructions. Returns ids to pass to get_agent.',
@@ -103,7 +103,7 @@ export function createMcp(catalog) {
       case 'initialize':
         return reply({ protocolVersion: VERSIONS.includes(p.protocolVersion) ? p.protocolVersion : VERSIONS[1],
           capabilities: { tools: { listChanged: false } }, serverInfo: SERVER,
-          instructions: 'Hamza Agent Hub: 252 expert agent roles. Use search_agents to pick a role, then get_agent and follow its instructions.' });
+          instructions: 'Hamza Agent Hub: 243 expert agent roles. Use search_agents to pick a role, then get_agent and follow its instructions.' });
       case 'ping': return reply({});
       case 'tools/list': return reply({ tools: TOOLS });
       case 'tools/call': {
