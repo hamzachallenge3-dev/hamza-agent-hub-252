@@ -61,11 +61,13 @@ for (const check of SMOKE_CHECKS) {
   });
 }
 
-it('reports Tools13 honestly: 13 catalogued, 8 blocked, 5 with local alternatives', () => {
+it('reports Tools13 honestly: 13 catalogued, 7 blocked, 5 local, Agent Reach enabled', () => {
   const caps = tools13Capabilities();
   expect(caps).toHaveLength(13);
-  expect(caps.filter((c) => c.status === 'BLOCKED')).toHaveLength(8);
+  expect(caps.filter((c) => c.status === 'BLOCKED')).toHaveLength(7);
   expect(caps.filter((c) => c.status === 'LOCAL_ALTERNATIVE')).toHaveLength(5);
+  expect(caps.filter((c) => c.status === 'ENABLED')).toHaveLength(1);
+  expect(caps.find((c) => c.id === 'agent-reach')?.status).toBe('ENABLED');
 
   // A local alternative must name its runner, and must not imply the upstream
   // service is running.

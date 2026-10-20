@@ -19,6 +19,7 @@ import { loadTools13Manifest, lookupTool13 } from '../packs/tools13/registry.js'
 import { seoAuditHtml } from '../packs/tools13/seo.js';
 import { redactSecrets } from '../security/redact.js';
 import { edgeHealth } from './edge-health.js';
+import { collectHealth } from '../runtime/health.js';
 import { tools13Capabilities, validateWorkflow, compactContext, extractLinks } from '../packs/tools13/offline.js';
 import { CANCEL, RO, RO_OPEN, SANDBOX_EXEC, WRITE_LOCAL } from './annotations.js';
 import { runSandboxCommand, sandboxToolsEnabled } from '../tools/sandbox.js';
@@ -57,9 +58,11 @@ export function createHamzaHubServer(): McpServer {
       }
       const model = modelStatus();
       const probe = await probeFreellmapi(800);
+      const health = await collectHealth(800);
       return jsonText({
         ok,
         service: 'hamza-agent-hub',
+        components: health.components,
         version: '1.2.1',
         chatgpt_plugin: true,
         packs: PACKS,

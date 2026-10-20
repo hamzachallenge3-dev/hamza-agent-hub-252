@@ -1,5 +1,6 @@
 import { loadTools13Manifest } from './registry.js';
 import { redactSecrets } from '../../security/redact.js';
+import { agentReachStatus } from './agent-reach.js';
 
 /** Local alternatives; these do not pretend to run upstream services. */
 export function tools13Capabilities() {
@@ -8,13 +9,27 @@ export function tools13Capabilities() {
     scrapling: 'html_extract_links (local extraction only)', headroom: 'context_compact (local line dedupe only)',
     'ecc-68': 'run_agent (heuristic scaffold or configured live model)',
   };
-  return loadTools13Manifest().map(t => ({
-    id:t.id, status:local[t.id] ? 'LOCAL_ALTERNATIVE' : 'BLOCKED',
-    runner:local[t.id] ?? null,
-    hint: t.id === 'lapian-notes'
-      ? 'film_pack_prepare is agent-only; install ffmpeg/ffprobe and provide a workspace video'
-      : local[t.id] ? 'No external API calls / يعمل محلياً' : `Install and configure upstream manually: ${t.source}. No service started / الخدمة غير مفعلة`,
-  }));
+  const reach = agentReachStatus();
+  return loadTools13Manifest().map(t => {
+    if (t.id === 'agent-reach') {
+      return {
+        id: t.id,
+        status: reach.enabled ? 'ENABLED' as const : 'NOT_ENABLED' as const,
+        runner: reach.enabled ? 'public_web' : null,
+        hint: reach.reason,
+        missing: reach.missing,
+      };
+    }
+    return {
+      id: t.id,
+      status: local[t.id] ? 'LOCAL_ALTERNATIVE' as const : 'BLOCKED' as const,
+      runner: local[t.id] ?? null,
+      hint: t.id === 'lapian-notes'
+        ? 'film_pack_prepare is agent-only; install ffmpeg/ffprobe and provide a workspace video'
+        : local[t.id] ? 'No external API calls / يعمل محلياً' : `Install and configure upstream manually: ${t.source}. No service started / الخدمة غير مفعلة`,
+      missing: [] as string[],
+    };
+  });
 }
 export function validateWorkflow(workflow: unknown) {
   const w = workflow as {nodes?: Array<{name?:string;type?:string}>; connections?: Record<string,unknown>;active?:boolean};

@@ -21,6 +21,7 @@ import { planWithBoss } from '../runtime/boss.js';
 import { auditAgent, auditAgents, auditSummary } from '../runtime/audit.js';
 import { pendingApproval, resolveApproval } from '../runtime/approvals.js';
 import { cancelTask, enqueueAgentTask, queueStats, startQueue } from '../runtime/queue.js';
+import { collectHealth } from '../runtime/health.js';
 import { missionStatus, startMission } from '../runtime/mission.js';
 import { STATE_TO_LEGACY } from '../runtime/states.js';
 import { getTask, listEvents, taskState } from '../storage/db.js';
@@ -102,6 +103,11 @@ export function createApiRouter(): express.Router {
   // cannot carry a bearer token.
   router.get('/health/live', (_req, res) => {
     res.json({ ok: true, service: 'hamza-agent-hub', version: '1.2.1' });
+  });
+
+  router.get('/health/status', async (_req, res) => {
+    const report = await collectHealth(1_500);
+    res.json(report);
   });
 
   router.get('/health/ready', async (_req, res) => {
@@ -573,6 +579,8 @@ export function createApiRouter(): express.Router {
         catalog_entries: t13.length,
         local_alternative: t13.filter((c) => c.status === 'LOCAL_ALTERNATIVE').length,
         blocked: t13.filter((c) => c.status === 'BLOCKED').length,
+        enabled: t13.filter((c) => c.status === 'ENABLED').length,
+        not_enabled: t13.filter((c) => c.status === 'NOT_ENABLED').length,
       },
       model,
       browser,

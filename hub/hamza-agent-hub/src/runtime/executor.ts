@@ -12,6 +12,7 @@ import { gradeRun } from './verification.js';
 import { STATE_TO_LEGACY } from './states.js';
 import { profileFor } from './capabilities.js';
 import { requestApproval } from './approvals.js';
+import { preflightDispatch } from './preflight.js';
 
 /**
  * Tool output is a redacted string, so the approval request is read back out of
@@ -76,7 +77,29 @@ async function runAgentTask(taskId: string, signal: AbortSignal): Promise<void> 
 
   const agent = getAgent(task.agent_id);
   if (!agent) {
-    updateTask(taskId, { status: 'failed', error: `unknown agent ${task.agent_id}`, finished_at: Date.now(), progress: 1 });
+    updateTask(taskId, { status: 'failed', state: 'FAILED', error: `unknown agent ${task.agent_id}`, finished_at: Date.now(), progress: 1 });
+    return;
+  }
+
+  const preflight = await preflightDispatch({ agentId: agent.id, task: task.task });
+  if (!preflight.ok) {
+    const reason = preflight.reason ?? 'preflight refused dispatch';
+    updateTask(taskId, {
+      status: 'failed',
+      state: 'BLOCKED',
+      verified: 0,
+      error: reason,
+      output: JSON.stringify({ status: 'BLOCKED', reason, missing: preflight.missing, component: preflight.component }),
+      progress: 1,
+      progress_message: 'blocked',
+      finished_at: Date.now(),
+      evidence: JSON.stringify([`preflight:${preflight.component}`, 'verdict:BLOCKED']),
+    });
+    appendEvent(taskId, 'preflight_refused', {
+      component: preflight.component,
+      reason,
+      missing: preflight.missing,
+    });
     return;
   }
 
@@ -226,7 +249,7 @@ async function runAgentTask(taskId: string, signal: AbortSignal): Promise<void> 
     tool_log: redactSecrets(toolLog),
     artifacts: JSON.stringify([...new Set(artifacts)]),
     evidence: JSON.stringify(enrichedEvidence),
-    error: verdict.state === 'BLOCKED' ? verdict.reasons.join('; ') : null,
+    error: verdict.state === 'BLOCKED' || verdict.state === 'FAILED' ? verdict.reasons.join('; ') : null,
   });
   appendEvent(taskId, verdict.state.toLowerCase(), {
     artifacts,

@@ -99,11 +99,17 @@ it('holds a dependent subtask in WAITING_FOR_DEPENDENCY until its upstream finis
 it('reports a mission as no more complete than its least complete subtask', async () => {
   const started = start('Clean the lead list then review the python code.');
   const status = await settle(started.mission_id);
-  // No live model is configured here, so every reasoning subtask is limited and
-  // the mission must say so rather than claiming a verified completion.
-  expect(status.state).toBe('COMPLETED_LIMITED');
+  // No live model is configured, so the reasoning subtask is refused before it
+  // runs. The mission takes that blocked state instead of a completion.
+  expect(status.state).toBe('BLOCKED');
   expect(status.verified).toBe(false);
   expect(status.progress).toBe(1);
+  const blocked = status.subtasks.filter((subtask) => subtask.state === 'BLOCKED');
+  expect(blocked.length).toBeGreaterThan(0);
+  for (const subtask of blocked) {
+    expect(getTask(subtask.task_id)?.status).not.toBe('completed');
+    expect(subtask.error).toMatch(/HAH_MODEL_URL|dependency did not complete/);
+  }
 });
 
 it('assembles one report naming every subtask and the constraints applied', async () => {
@@ -136,9 +142,15 @@ it('resumes a mission interrupted mid-flight instead of stranding it', async () 
 
   startQueue();
   const status = await settle(started.mission_id);
-  expect(['COMPLETED_VERIFIED', 'COMPLETED_LIMITED']).toContain(status.state);
-  // The mission's wiring survived the restart, not just the individual rows.
-  for (const subtask of status.subtasks) expect(subtask.state.startsWith('COMPLETED')).toBe(true);
+  expect(status.state).toBe('BLOCKED');
+  // The mission's wiring survived the restart. A refused reasoning step stays
+  // blocked; it is not rewritten as a completion.
+  for (const subtask of status.subtasks) {
+    expect(['COMPLETED_VERIFIED', 'COMPLETED_LIMITED', 'BLOCKED', 'FAILED']).toContain(subtask.state);
+    if (subtask.state === 'BLOCKED' || subtask.state === 'FAILED') {
+      expect(getTask(subtask.task_id)?.status).not.toBe('completed');
+    }
+  }
 });
 
 it('reuses a mission on a retried idempotency key instead of queuing it twice', () => {

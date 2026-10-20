@@ -70,11 +70,17 @@ it('executes the five positive and three negative store cases through MCP',async
 it('all 92 profiles load, with a smoke mission from each pack',async()=>{
  for(const a of listAgents()) expect(loadRoleInstructions(a.id)).toContain(a.id);
  startQueue();
- for(const agent_id of ['hub-boss','desk-lead-cleaner','ecc-security-reviewer','forge-agent-miner','tool13-seo-audit']) {
+ for(const agent_id of ['hub-boss','desk-lead-cleaner','forge-agent-miner','tool13-seo-audit']) {
    const {task_id}=enqueueAgentTask({agent_id,task:'test offline mission',workspace_id:'smoke',idempotency_key:agent_id});
    await until(task_id,'completed');
    expect(getTask(task_id)?.evidence).toContain('heuristic');
  }
+ const reviewer=enqueueAgentTask({agent_id:'ecc-security-reviewer',task:'test offline mission',workspace_id:'smoke',idempotency_key:'ecc-security-reviewer'});
+ await until(reviewer.task_id,'failed');
+ const reviewerTask=getTask(reviewer.task_id)!;
+ expect(reviewerTask.state).toBe('BLOCKED');
+ expect(reviewerTask.status).not.toBe('completed');
+ expect(reviewerTask.error).toMatch(/HAH_MODEL_URL/);
 });
 it('rejects traversal, absolute paths and symlink escapes including artifacts',async()=>{
  const root=ensureWorkspace('safe');

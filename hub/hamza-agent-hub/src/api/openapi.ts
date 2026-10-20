@@ -137,6 +137,15 @@ export function openApiDocument() {
           responses: { '200': { description: 'The process is running.' } },
         },
       },
+      '/health/status': {
+        get: {
+          summary: 'Hub, AI engine, Agent Reach and Browser-Box status',
+          description:
+            'One truthful report. Missing configuration is named (env var names only). ok is true only when the engine is live, Agent Reach is enabled, and Browser-Box is connected.',
+          security: [],
+          responses: { '200': { description: 'Component status. ok may be false.' } },
+        },
+      },
       '/health/ready': {
         get: {
           summary: 'Readiness probe',

@@ -17,6 +17,7 @@ import {
   recordProviderResult,
 } from './providers.js';
 import { SCAFFOLD_MARKER } from '../runtime/verification.js';
+import { engineGap } from './engine.js';
 
 export interface ModelMessage {
   role: 'system' | 'user' | 'assistant' | 'tool';
@@ -31,6 +32,10 @@ export interface ModelMessage {
 export async function modelHealth(timeoutMs = 3000) {
   const report = await providerHealthReport(timeoutMs);
   const configured = configuredProviders().map((p) => p.id);
+  const gap = engineGap();
+  const unreachable = gap.configured && !report.any_live
+    ? `AI engine not ready: configured provider unreachable${configured.length ? ` (${configured.join(', ')})` : ''}`
+    : null;
   return {
     readiness: report.any_live ? ('ready' as const) : ('blocked' as const),
     any_live: report.any_live,
@@ -41,6 +46,9 @@ export async function modelHealth(timeoutMs = 3000) {
      * COMPLETED_LIMITED.
      */
     degraded_mode: report.any_live ? null : 'no live model: deterministic tools only, results are COMPLETED_LIMITED',
+    missing_config: gap.missing_config,
+    missing_keys: gap.missing_keys,
+    error: report.any_live ? null : (gap.error ?? unreachable),
     providers: report.providers,
   };
 }

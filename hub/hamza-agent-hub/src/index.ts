@@ -7,9 +7,24 @@ import { getDb, closeDb } from './storage/db.js';
 import { assertCatalog } from './runtime/registry.js';
 import { stopQueue } from './runtime/queue.js';
 import { runAllSmokeChecks } from './tools/smoke.js';
+import { redactSecrets } from './security/redact.js';
+import { initializeEngine } from './model/engine.js';
+import { ensureBrowserBox, startBrowserBox } from './browser/box.js';
+import { collectHealth } from './runtime/health.js';
 
 async function main() {
+  const command = process.argv[2];
+  if (command === 'status' || command === 'health') {
+    await initializeEngine(2_000, true);
+    await ensureBrowserBox({ maxAttempts: 3 });
+    const report = await collectHealth(500);
+    process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
+    return;
+  }
   getDb(); assertCatalog();
+  const engine = await initializeEngine(2_000, true);
+  if (engine.error) console.error(engine.error);
+  startBrowserBox();
   const listener = config.transport === 'http'
     ? createHttpApp().listen(config.port, config.host)
     : null;
@@ -26,4 +41,8 @@ async function main() {
   process.once('SIGINT', () => void shutdown());
   process.once('SIGTERM', () => void shutdown());
 }
-main().catch(() => { console.error('Hub startup failed; check configuration / فشل بدء التشغيل'); process.exitCode = 1; });
+main().catch((err) => {
+  const detail = redactSecrets(err instanceof Error ? err.message : String(err));
+  console.error(`Hub startup failed: ${detail}`);
+  process.exitCode = 1;
+});

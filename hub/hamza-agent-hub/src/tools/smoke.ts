@@ -76,7 +76,7 @@ export const SMOKE_CHECKS: SmokeCheck[] = [
     assert: (output) => {
       const rows = obj(output) as unknown as Array<{ id: string; status: string }>;
       if (!Array.isArray(rows) || rows.length !== 13) return `expected 13 Tools13 rows, got ${Array.isArray(rows) ? rows.length : 'none'}`;
-      if (!rows.every((r) => r.status === 'BLOCKED' || r.status === 'LOCAL_ALTERNATIVE')) return 'a Tools13 row claimed a status outside the honest vocabulary';
+      if (!rows.every((r) => r.status === 'BLOCKED' || r.status === 'LOCAL_ALTERNATIVE' || r.status === 'ENABLED' || r.status === 'NOT_ENABLED')) return 'a Tools13 row claimed a status outside the honest vocabulary';
       return null;
     },
   },

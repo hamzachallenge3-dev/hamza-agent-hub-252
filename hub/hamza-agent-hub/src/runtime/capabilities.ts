@@ -173,8 +173,11 @@ const LOCAL_RUNNER_TOOLS = new Set(['film_pack_prepare']);
 function tools13Readiness(agent: AgentDef): { readiness: 'BLOCKED' | 'LIMITED'; reason: string } | null {
   if (!agent.id.startsWith('tool13-')) return null;
   const cap = tools13Capabilities().find((c) => c.id === agent.id.slice('tool13-'.length));
-  if (!cap || cap.status !== 'BLOCKED') return null;
+  if (!cap || (cap.status !== 'BLOCKED' && cap.status !== 'NOT_ENABLED' && cap.status !== 'ENABLED')) return null;
   const reason = cap.hint || 'upstream runtime not installed';
+  if (cap.status === 'ENABLED') {
+    return { readiness: 'LIMITED', reason };
+  }
   if (agent.tools.some((t) => LOCAL_RUNNER_TOOLS.has(t))) {
     return { readiness: 'LIMITED', reason: `upstream service unavailable; local runner only — ${reason}` };
   }

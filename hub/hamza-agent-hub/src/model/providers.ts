@@ -10,6 +10,7 @@
  * No adapter here is enabled by default unless its credentials/endpoint are
  * present, and none of them is a paid tier.
  */
+import { redactSecrets } from '../security/redact.js';
 import { modelTool } from './schemas.js';
 import { freellmapiBaseUrl, freellmapiApiKey, freellmapiModel, freellmapiEnabled } from './freellmapi.js';
 
@@ -69,6 +70,21 @@ export interface ModelProvider {
   contextTokens: number;
   health(timeoutMs?: number): Promise<ProviderHealth>;
   chat(req: ChatRequest): Promise<ChatResponse>;
+  /**
+   * Config and credential env names this adapter reads. Values are never
+   * included — callers report the names when something is missing.
+   */
+  requirements(): ProviderRequirements;
+}
+
+export interface ProviderRequirements {
+  config_env: string[];
+  key_env: string[];
+  requires_key: boolean;
+  /** True only when an operator set one of config_env. A built-in default URL does not count. */
+  endpoint_env_set: boolean;
+  /** True when one of key_env is non-empty. The value is never copied here. */
+  key_env_set: boolean;
 }
 
 /** Rough token estimate; good enough for budgeting without a tokenizer dep. */
@@ -148,15 +164,26 @@ export function openAiCompatibleProvider(spec: OpenAiCompatibleSpec): ModelProvi
     apiKey,
     supportsTools: spec.supportsTools,
     contextTokens: spec.contextTokens,
+    requirements: () => ({
+      config_env: spec.envUrl,
+      key_env: spec.envKey,
+      requires_key: spec.requiresKey,
+      endpoint_env_set: Boolean(firstEnv(spec.envUrl)),
+      key_env_set: Boolean(firstEnv(spec.envKey)),
+    }),
 
     async health(timeoutMs = 4000): Promise<ProviderHealth> {
       if (!configured()) {
+        const hasKey = Boolean(apiKey());
+        const error = spec.requiresKey && !hasKey
+          ? `missing key ${spec.envKey.join(', ')}`
+          : `missing config ${spec.envUrl.filter(Boolean).join(', ') || spec.id}`;
         return {
           id: spec.id,
           configured: false,
           ok: false,
           latency_ms: null,
-          error: spec.requiresKey && !apiKey() ? 'no API key configured' : 'no endpoint configured',
+          error,
           hint: spec.hint,
         };
       }
@@ -188,7 +215,7 @@ export function openAiCompatibleProvider(spec: OpenAiCompatibleSpec): ModelProvi
           configured: true,
           ok: false,
           latency_ms: Date.now() - started,
-          error: err instanceof Error ? err.message.slice(0, 160) : String(err).slice(0, 160),
+          error: redactSecrets(err instanceof Error ? err.message : String(err)).slice(0, 160),
           hint: spec.hint,
         };
       }
@@ -218,7 +245,7 @@ export function openAiCompatibleProvider(spec: OpenAiCompatibleSpec): ModelProvi
       });
       if (!res.ok) {
         const text = await res.text().catch(() => '');
-        throw new Error(`${spec.id} HTTP ${res.status}${text ? `: ${text.slice(0, 200)}` : ''}`);
+        throw new Error(redactSecrets(`${spec.id} HTTP ${res.status}${text ? `: ${text.slice(0, 200)}` : ''}`));
       }
       const json = (await res.json()) as {
         choices?: Array<{ message?: { content?: string | null; tool_calls?: Array<{ id: string; function: { name: string; arguments: string } }> } }>;
@@ -270,6 +297,13 @@ function freellmapiProvider(): ModelProvider {
     defaultModel: () => freellmapiModel(),
     // Only a deliberate opt-in or a reachable local gateway counts as configured.
     configured: () => freellmapiEnabled(),
+    requirements: () => ({
+      config_env: ['HAH_MODEL_PROVIDER', 'HAH_FREELLMAPI_URL', 'HAH_USE_FREELLMAPI'],
+      key_env: ['HAH_FREELLMAPI_KEY', 'HAH_MODEL_API_KEY'],
+      requires_key: false,
+      endpoint_env_set: freellmapiEnabled(),
+      key_env_set: Boolean(process.env.HAH_FREELLMAPI_KEY || process.env.HAH_MODEL_API_KEY),
+    }),
   };
 }
 

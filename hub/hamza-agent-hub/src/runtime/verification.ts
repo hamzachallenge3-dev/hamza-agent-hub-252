@@ -33,11 +33,27 @@ export interface EvidenceInput {
 }
 
 export interface Verdict {
-  state: Extract<TaskState, 'COMPLETED_VERIFIED' | 'COMPLETED_LIMITED' | 'BLOCKED'>;
+  state: Extract<TaskState, 'COMPLETED_VERIFIED' | 'COMPLETED_LIMITED' | 'BLOCKED' | 'FAILED'>;
   verified: boolean;
   reasons: string[];
   /** Evidence the verdict rests on, for audit. */
   proof: string[];
+}
+
+/** A step payload that already says it did not succeed. Only the top-level status counts. */
+function payloadOutcome(text: string | undefined): 'BLOCKED' | 'FAILED' | null {
+  if (!text) return null;
+  const trimmed = text.trim();
+  if (!trimmed.startsWith('{')) return null;
+  try {
+    const parsed = JSON.parse(trimmed) as { status?: unknown; state?: unknown };
+    const raw = String(parsed.status ?? parsed.state ?? '').toUpperCase();
+    if (raw === 'BLOCKED') return 'BLOCKED';
+    if (raw === 'FAILED' || raw === 'DEAD_LETTER') return 'FAILED';
+  } catch {
+    return null;
+  }
+  return null;
 }
 
 /** Tools whose success is real work rather than inspection of an empty dir. */
@@ -64,11 +80,29 @@ export function gradeRun(input: EvidenceInput): Verdict {
   const reasons: string[] = [];
   const proof: string[] = [];
 
-  if (input.blockedReason) {
+  const payloads = [input.output, ...input.toolLog.map((entry) => entry.output)];
+  const blockedPayload = payloads.map(payloadOutcome).find((outcome) => outcome === 'BLOCKED');
+  if (input.blockedReason || blockedPayload) {
     return {
       state: 'BLOCKED',
       verified: false,
-      reasons: [input.blockedReason],
+      reasons: [input.blockedReason || 'a step reported status BLOCKED'],
+      proof: input.evidence.slice(0, 20),
+    };
+  }
+
+  const failedTool = input.toolLog.find((entry) => entry.ok === false);
+  const failedEvidence = input.evidence.some((line) => line.startsWith('tool:') && line.endsWith(':fail'));
+  const failedPayload = payloads.some((text) => payloadOutcome(text) === 'FAILED');
+  if (failedTool || failedEvidence || failedPayload) {
+    return {
+      state: 'FAILED',
+      verified: false,
+      reasons: [
+        failedTool
+          ? `step failed: ${failedTool.tool}`
+          : 'a step failed',
+      ],
       proof: input.evidence.slice(0, 20),
     };
   }

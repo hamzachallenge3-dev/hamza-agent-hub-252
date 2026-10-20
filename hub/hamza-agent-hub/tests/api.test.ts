@@ -31,6 +31,8 @@ beforeEach(async () => {
   vi.stubEnv('HAH_MODEL_URL', '');
   vi.stubEnv('HAH_MODEL_PROVIDER', '');
   vi.stubEnv('HAH_FREELLMAPI_URL', '');
+  vi.stubEnv('HAH_AGENT_REACH', '');
+  vi.stubEnv('HAH_AGENT_REACH_PUBLIC_WEB', '1');
   fs.mkdirSync(path.join(base, 'data'), { recursive: true });
   resetQuotas();
   resetIntegrationBreakers();
@@ -183,6 +185,7 @@ it('publishes an OpenAPI document that matches the live routes', async () => {
   const paths = Object.keys(doc.body?.paths as Record<string, unknown>);
   for (const expected of [
     '/health/live',
+    '/health/status',
     '/health/ready',
     '/v1/agents',
     '/v1/agents/{id}',
@@ -361,8 +364,36 @@ it('reports diagnostics that separate registered from executable capability', as
   expect(agents.ready + agents.limited + agents.blocked + agents.untested).toBe(agents.registered);
   const tools13 = diag.body?.tools13 as Record<string, number>;
   expect(tools13.catalog_entries).toBe(13);
-  expect(tools13.blocked).toBe(8);
+  expect(tools13.blocked).toBe(7);
   expect(tools13.local_alternative).toBe(5);
+  expect(tools13.enabled).toBe(1);
+  expect(tools13.not_enabled).toBe(0);
+});
+
+it('reports hub, engine, Agent Reach and Browser-Box without authentication', async () => {
+  const res = await fetch(`${url}/health/status`);
+  expect(res.status).toBe(200);
+  const body = (await res.json()) as {
+    ok: boolean;
+    service: string;
+    components: {
+      hub: { state: string; agents: number };
+      ai_engine: { state: string; error: string | null; missing_config: string[] };
+      agent_reach: { state: string; enabled: boolean };
+      browser_box: { state: string; connected: boolean; reason: string };
+    };
+  };
+  expect(body.service).toBe('hamza-agent-hub');
+  expect(body.ok).toBe(false);
+  expect(body.components.hub.state).toBe('connected');
+  expect(body.components.hub.agents).toBe(listAgents().length);
+  expect(body.components.ai_engine.state).toBe('not_ready');
+  expect(body.components.ai_engine.error).toMatch(/missing config/);
+  expect(body.components.ai_engine.missing_config).toContain('HAH_MODEL_URL');
+  expect(body.components.agent_reach.enabled).toBe(true);
+  expect(body.components.browser_box.connected).toBe(false);
+  expect(body.components.browser_box.reason).toMatch(/connection stopped|reconnecting/);
+  expect(JSON.stringify(body)).not.toMatch(/sk-[A-Za-z0-9]{10,}/);
 });
 
 it('audits agents with measured evidence and filters by readiness', async () => {

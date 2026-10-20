@@ -68,6 +68,8 @@ function tempEnv() {
   vi.stubEnv('HAH_MODEL_URL', '');
   vi.stubEnv('HAH_MODEL_PROVIDER', '');
   vi.stubEnv('HAH_FREELLMAPI_URL', '');
+  vi.stubEnv('HAH_AGENT_REACH', '');
+  vi.stubEnv('HAH_AGENT_REACH_PUBLIC_WEB', '1');
   fs.mkdirSync(path.join(base, 'workspaces'), { recursive: true });
   resetBreakers();
 }
@@ -272,7 +274,7 @@ describe('R6 offline scaffolds never count as verified AI completion', () => {
     expect(verdict.verified).toBe(true);
   });
 
-  it('runs an offline mission to COMPLETED_LIMITED, never to verified', async () => {
+  it('refuses an offline reasoning mission instead of marking it completed', async () => {
     startQueue();
     const { task_id } = enqueueAgentTask({
       agent_id: 'ecc-planner',
@@ -280,11 +282,14 @@ describe('R6 offline scaffolds never count as verified AI completion', () => {
       workspace_id: 'r6',
       idempotency_key: 'r6-scaffold',
     });
-    await until(task_id, 'completed');
+    await until(task_id, 'failed');
     const task = getTask(task_id)!;
-    expect(task.state).toBe('COMPLETED_LIMITED');
+    expect(task.state).toBe('BLOCKED');
+    expect(task.status).not.toBe('completed');
     expect(task.verified).toBe(0);
-    expect(JSON.parse(task.evidence!)).toContain('verdict:COMPLETED_LIMITED');
+    expect(task.error).toMatch(/missing config/);
+    expect(task.error).toMatch(/HAH_MODEL_URL/);
+    expect(JSON.parse(task.evidence!)).toContain('verdict:BLOCKED');
   });
 
   it('never claims verification retroactively for a pre-migration row', () => {
@@ -502,8 +507,9 @@ describe('R13 paid and irreversible actions require explicit authorization', () 
     expect(caps).toHaveLength(13);
     const blocked = caps.filter((c) => c.status === 'BLOCKED');
     const local = caps.filter((c) => c.status === 'LOCAL_ALTERNATIVE');
-    expect(blocked.length).toBe(8);
+    expect(blocked.length).toBe(7);
     expect(local.length).toBe(5);
+    expect(caps.filter((c) => c.status === 'ENABLED').map((c) => c.id)).toEqual(['agent-reach']);
     // A local substitute must say it is local, never claim the upstream service.
     for (const entry of local) expect(entry.runner).toBeTruthy();
   });
