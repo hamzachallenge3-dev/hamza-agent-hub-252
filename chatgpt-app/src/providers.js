@@ -192,7 +192,7 @@ function messageText(data) {
 async function callOpenAI({ url, key, model, messages, maxTokens, headers, fetchImpl, secrets }) {
   const res = await fetchImpl(url, {
     method: 'POST',
-    redirect: 'error',
+    redirect: 'manual',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...headers },
     body: JSON.stringify({ model, messages, max_tokens: maxTokens, temperature: 0.2 }),
     signal: AbortSignal.timeout(20000),
@@ -236,7 +236,7 @@ async function callCloudflare({ env, model, messages, maxTokens, fetchImpl, secr
   const url = `https://api.cloudflare.com/client/v4/accounts/${account}/ai/run/${model}`;
   const res = await fetchImpl(url, {
     method: 'POST',
-    redirect: 'error',
+    redirect: 'manual',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ messages, max_tokens: maxTokens }),
     signal: AbortSignal.timeout(20000),
