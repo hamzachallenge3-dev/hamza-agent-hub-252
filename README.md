@@ -1,12 +1,12 @@
 # ⚡ Hamza Agent Hub
 
-**243 expert agents (reviewer, planner, tester, security auditor…) inside ChatGPT, Claude and Cursor with one MCP URL. No install, no API key.**
+**252 expert agents (reviewer, planner, tester, security auditor…) inside ChatGPT, Claude and Cursor with one MCP URL. No install, no API key required.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-server-blue)](https://modelcontextprotocol.io)
-![Agents](https://img.shields.io/badge/agents-243-orange)
-![Categories](https://img.shields.io/badge/categories-13-purple)
-![Tools](https://img.shields.io/badge/tools-4%20read--only-lightgrey)
+![Agents](https://img.shields.io/badge/agents-252-orange)
+![Categories](https://img.shields.io/badge/categories-14-purple)
+![Tools](https://img.shields.io/badge/tools-5-lightgrey)
 [![GitHub stars](https://img.shields.io/github/stars/hamzachallenge3-dev/hamza-agent-hub-252?style=social)](https://github.com/hamzachallenge3-dev/hamza-agent-hub-252/stargazers)
 
 ![Hamza Agent Hub running inside ChatGPT](docs/media/chatgpt-demo.gif)
@@ -42,37 +42,41 @@ Then ask: *"Use Hamza Agent Hub to review this function as a security auditor."*
 
 ## What the server exposes
 
-Four **read-only** tools. Nothing touches your accounts, files or money.
+Five tools. Nothing touches your accounts, files, or money. `run_agent_prompt` calls a free model only when a server secret is set; otherwise it returns the prompt.
 
 | Tool | What it does |
 | --- | --- |
-| `list_categories` | The 13 categories and how many agents each has |
+| `list_categories` | The 14 categories and how many agents each has |
 | `search_agents` | Find agents by keyword or category |
 | `get_agent` | Full role prompt and details for one agent |
-| `run_agent_prompt` | Builds a ready-to-use prompt: agent role + your task |
+| `list_model_providers` | Free providers, secret names, and allowlisted models (never the keys) |
+| `run_agent_prompt` | Agent role + your task, then a free-model reply when a secret is set |
 
 > **Honest note.** These agents are carefully written role prompts. They don't run by
 > themselves or act on your accounts. They make the AI chat you already use behave like a
-> focused specialist for the task you give it.
+> focused specialist for the task you give it. Optional server secrets (`GROQ_API_KEY`,
+> `GEMINI_API_KEY`, `OPENROUTER_API_KEY`, `HF_TOKEN`, or `CLOUDFLARE_API_TOKEN` with
+> `CLOUDFLARE_ACCOUNT_ID`) let `run_agent_prompt` call a free model. Paid providers are disabled.
 
-## Categories (243 agents)
+## Categories (252 agents)
 
 | Category | Agents |
 | --- | ---: |
 | 🗺️ Planning & coordination | 51 |
+| 🧰 General helpers | 36 |
 | 🧪 Testing & QA | 35 |
-| 🧰 General helpers | 35 |
 | 🔍 Code review | 25 |
 | 🚀 Performance & optimization | 22 |
 | 🏗️ Architecture & design | 21 |
 | 🔐 Security | 14 |
 | 💻 Coding | 12 |
+| 🧠 Memory & knowledge | 10 |
 | 📝 Documentation | 9 |
-| 🧠 Memory & knowledge | 9 |
-| 🔎 Research | 5 |
+| 🔎 Research | 6 |
+| 📈 Trading & market data (prompts only) | 6 |
 | 🌿 Git & GitHub | 3 |
 | 🎵 Music | 2 |
-| **Total** | **243** |
+| **Total** | **252** |
 
 The served roster is [`chatgpt-app/data/agents.json`](chatgpt-app/data/agents.json).
 

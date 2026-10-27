@@ -15,6 +15,6 @@ export default {
       const page = PAGES[pathname.replace(/\/$/, '')];
       if (page) return new Response(page, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
     }
-    return mcp.handleHttp(request);
+    return mcp.handleHttp(request, env || {});
   },
 };

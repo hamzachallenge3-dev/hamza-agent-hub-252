@@ -9,7 +9,7 @@ ChatGPT searches the roster, loads the right agent's full instructions, and work
 https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/mcp
 ```
 
-Health check: `https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/healthz`
+Health check: `https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/health` (and `/healthz`)
 
 ## Tools
 
@@ -18,10 +18,26 @@ Health check: `https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/healthz`
 | `list_categories` | The 14 categories and agent counts (252 total). |
 | `search_agents(query, category?, limit?)` | Finds the best agents for a task. Returns ids. |
 | `get_agent(id)` | Returns the agent's full instructions; ChatGPT adopts that role. |
-| `run_agent_prompt(id, task)` | Agent instructions + your task as one ready prompt (also usable in any AI chat). |
+| `list_model_providers` | Free providers, the secret name for each, and the models allowed. No key values. |
+| `run_agent_prompt(id, task, provider?, model?)` | Agent instructions + your task. Calls a free model when a secret is set; otherwise returns the prompt and the secret names to set. |
 
-All tools are marked `readOnlyHint: true`, `destructiveHint: false`, `openWorldHint: false`.
-The server stores nothing, needs no keys, and makes no outside calls.
+Catalog tools are `readOnlyHint: true`, `destructiveHint: false`, `openWorldHint: false`.
+`run_agent_prompt` is `openWorldHint: true` because it may send the task to a free model API.
+The server stores nothing. Paid providers (OpenAI, Anthropic, and any other billed API) are hard-blocked.
+
+### Free model secrets
+
+Set any one of these as a Cloudflare Worker secret (`npx wrangler secret put NAME`) or as an env var for `node src/server.js`. With none set, every tool still works and `run_agent_prompt` returns the prompt.
+
+| Secret | Provider | Default free model |
+| --- | --- | --- |
+| `GROQ_API_KEY` | Groq free tier | `qwen/qwen3.8-27b` |
+| `GEMINI_API_KEY` | Google Gemini free tier (Flash only) | `gemini-2.5-flash` |
+| `OPENROUTER_API_KEY` | OpenRouter models ending in `:free` | `meta-llama/llama-3.3-70b-instruct:free` |
+| `HF_TOKEN` | Hugging Face free inference (`:hf-inference` only). `HUGGINGFACE_API_KEY` is an alias. | `Qwen/Qwen2.5-7B-Instruct:hf-inference` |
+| `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` | Workers AI REST. A binding named `AI` works with no token. | `@cf/meta/llama-3.1-8b-instruct` |
+
+On rate limit or provider error the server tries the next configured free provider. A paid model id is rejected and is not replaced with a paid call.
 
 ## Add it in ChatGPT (web)
 
@@ -32,7 +48,7 @@ You need a ChatGPT plan that allows custom MCP servers (see "Plans" below). Use 
 3. Name: `Hamza Agent Hub` · Description: `252 expert agents: coding, testing, security, planning, docs, research and more.`
 4. Connection / MCP Server URL: `https://hamza-agent-hub-mcp.loukilihamza78.workers.dev/mcp`
 5. Authentication: **No authentication**.
-6. Tick **I understand and want to continue** → **Create** (as a plugin). You should see the 4 tools.
+6. Tick **I understand and want to continue** → **Create** (as a plugin). You should see the 5 tools.
 7. Install / enable it, open a new chat, type **@Hamza Agent Hub** and ask, for example:
    - "Find the best agent to review my Node.js API for security, then act as it."
    - "List the agent categories."
@@ -60,6 +76,6 @@ npx wrangler deploy                   # Cloudflare Workers free plan (Node 22+ f
 ## Notes
 
 - 162 agents come from the upstream open-source agent library (MIT, see `../LICENSE`); 90 from the Hamza Agent Hub packs.
-  8 hub agents have no profile file; their instructions are generated from the catalog description (marked in `source`).
+  Hub agents with no profile file get instructions generated from the catalog description (marked in `source`).
 - 6 very long instruction files are cut at 24,000 characters (marked `truncated: true`).
 - Instructions may mention CLI tools that don't exist in ChatGPT; the server tells ChatGPT to skip those parts.

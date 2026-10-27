@@ -5,4 +5,14 @@
   "workers_dev": true
   // Optional custom domain (zone must be in the same Cloudflare account):
   // "routes": [{ "pattern": "agents.example.com", "custom_domain": true }]
+  //
+  // Free-model secrets (wrangler secret put NAME). Never put values in this file.
+  //   GROQ_API_KEY
+  //   GEMINI_API_KEY
+  //   OPENROUTER_API_KEY
+  //   HF_TOKEN
+  //   CLOUDFLARE_API_TOKEN
+  //   CLOUDFLARE_ACCOUNT_ID
+  // Workers AI free allocation also works when a binding named AI is added:
+  // "ai": { "binding": "AI" }
 }

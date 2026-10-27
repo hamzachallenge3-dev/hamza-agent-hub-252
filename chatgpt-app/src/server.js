@@ -9,7 +9,7 @@ http.createServer(async (req, res) => {
   try {
     const chunks = []; for await (const c of req) chunks.push(c);
     const body = ['GET', 'HEAD', 'OPTIONS'].includes(req.method) ? undefined : Buffer.concat(chunks);
-    const r = await mcp.handleHttp(new Request(`http://${req.headers.host || 'localhost'}${req.url}`, { method: req.method, headers: req.headers, body }));
+    const r = await mcp.handleHttp(new Request(`http://${req.headers.host || 'localhost'}${req.url}`, { method: req.method, headers: req.headers, body }), process.env);
     res.writeHead(r.status, Object.fromEntries(r.headers)); res.end(Buffer.from(await r.arrayBuffer()));
   } catch { res.writeHead(500); res.end('{"error":"internal"}'); }
 }).listen(port, host, () => console.log(`hamza-agent-hub MCP on http://${host}:${port}/mcp (${catalog.count} agents)`));
